@@ -6,3 +6,10 @@ Document Studio .NET is based on 100% managed code and does not require external
 # Demos
 Demos folder contains example code and samples which will help in understanding the product.
 
+To see ASP.NET Document Viewer in action, please visit https://demos.gnostice.com/webviewer
+
+To see ASP.NET Document Converter in action, please visit https://demos.gnostice.com/converter
+
+# Developer guide 
+For developer's guide, please 
+visit: https://www.gnostice.com/docs/docstudio_net/guide/index.html
