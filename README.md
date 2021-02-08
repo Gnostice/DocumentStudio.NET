@@ -13,3 +13,6 @@ To see ASP.NET Document Converter in action, please visit https://demos.gnostice
 # Developer's guide 
 For developer's guide, please 
 visit: https://www.gnostice.com/docs/docstudio_net/guide/index.html
+
+# Releases
+Please visit history page to see release notes, https://www.gnostice.com/XtremeDocumentStudio_dot_NET.asp?show=history 
