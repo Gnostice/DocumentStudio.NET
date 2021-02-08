@@ -10,6 +10,6 @@ To see ASP.NET Document Viewer in action, please visit https://demos.gnostice.co
 
 To see ASP.NET Document Converter in action, please visit https://demos.gnostice.com/converter
 
-# Developer guide 
+# Developer's guide 
 For developer's guide, please 
 visit: https://www.gnostice.com/docs/docstudio_net/guide/index.html
