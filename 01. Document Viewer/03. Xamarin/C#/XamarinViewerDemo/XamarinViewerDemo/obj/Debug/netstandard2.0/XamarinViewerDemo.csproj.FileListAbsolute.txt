@@ -1,0 +1,35 @@
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.deps.json
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.pdb
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Controls.Xamarin.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Core.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Documents.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Graphics.Skia.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.PageManager.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Controls.Xamarin.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Core.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Documents.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.Graphics.Skia.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\Gnostice.PageManager.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.AssemblyInfoInputs.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.AssemblyInfo.cs
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.pdb
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.deps.json
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.dll
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\bin\Debug\netstandard2.0\XamarinViewerDemo.pdb
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.AssemblyInfoInputs.cache
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.AssemblyInfo.cs
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.dll
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.pdb
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.csproj.CoreCompileInputs.cache
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\D\demo application\01. Document Viewer\03. Xamarin\C#\XamarinViewerDemo\XamarinViewerDemo\obj\Debug\netstandard2.0\XamarinViewerDemo.csprojAssemblyReference.cache

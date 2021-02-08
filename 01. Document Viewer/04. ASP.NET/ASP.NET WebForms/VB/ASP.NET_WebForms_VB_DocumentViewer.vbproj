@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{9A41E1FC-512C-4CC6-9DFE-1DBCE3AF777D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ASP.NETWebFormsVBHTML5DocumentViewer.csproj</RootNamespace>
+    <AssemblyName>ASP.NETWebFormsVBHTML5DocumentViewer.csproj</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ASP.NETWebFormsVBHTML5DocumentViewer.csproj.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ASP.NETWebFormsVBHTML5DocumentViewer.csproj.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetZip">
+      <HintPath>..\..\..\..\Binaries\net45\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Controls.ASP">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Controls.ASP.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Core">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Converter">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Converter.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.DigitizationEngine">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.DigitizationEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Documents">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Graphics.GDIPlus">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Graphics.GDIPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.ImageEngine">
+      <HintPath>..\..\..\..\Binaries\net45\Gnostice.ImageEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\Binaries\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tesseract">
+      <HintPath>..\..\..\..\Binaries\net45\Tesseract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\accepted-disabled.png">
+      <Link>CSS\Images\accepted-disabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\accepted-enabled.png">
+      <Link>CSS\Images\accepted-enabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\actionlist.png">
+      <Link>CSS\Images\actionlist.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\anticlock.png">
+      <Link>CSS\Images\anticlock.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\arrow-221-16.png">
+      <Link>CSS\Images\arrow-221-16.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\arrow-down.png">
+      <Link>CSS\Images\arrow-down.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\arrow-left.png">
+      <Link>CSS\Images\arrow-left.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\arrow-right.png">
+      <Link>CSS\Images\arrow-right.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\arrow-up.png">
+      <Link>CSS\Images\arrow-up.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\bookmark.png">
+      <Link>CSS\Images\bookmark.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\bubble-up-gray.png">
+      <Link>CSS\Images\bubble-up-gray.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\cancel-disabled.png">
+      <Link>CSS\Images\cancel-disabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\cancel-enabled.png">
+      <Link>CSS\Images\cancel-enabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\clockwise.png">
+      <Link>CSS\Images\clockwise.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\close-window.png">
+      <Link>CSS\Images\close-window.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\close-window1.png">
+      <Link>CSS\Images\close-window1.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\close.png">
+      <Link>CSS\Images\close.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\comment-png-16.png">
+      <Link>CSS\Images\comment-png-16.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\comment1.png">
+      <Link>CSS\Images\comment1.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\completed-disabled.png">
+      <Link>CSS\Images\completed-disabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\completed-enabled.png">
+      <Link>CSS\Images\completed-enabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\delete.png">
+      <Link>CSS\Images\delete.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\downArrow.png">
+      <Link>CSS\Images\downArrow.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\download.png">
+      <Link>CSS\Images\download.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\dragginghand.cur">
+      <Link>CSS\Images\dragginghand.cur</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\dragginghand.png">
+      <Link>CSS\Images\dragginghand.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\dropdown.png">
+      <Link>CSS\Images\dropdown.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\error.png">
+      <Link>CSS\Images\error.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\favicon.cur">
+      <Link>CSS\Images\favicon.cur</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\find.png">
+      <Link>CSS\Images\find.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\first.png">
+      <Link>CSS\Images\first.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\fullscreen-exit.png">
+      <Link>CSS\Images\fullscreen-exit.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\fullscreen.png">
+      <Link>CSS\Images\fullscreen.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\hand.ico">
+      <Link>CSS\Images\hand.ico</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\hand.png">
+      <Link>CSS\Images\hand.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\info.png">
+      <Link>CSS\Images\info.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\invert.png">
+      <Link>CSS\Images\invert.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\last.png">
+      <Link>CSS\Images\last.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\loadDocument.gif">
+      <Link>CSS\Images\loadDocument.gif</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\loading_background.gif">
+      <Link>CSS\Images\loading_background.gif</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\lock-32.png">
+      <Link>CSS\Images\lock-32.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\minimize-white.png">
+      <Link>CSS\Images\minimize-white.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\minimize-window-gray.png">
+      <Link>CSS\Images\minimize-window-gray.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\minimize.png">
+      <Link>CSS\Images\minimize.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\minimize_left.png">
+      <Link>CSS\Images\minimize_left.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\minimize_right.png">
+      <Link>CSS\Images\minimize_right.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\next.png">
+      <Link>CSS\Images\next.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\open.png">
+      <Link>CSS\Images\open.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\pagecount.gif">
+      <Link>CSS\Images\pagecount.gif</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\prev.png">
+      <Link>CSS\Images\prev.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\print.png">
+      <Link>CSS\Images\print.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\propertiesInfo.png">
+      <Link>CSS\Images\propertiesInfo.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\redact.png">
+      <Link>CSS\Images\redact.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\region.png">
+      <Link>CSS\Images\region.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\rejected-disabled.png">
+      <Link>CSS\Images\rejected-disabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\rejected-enabled.png">
+      <Link>CSS\Images\rejected-enabled.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\reply.png">
+      <Link>CSS\Images\reply.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\save.png">
+      <Link>CSS\Images\save.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\search-icon.png">
+      <Link>CSS\Images\search-icon.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\shadow.png">
+      <Link>CSS\Images\shadow.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\sidebarToggle.png">
+      <Link>CSS\Images\sidebarToggle.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\signature.ico">
+      <Link>CSS\Images\signature.ico</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\small-grey-disclosure-arrow-down.png">
+      <Link>CSS\Images\small-grey-disclosure-arrow-down.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\spinner_transp.gif">
+      <Link>CSS\Images\spinner_transp.gif</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\success.png">
+      <Link>CSS\Images\success.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\texture.png">
+      <Link>CSS\Images\texture.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\thumbnail.png">
+      <Link>CSS\Images\thumbnail.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\thumbnails.png">
+      <Link>CSS\Images\thumbnails.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\tick.png">
+      <Link>CSS\Images\tick.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\togglemenu.png">
+      <Link>CSS\Images\togglemenu.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\user-16.png">
+      <Link>CSS\Images\user-16.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\warning.png">
+      <Link>CSS\Images\warning.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\zoomin.png">
+      <Link>CSS\Images\zoomin.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\zoommenuarrows.png">
+      <Link>CSS\Images\zoommenuarrows.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\Binaries\CSS\Images\zoomout.png">
+      <Link>CSS\Images\zoomout.png</Link>
+    </Content>
+    <Content Include="Content\Images\a.png" />
+    <Content Include="Content\Images\chrome-24.png" />
+    <Content Include="Content\Images\firefox-icon.png" />
+    <Content Include="Content\Images\formbg.gif" />
+    <Content Include="Content\Images\gnostice.png" />
+    <Content Include="Content\Images\IE-24.png" />
+    <Content Include="Content\Images\opera-24.png" />
+    <Content Include="Content\Images\pdfe_button_175.gif" />
+    <Content Include="Content\Images\safari-24.png" />
+    <Content Include="Content\Images\selected Icons resized 60.png" />
+    <Content Include="Content\Stylesheet\Demo-Stylesheet.css" />
+    <Content Include="CSS\default.theme.css" />
+    <Content Include="CSS\documentviewer.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="DocumentViewer.aspx" />
+    <Content Include="DocumentViewer.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Script\documentviewer.min.js" />
+    <Content Include="Script\jquery-1.11.0.min.js" />
+    <Content Include="Script\jquery-ui.min.js" />
+    <Content Include="Script\ViewerInitializer.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentEventHandler.vb" />
+    <Compile Include="DocumentViewer.aspx.designer.vb">
+      <DependentUpon>DocumentViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentViewer.aspx.vb">
+      <DependentUpon>DocumentViewer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\html5documentviewerarticle.pdf" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Gnostice.DocumentStudio.Converter">
+      <Version>20.1.776</Version>
+    </PackageReference>
+    <PackageReference Include="Gnostice.DocumentStudio.OCR">
+      <Version>20.1.776</Version>
+    </PackageReference>
+    <PackageReference Include="Gnostice.DocumentStudio.WinForms">
+      <Version>20.1.776</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50216</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50216/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <!--<PostBuildEvent>xcopy /E /i /Y "$(ProjectDir)..\..\..\..\Output\x86" "$(ProjectDir)bin\x86"
+xcopy /E /i /Y "$(ProjectDir)..\..\..\..\Output\x64" "$(ProjectDir)bin\x64"
+xcopy /E /i /Y "$(ProjectDir)..\..\..\..\Output\tessdata" "$(ProjectDir)bin\tessdata"</PostBuildEvent>-->
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

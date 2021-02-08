@@ -1,0 +1,86 @@
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll.config
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.pdb
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Controls.ASP.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Converter.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Core.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.DigitizationEngine.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Documents.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.GDIPlus.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.ImageEngine.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\log4net.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Newtonsoft.Json.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Tesseract.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Controls.ASP.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Core.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Converter.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.DigitizationEngine.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Documents.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.GDIPlus.xml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.dll
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.pdb
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll.config
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.pdb
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\DotNetZip.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Controls.ASP.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Converter.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Core.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.DigitizationEngine.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Documents.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.GDIPlus.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.ImageEngine.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\log4net.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Tesseract.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Newtonsoft.Json.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Controls.ASP.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Core.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Converter.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.DigitizationEngine.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Documents.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.GDIPlus.xml
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CopyComplete
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.dll
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.pdb
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\x86\liblept1753.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\x86\libtesseract3052.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\x64\liblept1753.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\x64\libtesseract3052.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.bigrams
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.fold
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.lm
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.nn
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.params
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.size
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.cube.word-freq
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.tesseract_cube.nn
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\eng.traineddata
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\equ.traineddata
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\tessdata\osd.traineddata
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll.config
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\HTML5_DocumentViewer.pdb
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\AngleSharp.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\DotNetZip.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\DotNetZip.pdb
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Controls.ASP.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Converter.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Core.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Documents.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.GDIPlus.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.Graphics.Skia.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.ImageEngine.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Gnostice.DigitizationEngine.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\log4net.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Newtonsoft.Json.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\bin\Tesseract.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\ASP.NET_WebForms_CS_Document_Viewer.csproj.CopyComplete
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.dll
+C:\D\demo application\01. Document Viewer\04. ASP.NET\ASP.NET WebForms\C#\obj\Debug\HTML5_DocumentViewer.pdb

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.PageManager</name>
+    </assembly>
+    <members>
+        <member name="E:Gnostice.PageManager.DocControlManager.NeedPassword">
+            <summary>
+            Occurs when a password is required to open the loaded
+            document. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.ViewerPreferences">
+            <summary>
+            This class represents settings of the <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentViewer" text="document viewer" />.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.PasswordSettings">
+            <summary>
+            Gets or sets password dialog settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.KeyNavigation">
+            <summary>
+            Gets or sets whether keyboard strokes should be sent to the
+            viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.FormatterSettings">
+            <summary>
+            Gets or sets FormatterSettings
+            viewer.
+            </summary>
+        </member>
+    </members>
+</doc>

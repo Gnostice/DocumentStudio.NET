@@ -1,0 +1,734 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:WPF="clr-namespace:Gnostice.Controls.WPF;assembly=Gnostice.Controls.WPF"
+        xmlns:Core="clr-namespace:Gnostice.Core.Viewer;assembly=Gnostice.Core"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:PageManager="clr-namespace:Gnostice.PageManager;assembly=Gnostice.PageManager" 
+        xmlns:Documents="clr-namespace:Gnostice.Documents;assembly=Gnostice.Documents" 
+        xmlns:Spreadsheet="clr-namespace:Gnostice.Documents.Spreadsheet;assembly=Gnostice.Documents" 
+        xmlns:Graphics="clr-namespace:Gnostice.Core.Graphics;assembly=Gnostice.Core" 
+        x:Class="WPF_CS_Document_Viewer.MainWindow"
+        mc:Ignorable="d"
+        Title="Gnostice Document Studio .NET - WPF Document Viewer" Height="850" Width="1600"
+        Icon="Resources/Viewer.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+    <Window.Resources>
+        <WPF:ZoomValueConverter x:Key="ZoomValueConvert" />
+        <ObjectDataProvider x:Key="pageLayoutModes" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Core:PageLayoutMode"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="viewerScrollMode" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Core:ScrollMode"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        
+        <Menu Grid.Row="0" Grid.Column="0" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Open" x:Name="menuItemOpen" Command="{Binding LoadDocumentCommand}" CommandTarget="{Binding ElementName=DocumentViewer1}" CommandParameter="All Files|*.pdf;*.docx;*.doc;*.jpg;*.png;*.bmp;*.tif;*.tiff;*.emf;*.wmf;|Word Documents|*.docx;*.doc|Image Files|*.jpg;*.png;*.bmp;*.tiff;*.tif;*.emf;*.wmf">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/open.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save" InputGestureText="Ctrl + S" x:Name="menuItemSave">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Exit" InputGestureText="Alt + F4" x:Name="menuItemExit">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/close.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_View">
+                <MenuItem Header="Rotate Page">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/rotate.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Rotate Clockwise" x:Name="menuItemRotateClockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateAllClockwiseCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/rotate_clockwise.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rotate AntiClock_wise" x:Name="menuItemRotateAnticlickwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateAllCounterClockwiseCommand}" >
+                        <MenuItem.Icon>
+                            <Image Source="Resources/rotate_anticlockwise.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rotate Current Page Clockwise" x:Name="menuItemRotateCurrentPageClockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateCurrentClockwiseCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/rotate_clockwise_extra.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rotate Current Page AntiClockwise" x:Name="nemuItemRotateCurrentPageAnticlockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateCurrentCounterClockwiseCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/rotate_anticlockwise_extra.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Page Navigation">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/navigation.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="First Page" x:Name="menuItemFirstPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding FirstPageCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/first.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Last Page" x:Name="menuItemLastPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LastPageCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/last.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Previous Page" x:Name="menuItemPreviousPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding PreviousPageCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/previous.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Next Page" x:Name="menuItemNextPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding NextPageCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/next.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <Separator/>
+
+                <MenuItem Header="Page Layout">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/page_layout.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                    
+                    <MenuItem Header="Single Page Continuous" x:Name="menuItemSingleContinuous" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LayoutSinglePageContinuousCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/ContinuousLayout.gif" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    
+                    <MenuItem Header="Two Page Continuous" x:Name="menuItemTwoPageContinuous" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LayoutTwoPageContinuousCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/SideBySideLayoutContinuous.gif" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    
+                    <MenuItem Header="Show Cover Page" IsCheckable="True" IsChecked="{Binding PageLayout.ShowCoverPage, Mode=OneWay}" x:Name="menuItemShowCoverPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ShowCoverPageCommand}" >
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Zoom">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/zoom.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Zoom In" x:Name="menuItemZoomIn" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ZoomInCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/zoom_in.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Zoom Out" x:Name="menuItemZoomOut" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ZoomOutCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/zoom_out.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <Separator/>
+
+                <MenuItem Header="Show / Hide">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/setting.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Page Layout Options" x:Name="menuItemPageLayout" Click="menuItemPageLayout_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/tick.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Navigation Pane" x:Name="menuItemNavigationPane" Click="menuItemNavigationPane_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/tick.png" Height="16" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Shortcut Manager" x:Name="menuItemShortcutManager" Click="menuItemShortcutManager_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Keyboard.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0"  Orientation="Horizontal">
+
+                <Button Height="32" Width="60" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnOpen" Command="{Binding LoadDocumentCommand}" CommandTarget="{Binding ElementName=DocumentViewer1}" CommandParameter="All Files|*.pdf;*.docx;*.doc;*.jpg;*.png;*.bmp;*.tif;*.tiff;*.emf;*.wmf;|Word Documents|*.docx;*.doc|Image Files|*.jpg;*.png;*.bmp;*.tiff;*.tif;*.emf;*.wmf" ToolTip="Open">
+                    <Grid Width="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/open.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Open" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="60" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Name="btnSave" Click="btnSave_Click" ToolTip="Save">
+                    <Grid Width="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/save.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+                    </Grid>
+                </Button>
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnFirstPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding FirstPageCommand}" ToolTip="First page">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/first.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnPreviousPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding PreviousPageCommand}" ToolTip="Previous Page">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/previous.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <TextBox Text="{Binding Path=CurrentPage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" VerticalAlignment="Center" TextAlignment="Center" ToolTip="Current Page"/>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnNextPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding NextPageCommand}" ToolTip="Next Page">
+                    <Grid Width="32">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/next.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0" Height="16" Width="16" Grid.RowSpan="2"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnLastPage" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LastPageCommand}" ToolTip="Last Page">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/last.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnZoomOut" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ZoomOutCommand}" ToolTip="Zoom Out">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/zoom_out.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <ComboBox 
+                    x:Name="cmbZoomPercent"
+                    IsEditable="True"
+                    HorizontalAlignment="Left" 
+                    Width="65" 
+                    Text="{Binding Zoom.ZoomDisplay, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                    VerticalAlignment="Center" 
+                    ToolTip="Zoom Percent" 
+                    ItemsSource="{Binding ZoomValues, Mode=OneWay}" 
+                    DisplayMemberPath="Name" 
+                    SelectedValuePath="Zoom" 
+                    SelectionChanged="cmbZoomPercent_SelectionChanged"
+                    >
+                   
+                </ComboBox>
+
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnZoomIn" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ZoomInCommand}" ToolTip="Zoom In">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/zoom_in.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnRotateCloclwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateAllClockwiseCommand}" ToolTip="Rotate Clockwise">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/rotate_clockwise.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnRotateAnticlockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateAllCounterClockwiseCommand}" ToolTip="Rotate Anti Clockwise">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/rotate_anticlockwise.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnRotateCurrentPageClockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateCurrentClockwiseCommand}" ToolTip="Rotate Current Page Clockwise">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/rotate_clockwise_extra.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnRotateCurrentPageAnticlockwise" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding RotateCurrentCounterClockwiseCommand}" ToolTip="Rotate Current Page Anti Clockwise">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/rotate_anticlockwise_extra.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnSingleContinuous"  CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LayoutSinglePageContinuousCommand}" ToolTip="Single Continuous">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/ContinuousLayout.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+                    </Grid>
+                </Button>
+               
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnTwoPageContinuous" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding LayoutTwoPageContinuousCommand}" ToolTip="Two Pages Continuous">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/SideBySideLayoutContinuous.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16"/>
+
+                    </Grid>
+                </Button>
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnSelection" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding MouseModeTextSelectionCommand}" ToolTip="Text Selection">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/ArrowCursor.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0" Height="16" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+
+                    </Grid>
+                </Button>
+
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnPan" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding MouseModePanCommand}" ToolTip="Panning">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/HandCursor.png" HorizontalAlignment="Center" Margin="8,0" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+
+                    </Grid>
+                </Button>
+
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnAreaSelection" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding MouseModeAreaSelectionCommand}" ToolTip="Region Selection">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/AreaSelection.png" HorizontalAlignment="Center" Margin="8,0" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnMarquee" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding MouseModeMarqueeZoomCommand}" ToolTip="Marquee Zoom">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/MarqueeZoom.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="8,0" Height="16" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+
+                    </Grid>
+                </Button>
+
+                <Separator Background="Silver">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnHorizontal" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ScrollOrientHorizontalCommand}" ToolTip="Horizontal orientation" VerticalAlignment="Bottom">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/HOrientation.png" HorizontalAlignment="Center" Margin="8,0" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+
+                    </Grid>
+                </Button>
+                <Button Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnVertical" CommandTarget="{Binding ElementName=DocumentViewer1}" Command="{Binding ScrollOrientVerticalCommand}" ToolTip="Vertical orientation">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" Source="Resources/VOrientation.png" HorizontalAlignment="Center" Margin="8,0" Width="16" RenderTransformOrigin="-1.5,0.5"/>
+                    </Grid>
+                </Button>
+                <Separator Background="Silver" Margin="8,2,8,2">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+            </StackPanel>
+            <Grid Grid.Row="0" Grid.Column="1" IsEnabled="{Binding IsDocumentLoaded}" HorizontalAlignment="Right" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Padding="4,4,4,4" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Search "></TextBlock>
+                <TextBox Grid.Column="1" Grid.Row="0" IsEnabled="{Binding IsDocumentLoaded}" TextWrapping="NoWrap" HorizontalAlignment="Left" Width="55" VerticalAlignment="Center" ToolTip="Search text" Name="txtInputText" TextChanged="txtInputText_TextChanged" KeyDown="txtInputText_KeyDown"/>
+                <Menu Grid.Column="2" Grid.Row="0" Width="32" VerticalAlignment="Center">
+                    <MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="Resources/setting.png"></Image>
+                        </MenuItem.Icon>
+                        <MenuItem Header="WholeWord" IsCheckable="True" Checked="MenuItem_Checked" Unchecked="MenuItem_Unchecked" />
+                        <MenuItem Header="CaseSensitive" IsCheckable="True" Checked="MenuItem_Checked_1" Unchecked="MenuItem_Unchecked_1" />
+                        <MenuItem Header="WrapAround" IsCheckable="True" Checked="MenuItem_Checked_2" Unchecked="MenuItem_Unchecked_2" />
+                    </MenuItem>
+                </Menu>
+                <Button Grid.Column="3" Grid.Row="0" Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnNextSearch" ToolTip="Next Page" Click="btnNextSearch_Click">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16">
+                            <Image.Source>
+                                <BitmapImage UriSource="Resources/next.png" Rotation="Rotate90" />
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Grid.Row="0" Height="32" Width="32" Padding="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" x:Name="btnPreviousSearch" ToolTip="Previous Search" Click="btnPreviousSearch_Click">
+                    <Grid Width="32">
+                        <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="16" Width="16">
+                            <Image.Source>
+                                <BitmapImage UriSource="Resources/previous.png" Rotation="Rotate90" />
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Button>
+                
+                <!--<ComboBox Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left"
+                 Width="65" VerticalAlignment="Center" x:Name="cmbSeachOption"
+                 ToolTip="Search Option" SelectedIndex="0" 
+                 SelectionChanged="cmbSeachOption_SelectionChanged" />-->
+            </Grid>
+        </Grid>
+        
+        <WPF:DocumentViewer Grid.Row="2" Grid.Column="0" Name="DocumentViewer1" AllowDrop="True" DragEnter="DocumentViewer1_DragEnter" Drop="DocumentViewer1_Drop" MouseMode="TextSelection" Grid.ColumnSpan="2" Orientation="Horizontal">
+        </WPF:DocumentViewer>
+        
+        <Grid IsEnabled="{Binding IsDocumentLoaded, Mode=OneWay}" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#F7F7F7" x:Name="toolBarPageLayout" Visibility="Visible" Height="40" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="105"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Layout Mode : " VerticalAlignment="Center"/>
+
+            <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cmbLayoutMode" ItemsSource="{Binding Source={StaticResource pageLayoutModes}, Mode=OneWay}" 
+                     SelectedIndex="0" SelectedValue="{Binding PageLayout.LayoutMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" VerticalAlignment="Center">
+            </ComboBox>
+            <Separator Grid.Row="0" Grid.Column="2" Background="Silver">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Margin="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Columns : " VerticalAlignment="Center" KeyUp="txtNumberPfPagesInRow_KeyUp"/>
+            <TextBox Grid.Column="4" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="{Binding PageLayout.Columns, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtNumberPfPagesInRow"  />
+            <Separator Grid.Row="0" Grid.Column="5" Background="Silver">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+            <TextBlock Grid.Row="0" Grid.Column="9" Margin="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Horizontal Spacing : " VerticalAlignment="Center"/>
+            <TextBox Grid.Column="10" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="{Binding PageLayout.HorizontalSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtHorizontalSpacing"  />
+            <Separator Grid.Row="0" Grid.Column="11" Background="Silver">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <TextBlock Grid.Row="0" Grid.Column="12" Margin="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Vertical Spacing : " VerticalAlignment="Center" />
+            <TextBox Grid.Column="13" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="{Binding PageLayout.HorizontalSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtVerticalSpacing" />
+            <Separator Grid.Row="0" Grid.Column="14" Background="Silver">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <CheckBox IsChecked="{Binding PageLayout.ShowCoverPage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Show Cover Page" x:Name="chkShowCoverPage" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="15" />
+        </Grid>
+
+        <Popup IsOpen="False" x:Name="popupSaveOptions" Placement="Absolute" Height="Auto" Width="304" VerticalOffset="170" HorizontalOffset="670" Grid.ColumnSpan="2" Margin="646,0,645,0">
+            <Border BorderBrush="Black" BorderThickness="1" Background="LightGray">
+                <Grid x:Name="toolBarSaveOptions" Visibility="Visible" Height="Auto" Width="Auto" Margin="12,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="Save Options" 
+                                Margin="-11,0,0,0" TextAlignment="Center" Background="#FF897F7F" FontWeight="Bold" FontSize="16"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="15,10,10,10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Save As : " VerticalAlignment="Center" />
+                    <ComboBox Grid.Row="1" Grid.Column="0" Margin="75,0,0,0" Width="60" SelectedIndex="0" HorizontalAlignment="Left"  VerticalAlignment="Center" x:Name="cmbSaveAs">
+                        <ComboBoxItem Content="PDF"/>
+                        <ComboBoxItem Content="DOCX"/>
+                        <ComboBoxItem Content="TXT"/>
+                        <ComboBoxItem Content="HTML"/>
+                        <ComboBoxItem Content="BMP"/>
+                        <ComboBoxItem Content="PNG"/>
+                        <ComboBoxItem Content="JPEG"/>
+                        <ComboBoxItem Content="TIFF"/>
+                    </ComboBox>
+
+                    <GroupBox Grid.Row="2" Grid.Column="0" x:Name="grpBxConverterSettings" HorizontalAlignment="Left" Width="284" VerticalAlignment="Center">
+                        <GroupBox.Header>
+                            <Label Content="Converter Params:"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Page Range : " VerticalAlignment="Center"/>
+                            <ComboBox Grid.Row="0" Grid.Column="1" Margin="0" Width="70" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cmbPageRange">
+                                <ComboBoxItem Content="All"/>
+                                <ComboBoxItem Content="Even"/>
+                                <ComboBoxItem Content="Odd"/>
+                                <ComboBoxItem Content="Custom"/>
+                            </ComboBox>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Custom Page Range : " VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="-" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtPageRange" Margin="0"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="3" Grid.Column="0" x:Name="grpBxEncoderSettings" HorizontalAlignment="Left" VerticalAlignment="Center" Width="284" >
+                        <GroupBox.Header>
+                            <Label Content="Encoder Params:"/>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0" x:Name="pdfEncoderSettings" Visibility="Visible">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Font Embed Type : " VerticalAlignment="Center"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" Margin="0" Width="60" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cmbFontEmbedType">
+                                    <ComboBoxItem Content="Full"/>
+                                    <ComboBoxItem Content="None"/>
+                                    <ComboBoxItem Content="Subset"/>
+                                </ComboBox>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="PDFVersion : " VerticalAlignment="Center"/>
+                                <ComboBox Grid.Row="1" Grid.Column="1" Margin="0" Width="50" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cmbPDFVersion">
+                                    <ComboBoxItem Content="V1_4"/>
+                                    <ComboBoxItem Content="V1_5"/>
+                                    <ComboBoxItem Content="V1_6"/>
+                                </ComboBox>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="0" x:Name="txtEncoderSettings" Visibility="Collapsed">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="File Encoding : " VerticalAlignment="Center"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="0" Width="Auto" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cmbFileEncoding">
+                                    <ComboBoxItem Content="UTF_8"/>
+                                    <ComboBoxItem Content="US_ASCII"/>
+                                    <ComboBoxItem Content="UTF_16BE"/>
+                                    <ComboBoxItem Content="UTF_16LE"/>
+                                    <ComboBoxItem Content="ISO_8859_1"/>
+                                </ComboBox>
+
+
+                                <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="Break Lines" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="chkBreakLines" Margin="10"/>
+
+                                <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Break Paragraphs" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="chkBreakParagraphs" Margin="10"/>
+
+                                <CheckBox Grid.Row="3" Grid.Column="0" Content="Break Pages" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="chkBreakPages" Margin="10"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Margin="0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Custom Page Break : " VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtPageBreakString"/>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.Column="0" x:Name="imageEncoderSettings" Visibility="Visible">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Page Scalling : " VerticalAlignment="Center"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" Margin="0" Width="155" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cmbPageScalling">
+                                    <ComboBoxItem Content="None"/>
+                                    <ComboBoxItem Content="UseRenderingResolution"/>
+                                </ComboBox>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DPI-X : " VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="96" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtDPIX"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DPI-Y : " VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="55" Text="96" VerticalAlignment="Center" TextAlignment="Center" x:Name="txtDPIY"/>
+
+                                <Grid Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0" x:Name="jpegEncoderSettings" Visibility="Collapsed">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Quality Level : 0" VerticalAlignment="Center"/>
+                                    <Slider Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Minimum="0" Maximum="100" SmallChange="1" Value="100" x:Name="sliderQuality"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="100" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="tiffEncoderSettings" Visibility="Collapsed">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Compression Type : " VerticalAlignment="Center"/>
+                                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="0" Width="Auto" SelectedIndex="0" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="cmbCompression">
+                                        <ComboBoxItem Content="None"/>
+                                        <ComboBoxItem Content="CCITT4"/>
+                                        <ComboBoxItem Content="LZW"/>
+                                        <ComboBoxItem Content="CCITT3"/>
+                                        <ComboBoxItem Content="Rle"/>
+                                    </ComboBox>
+
+                                    <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Multipage" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center" x:Name="chkMultipage"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+
+
+                    <Button Grid.Row="4" IsDefault="True" Grid.Column="0" Content="OK" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" x:Name="btnSaveOptionsOK" Click="btnSaveOptionsOK_Click" />
+
+                    <Button Grid.Row="4" Grid.Column="0" Content="Cancel" IsCancel="True" Margin="10,10,95,10" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" x:Name="btnSaveOptionsCancel" Click="btnSaveOptionsCancel_Click"/>
+
+
+                </Grid>
+            </Border>
+        </Popup>
+
+        <Popup IsOpen="false" Placement="Absolute" Width="525" Height="Auto" VerticalOffset="170" HorizontalOffset="550" x:Name="popupShortcutManager" Grid.ColumnSpan="2" Margin="535,0">
+            <Border BorderBrush="Black" BorderThickness="1" Background="LightGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="Shortcut Manager" TextAlignment="Center" Background="#FF897F7F" FontWeight="Bold" FontSize="16"/>
+
+                    <ComboBox Grid.Row="1" Grid.Column="0" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" SelectedIndex="0" x:Name="cmbControl">
+                        <ComboBoxItem Content="Viewer"/>
+                    </ComboBox>
+                    <ListBox Margin="10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="404" 
+                             SelectedIndex="-1" x:Name="lstbxBehavior" SelectionChanged="LstbxBehavior_SelectionChanged" >
+                        <ListBoxItem Content="Begining Of Page"/>
+                        <ListBoxItem Content="End Of Page"/>
+                        <ListBoxItem Content="First Page"/>
+                        <ListBoxItem Content="Last Page"/>
+                        <ListBoxItem Content="Previous Page"/>
+                        <ListBoxItem Content="Next Page"/>
+                        <ListBoxItem Content="Zoom In"/>
+                        <ListBoxItem Content="Zoom Out"/>
+                        <ListBoxItem Content="Rotate Pages Clockwise"/>
+                        <ListBoxItem Content="Rotate Pages Anticlockwise"/>
+                        <ListBoxItem Content="Rotate Current Page Clockwise"/>
+                        <ListBoxItem Content="Rotate Current Page Anticlockwise"/>
+                    </ListBox>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Shortcut Key" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="10,10,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" 
+                             VerticalAlignment="Top" Width="404" x:Name="txtExistingShotcutKey" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="Change Key" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="10,10,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" 
+                             VerticalAlignment="Top" Width="320" x:Name="txtShotcutKey" PreviewKeyDown="TxtShotcutKey_PreviewKeyDown"  />
+                    <Button Grid.Row="3" Grid.Column="1"  Content="Change" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="10"
+                            x:Name="btnChangeShortcutKey" Click="BtnChangeShortcutKey_Click" />
+
+                    <Button IsCancel="True" Grid.Row="3" Grid.Column="1"  Content="Close" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10,40,10,10" 
+                            x:Name="btnCloseShortcut" Click="BtnCloseShortcut_Click"/>
+                </Grid>
+            </Border>
+        </Popup>
+    </Grid>
+</Window>

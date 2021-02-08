@@ -1,0 +1,38 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Converter.exe.config
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Converter.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Converter.pdb
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\XDocument_Converter_Demo.Demo.resources
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\Document_Converter_Demo.Properties.Resources.resources
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.GenerateResource.cache
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.exe.licenses
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.exe
+C:\work\documentstudiodotnet\Demos\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.pdb
+C:\D\demo application\Binaries\net45\x86\liblept1753.dll
+C:\D\demo application\Binaries\net45\x86\libtesseract3052.dll
+C:\D\demo application\Binaries\net45\x64\liblept1753.dll
+C:\D\demo application\Binaries\net45\x64\libtesseract3052.dll
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.bigrams
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.fold
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.lm
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.nn
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.params
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.size
+C:\D\demo application\Binaries\net45\tessdata\eng.cube.word-freq
+C:\D\demo application\Binaries\net45\tessdata\eng.tesseract_cube.nn
+C:\D\demo application\Binaries\net45\tessdata\eng.traineddata
+C:\D\demo application\Binaries\net45\tessdata\equ.traineddata
+C:\D\demo application\Binaries\net45\tessdata\osd.traineddata
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Converter.exe.config
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Converter.exe
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Converter.pdb
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\XDocument_Converter_Demo.Demo.resources
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\Document_Converter_Demo.Properties.Resources.resources
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.GenerateResource.cache
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.exe.licenses
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.CoreCompileInputs.cache
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.csproj.CopyComplete
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.exe
+C:\D\demo application\03. Document Converter\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Converter.pdb

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WinForms_VB_Document_Viewer
+</name>
+</assembly>
+<members>
+<member name="T:Multi_formatViewer.My.Resources.Main">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.odOpenDoc_TrayLocation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Point similar to {X=122,Y=17}.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.toolStrip1_TrayLocation">
+<summary>
+  Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton10_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton11_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton12_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton13_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton14_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton3_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton4_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton5_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton6_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton7_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton8_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripButton9_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Main.ToolStripSplitButton1_Image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Multi_formatViewer.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.arrow_inout">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.arrow_out">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.arrow_turn_left">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.arrow_turn_right">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.first">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.FitWidth">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.last">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.open_document24_h">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.resultset_next">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.resultset_previous">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.zoomin24_h">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Multi_formatViewer.My.Resources.Resources.zoomout24_h">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>

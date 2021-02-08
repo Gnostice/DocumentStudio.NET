@@ -1,0 +1,30 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WPF_CS_Document_Viewer.exe.config
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WPF_CS_Document_Viewer.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WPF_CS_Document_Viewer.pdb
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\MainWindow.baml
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\MainWindow.g.cs
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\App.g.cs
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer_MarkupCompile.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.g.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.Properties.Resources.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.GenerateResource.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.exe
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.pdb
+C:\D\demo application\Binaries\net45\WPF_CS_Document_Viewer.exe.config
+C:\D\demo application\Binaries\net45\WPF_CS_Document_Viewer.exe
+C:\D\demo application\Binaries\net45\WPF_CS_Document_Viewer.pdb
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\MainWindow.baml
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\MainWindow.g.cs
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\App.g.cs
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer_MarkupCompile.cache
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.g.resources
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.Properties.Resources.resources
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.GenerateResource.cache
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.csproj.CopyComplete
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.exe
+C:\D\demo application\01. Document Viewer\02. WPF\C#\obj\Debug\WPF_CS_Document_Viewer.pdb

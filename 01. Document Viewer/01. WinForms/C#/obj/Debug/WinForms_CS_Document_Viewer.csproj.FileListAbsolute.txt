@@ -1,0 +1,60 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Viewer.exe.config
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Viewer.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Viewer.pdb
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Main.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Print.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Properties.Resources.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.SavingOptions.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.ShortcutManager.resources
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.GenerateResource.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe.licenses
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe
+C:\work\documentstudiodotnet\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.pdb
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Viewer.exe.config
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Viewer.exe
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Viewer.pdb
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csprojAssemblyReference.cache
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Main.resources
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Print.resources
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Properties.Resources.resources
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.SavingOptions.resources
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.ShortcutManager.resources
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.GenerateResource.cache
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe.licenses
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CopyComplete
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe
+C:\Users\Pradeep\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.pdb
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Main.resources
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Print.resources
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.Properties.Resources.resources
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.SavingOptions.resources
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.ShortcutManager.resources
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.GenerateResource.cache
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe.licenses
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CoreCompileInputs.cache
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.exe
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.pdb
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\WinForms_CS_Document_Viewer.exe.config
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\WinForms_CS_Document_Viewer.exe
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\WinForms_CS_Document_Viewer.pdb
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\AngleSharp.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\DotNetZip.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Controls.WinForms.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Converter.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Core.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Documents.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Graphics.GDIPlus.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.Graphics.Skia.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.ImageEngine.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\Gnostice.PageManager.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\log4net.dll
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\AngleSharp.xml
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\DotNetZip.pdb
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\DotNetZip.xml
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\bin\log4net.xml
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csproj.CopyComplete
+C:\D\demo application\01. Document Viewer\01. WinForms\C#\obj\Debug\WinForms_CS_Document_Viewer.csprojAssemblyReference.cache

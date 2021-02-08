@@ -1,0 +1,307 @@
+BODY 
+{
+	
+	font: normal 0.35cm 
+ "Liberation Sans", FreeSans, "DejaVu Sans",
+ "Helvetica CY", "Helvetica CE", "Lucida Grande",
+ "Segoe UI", Tahoma,
+ "Lucida Sans Unicode",
+ "Doulos SIL", "TITUS Cyberbit Basic",
+ "Last Resort", "Arial Unicode MS",
+ Helvetica, sans-serif!important;
+
+    position: relative;
+    width: 100%;
+
+}
+.centerBodyContent
+{
+    left: 10%;
+    position: relative;
+    width: 80%;
+    right: 10%;
+}
+
+
+a
+{
+	color: rgb(123,183,249);
+	text-decoration: none;
+}
+
+.gnostice-header > ul
+{
+    list-style-type: none;margin: 0;padding: 0;
+}
+.gnostice-header > ul > li
+{
+    display: inline;
+    font-weight: bold; 
+    color: #4579ae; 
+    font-family: Arial,sans-serif; 
+    font-size: 35px;
+}
+
+.gnostice-header
+{
+    min-height: 20px;
+    padding: 19px;
+  
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.gnostice-doc-viewer-container
+{
+    width:100%;
+    height:700px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.article-container
+{
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+
+
+
+.demo_title
+{
+    FONT-FAMILY: Tahoma, Liberation Sans, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size:
+    f    ffont-weight: bold;
+    color: rgb(0, 0, 0);
+}
+.article-header
+{
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    color: #428bca; 
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+.codesnippet
+{
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-device-width: 640px) and (orientation: portrait){
+
+
+    .centerBodyContent
+    {
+        left: 0% !important;
+        position: relative;
+        width: 100% !important;
+        right: 0% !important;
+    }
+
+    a
+    {
+        color: rgb(123,183,249);
+        text-decoration: none;
+    }
+
+    .gnostice-header > ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .gnostice-header > ul > li
+        {
+            display: inline;
+            font-weight: bold;
+            color: #4579ae;
+            font-family: arial,sans-serif;
+            font-size: 30px;
+        }
+
+    .gnostice-header
+    {
+        min-height: 20px;
+        padding: 5px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+    }
+
+    .gnostice-doc-viewer-container
+    {
+        width: 100% !important;
+        height: 500px !important;
+        background-color: #f5f5f5;
+    }
+
+    .article-container
+    {
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    }
+
+
+    .demo_title
+    {
+        FONT-FAMILY: Tahoma, Liberation Sans, Helvetica, sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+
+    .article-header
+    {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+        color: #428bca;
+        margin-top: 10px;
+    }
+
+    .gnostice-header > ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .gnostice-header > ul > li
+        {
+            display: inline;
+            font-weight: bold;
+            color: #4579ae;
+            font-family: Arial,sans-serif;
+            font-size: 10px;
+        }
+}
+
+/*@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+{
+
+}*/
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 720px) and (orientation: landscape)
+{
+    .centerBodyContent
+    {
+        left: 0%;
+        position: relative;
+        width: 100%;
+        right: 0%;
+    }
+
+    a
+    {
+        color: rgb(123,183,249);
+        text-decoration: none;
+    }
+
+    .gnostice-header > ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .gnostice-header > ul > li
+        {
+            display: inline;
+            font-weight: bold;
+            color: #4579ae;
+            font-family: arial,sans-serif;
+            font-size: 20px;
+        }
+
+    .gnostice-header
+    {
+        min-height: 20px;
+        padding: 5px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+    }
+
+    .gnostice-doc-viewer-container
+    {
+        width: 100%;
+        height: 600px;
+        background-color: #f5f5f5;
+    }
+
+    .article-container
+    {
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    }
+
+
+    .demo_title
+    {
+        FONT-FAMILY: Tahoma, Liberation Sans, Helvetica, sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+
+    .article-header
+    {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+        color: #428bca;
+        margin-top: 10px;
+    }
+
+    .gnostice-header > ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .gnostice-header > ul > li
+        {
+            display: inline;
+            font-weight: bold;
+            color: #4579ae;
+            font-family: Arial,sans-serif;
+            font-size: 10px;
+        }
+}
+
+
+
+

@@ -1,0 +1,21 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Printer.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_Document_Printer.pdb
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\Printer_Demo.DocumentPrinterDemo.resources
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\Printer_Demo.Properties.Resources.resources
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.GenerateResource.cache
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.exe
+C:\work\documentstudiodotnet\Demos\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.pdb
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Printer.exe.config
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Printer.exe
+C:\D\demo application\Binaries\net45\WinForms_CS_Document_Printer.pdb
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csprojAssemblyReference.cache
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\Printer_Demo.DocumentPrinterDemo.resources
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\Printer_Demo.Properties.Resources.resources
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.GenerateResource.cache
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.CoreCompileInputs.cache
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.csproj.CopyComplete
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.exe
+C:\D\demo application\02. Document Printer\01. WinForms\C#\obj\x86\Debug\WinForms_CS_Document_Printer.pdb

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+
+<configuration>  
+	
+	<appSettings>
+		
+		<add key="DocumentCache" value="memory"/>
+		
+	</appSettings>
+	
+	<system.web>
+		<httpHandlers> 
+			
+			<add verb="*" path="DocumentHandler.axd" type="Gnostice.Controls.ASP.DocumentHandler, Gnostice.Controls.ASP"/> 
+			
+		</httpHandlers>
+	</system.web>
+	 
+	<system.webServer>
+		<validation validateIntegratedModeConfiguration="false"/>
+		<handlers>
+			
+			<add name="XDocumentImage" verb="*" path="DocumentHandler.axd" type="Gnostice.Controls.ASP.DocumentHandler, Gnostice.Controls.ASP"/>
+			
+		</handlers>
+	</system.webServer>
+	
+</configuration>

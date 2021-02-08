@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\ASP.NET_MVC_VB_DocumentViewer.vbproj": {}
+  },
+  "projects": {
+    "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\ASP.NET_MVC_VB_DocumentViewer.vbproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\ASP.NET_MVC_VB_DocumentViewer.vbproj",
+        "projectName": "ASP.NET_MVC_VB_DocumentViewer",
+        "projectPath": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\ASP.NET_MVC_VB_DocumentViewer.vbproj",
+        "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pradeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "dependencies": {
+            "Gnostice.DocumentStudio.ASP": {
+              "target": "Package",
+              "version": "[20.1.776, )"
+            },
+            "Gnostice.DocumentStudio.OCR": {
+              "target": "Package",
+              "version": "[20.1.776, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNet.Razor": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
+            "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

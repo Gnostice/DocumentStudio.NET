@@ -1,0 +1,24 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMergeVisualDemo.exe.config
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMergeVisualDemo.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMergeVisualDemo.pdb
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\MailMergeDemo.Form1.resources
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\MailMergeDemo.Properties.Resources.resources
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.GenerateResource.cache
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.exe.licenses
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.exe
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.pdb
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMergeVisualDemo.exe.config
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMergeVisualDemo.exe
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMergeVisualDemo.pdb
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csprojAssemblyReference.cache
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\MailMergeDemo.Form1.resources
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\MailMergeDemo.Properties.Resources.resources
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.GenerateResource.cache
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.exe.licenses
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.CoreCompileInputs.cache
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.csproj.CopyComplete
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.exe
+C:\D\demo application\04. Mail-Merge\WinForms\obj\Debug\WinForms_CS_MailMergeVisualDemo.pdb

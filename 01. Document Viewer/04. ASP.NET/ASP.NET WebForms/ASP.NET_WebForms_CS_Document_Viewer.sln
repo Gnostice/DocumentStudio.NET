@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET_WebForms_CS_Document_Viewer", "C#\ASP.NET_WebForms_CS_Document_Viewer.csproj", "{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStore", "FileStore\FileStore.csproj", "{3E9C0173-64C0-49F0-8939-1A3BCDE2A2D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9C0173-64C0-49F0-8939-1A3BCDE2A2D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9C0173-64C0-49F0-8939-1A3BCDE2A2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9C0173-64C0-49F0-8939-1A3BCDE2A2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9C0173-64C0-49F0-8939-1A3BCDE2A2D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61E96ED4-031C-40AF-9246-FCB2129896EA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMerge.exe.config
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMerge.exe
+C:\work\documentstudiodotnet\Demos\Binaries\net45\WinForms_CS_MailMerge.pdb
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csprojAssemblyReference.cache
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csproj.CoreCompileInputs.cache
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csproj.CopyComplete
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.exe
+C:\work\documentstudiodotnet\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.pdb
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMerge.exe.config
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMerge.exe
+C:\D\demo application\Binaries\net45\WinForms_CS_MailMerge.pdb
+C:\D\demo application\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csprojAssemblyReference.cache
+C:\D\demo application\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csproj.CoreCompileInputs.cache
+C:\D\demo application\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.csproj.CopyComplete
+C:\D\demo application\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.exe
+C:\D\demo application\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.pdb
