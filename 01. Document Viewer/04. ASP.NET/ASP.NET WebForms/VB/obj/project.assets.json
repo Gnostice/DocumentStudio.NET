@@ -585,11 +585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\ASP.NET_WebForms_VB_DocumentViewer.vbproj",
+      "projectUniqueName": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\ASP.NET_WebForms_VB_DocumentViewer.vbproj",
       "projectName": "ASP.NET_WebForms_VB_DocumentViewer",
-      "projectPath": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\ASP.NET_WebForms_VB_DocumentViewer.vbproj",
+      "projectPath": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\ASP.NET_WebForms_VB_DocumentViewer.vbproj",
       "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
-      "outputPath": "C:\\D\\demo application\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\obj\\",
+      "outputPath": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\D\\demo application\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj": {}
+    "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj": {}
   },
   "projects": {
-    "C:\\D\\demo application\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj": {
+    "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\D\\demo application\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj",
+        "projectUniqueName": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj",
         "projectName": "XamarinViewerDemo",
-        "projectPath": "C:\\D\\demo application\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj",
+        "projectPath": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\XamarinViewerDemo.csproj",
         "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
-        "outputPath": "C:\\D\\demo application\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\obj\\",
+        "outputPath": "C:\\Local Drive D\\Office\\GitHub\\DocumentStudio.NET\\01. Document Viewer\\03. Xamarin\\C#\\XamarinViewerDemo\\XamarinViewerDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -83,7 +83,7 @@
             },
             "log4net": {
               "target": "Package",
-              "version": "[2.0.8, )"
+              "version": "[2.0.12, )"
             }
           },
           "imports": [

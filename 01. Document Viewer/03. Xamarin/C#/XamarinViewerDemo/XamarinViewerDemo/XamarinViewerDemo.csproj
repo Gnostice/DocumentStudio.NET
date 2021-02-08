@@ -14,7 +14,7 @@
     <PackageReference Include="AngleSharp" Version="0.9.11" />
     <PackageReference Include="DotNetZip" Version="1.13.3" />
     <PackageReference Include="Gnostice.DocumentStudio.Xamarin" Version="20.1.776" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="2.0.12" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
     <PackageReference Include="System.IO.Packaging" Version="4.5.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
