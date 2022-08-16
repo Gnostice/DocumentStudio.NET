@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
+	  <PackageReference Include="DotNetZip" Version="1.15.0" />
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.3" />
+    <PackageReference Include="System.IO.Packaging" Version="5.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991757" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AngleSharp">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Controls.Xamarin">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Controls.Xamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Converter">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Converter.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Core">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.DigitizationEngine">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.DigitizationEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Documents">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Graphics.Skia">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Graphics.Skia.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.MailMerge">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.MailMerge.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PageManager">
+      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.PageManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

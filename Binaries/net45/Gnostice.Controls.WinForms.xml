@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.Controls.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:Gnostice.Controls.WinForms.DocumentViewer">
+            <summary>
+            Represents the DocumentViewer component.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.Preferences">
+            <summary>
+            Gets or sets viewer preferences.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.PageRotation">
+            <summary>
+            Gets or sets angle with which page contents need to be
+            rotated in the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.Zoom">
+            <summary>
+            Gets or sets Zoom options. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.Orientation">
+            <summary>
+            Gets or sets viewing the document in Vertical/Horizontal
+            orientation in the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.CurrentPage">
+            <summary>
+            Gets or sets number of the current page of the document in
+            the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.PageCount">
+            <summary>
+            Gets total number of pages in the loaded document.
+            </summary>
+            <remarks>
+            In formats, such as DOCX, where the total number of pages is
+            not explicitly mentioned in the document, this property will
+            reflect that value only after the <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentViewer.LastPageRead" text="DocumentViewer.LastPageRead" />
+            has been called by the viewer. Until then, this property will
+            reflect a transient value representing the total number of
+            pages already processed by the viewer.
+            
+            In formats, such as PDF, this property reflects correct value
+            immediately after the document is loaded and displayed. 
+            </remarks>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.IsDocumentLoaded">
+            <summary>
+            Gets whether a document is already loaded in the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.PageLayout">
+            <summary>
+            Gets or sets page layout options on the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.MouseMode">
+            <summary>
+            Gets or sets the mouse mode for the document viewer to be used.
+            </summary>
+            <remarks>
+            The value can be Pan, Selection or MarqueeZoom.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.NavigationPane">
+            <summary>
+            Gets or sets the navigation pane of the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.PageBreakWidth">
+            <summary>
+            Gets or sets the space between pages in the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.BorderWidth">
+            <summary>
+            Gets or sets empty space around pages displayed by the viewer.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.LoadDocument(System.String,System.String)">
+            <summary>
+            Loads a document from specified file with specified password
+            and then displays it in the viewer.
+            </summary>
+            <param name="fileName">Pathname of the file from which the
+                                   document needs to be loaded</param>
+            <param name="password">Password with which the document
+                                   needs to be decrypted</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.LoadDocument(System.IO.Stream,System.String)">
+            <summary>
+            Loads a document from specified stream with specified
+            password and then displays it in the viewer.
+            </summary>
+            <param name="stream">Stream containing the document that
+                                 needs to be displayed</param>
+            <param name="password">Password with which the document
+                                   needs to be decrypted</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.CloseDocument">
+            <summary>
+            Unloads the displayed document and close the file.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.RefreshView">
+            <summary>
+            Refresh document rendering in the viewer.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.NextPage">
+            <summary>
+            Navigates to the next page in the viewer.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.PreviousPage">
+            <summary>
+            Navigates to the previous page in the viewer.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.FirstPage">
+            <summary>
+            Navigate to the first page.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.LastPage">
+            <summary>
+            Navigate to the last page.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.ZoomIn">
+            <summary>
+            Increases page magnification to the next preset level.
+            </summary>
+            <remarks>
+            The preset magnification levels are: 1, 6.25f, 10, 12.5f, 25, 33.5f, 50, 66.7f, 
+            75, 100, 150, 200, 300, 400, 600, 800, 1200, 1600, 2400, 3200, 6400, 10000
+            </remarks>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.ZoomOut">
+            <summary>
+            Decreases page magnification to the previous preset level.
+            </summary>
+            <remarks>
+            The preset magnification levels are: 1, 6.25f, 10, 12.5f, 25, 33.5f, 50, 66.7f, 
+            75, 100, 150, 200, 300, 400, 600, 800, 1200, 1600, 2400, 3200, 6400, 10000
+            </remarks>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.GetSupportedFormats">
+            <summary>
+            Returns a list of document formats supported by the viewer.
+            </summary>
+            <returns>
+            List containing strings specifying the formats. For example,
+            it may return the strings "DOCX" and "PDF".
+            </returns>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.RotatePagesClockwise90(System.String)">
+            <summary>
+            Rotate contents of specified page 90 degrees in the clockwise
+            direction.
+            </summary>
+            <param name="pageRange">Pages whose contents that need to be
+                                    rotated.</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.RotatePagesAntiClockwise90(System.String)">
+            <summary>
+            Rotate contents of specified page 90 degrees in the
+            counter-clockwise direction.
+            </summary>
+            <param name="pageRange">Pages whose contents that need to be
+                                    rotated.</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.RotatePages(Gnostice.Core.Viewer.RotationAngle,System.String)">
+            <summary>
+            Rotates contents of specified pages.
+            </summary>
+            <param name="rotationAngle">Angle of rotation.</param>
+            <param name="pageRange">Pages that need to be rotated.</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.RotatePage(Gnostice.Core.Viewer.RotationAngle,System.Int32)">
+            <summary>
+            Rotates the specified page to the specified angle. If -1
+            value is passed as the page number, then current page will be
+            rotated.
+            </summary>
+            <param name="rotationAngle">Angle of rotation.</param>
+            <param name="pageNumber">Number of the page whose
+                                     contents need to be rotated.</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.GoToPage(System.Int32)">
+            <summary>
+            Navigates to specified page in the viewer.
+            </summary>
+            <param name="pageNumber">Number of the page to which viewer
+                                     needs to navigate</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.GoToPage(System.Int32,System.Single,System.Single)">
+            <summary>
+            Changes contents of the viewer to specified page and
+            positions the top-left corner of the viewer at specified
+            position on the page.
+            </summary>
+            <param name="pageNumber">Number of the page.</param>
+            <param name="x">X\-coordinate of the location on
+                            the page where the top\-left corner
+                            of the page.</param>
+            <param name="y">Y\-coordinate of the location on
+                            the page where the top\-left corner
+                            of the page.</param>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.FindNext(System.String,Gnostice.Core.TextSearchMode,Gnostice.Core.TextSearchOptions,Gnostice.Core.DOM.TextSearchResult)">
+            <summary>
+            Search for text in the forward direction starting from either the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />) or the 
+            position of the last search occurrence.
+            </summary>
+            <param name="searchText">The text string to look for.</param>
+            <param name="textSearchMode">The text search mode. Whether literal search or pattern search using regex.</param>
+            <param name="searchOptions">Text search options.</param>
+            <param name="lastSearchResult">The result of the last search operation or 
+            null if the search should start at the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />).</param>
+            <returns>Details of the search text occurrence (<see cref="T:Gnostice.Core.DOM.TextSearchResult" />) or null if no more occurrences of the search text could be found.</returns>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.FindPrevious(System.String,Gnostice.Core.TextSearchMode,Gnostice.Core.TextSearchOptions,Gnostice.Core.DOM.TextSearchResult)">
+            <summary>
+            Search for text in the reverse direction starting from either the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />) or the 
+            position of the last search occurrence.
+            </summary>
+            <param name="searchText">The text string to look for.</param>
+            <param name="textSearchMode">The text search mode. Whether literal search or pattern search using regex.</param>
+            <param name="searchOptions">Text search options.</param>
+            <param name="lastSearchResult">The result of the last search operation or 
+            null if the search should start at the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />).</param>
+            <returns>Details of the search text occurrence (<see cref="T:Gnostice.Core.DOM.TextSearchResult" />) or null if no more occurrences of the search text could be found.</returns>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.GetSelectedText">
+            <summary>
+            Get selected text from the viewer
+            </summary>
+            <param name="BeginChar">The first character of the selected text</param>
+            <param name="EndChar">The last character of the selected text</param>
+            <param name="SelectedText">The selected text on the viewer</param>
+            <returns>Details of the selected text (<see cref="T:Gnostice.Core.Viewer.SelectedText" />) or null if no selection of the text in the viewer.</returns>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.GetZoomList">
+            <summary>
+            Get predefined and standard zoom list
+            </summary>
+            <returns>Details of the zoom values (<see cref="T:Gnostice.PageManager.ZoomInfo" />).</returns>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.DocumentPrinter">
+            <summary>
+            DocumentPrinter object used for printing the document being viewed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.ActiveDocument">
+            <summary>
+            Gets currently loaded document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.HScrollBar">
+            <summary>
+            Gets or sets vertical scroll bar settings of the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.DocumentViewer.VScrollBar">
+            <summary>
+            Gets or sets vertical scroll bar settings of the viewer.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.PrintDocument">
+            <summary>
+            Print the displayed document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.PrintDocument(System.Drawing.Printing.PrinterSettings,Gnostice.Core.Printer.PageScalingOptions,Gnostice.Core.Printer.PagePositioningOptions,System.Boolean,System.String)">
+            <summary>
+            Print the displayed document.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.PageChanged">
+            <summary>
+            Occurs when the viewer navigates to a new page. 
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.DocumentLoaded">
+            <summary>
+            Occurs when the document loading in the viewer. 
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.ZoomChanged">
+            <summary>
+            Occurs page the end-user changes the page magnification in
+            the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.NeedPassword">
+            <summary>
+            Occurs when a password is required to open the loaded
+            document. 
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.MouseUp">
+            <summary>
+            Occurs when a mouse button up on the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.MouseDown">
+            <summary>
+            Occurs when a mouse button down on the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.MouseMove">
+            <summary>
+            Occurs when a mouse button move over the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.DocumentProcessingError">
+            <summary>
+            Occurs when the document engine encounters an error when processing the document that is being loaded.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.ZoomValuesUpdated">
+            <summary>
+            Occurs when the viewer calculates standard zoom values.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.PagesAdded">
+            <summary>
+            Occurs when the document viewer adds one or more pages to the main view panel.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.OnTextSelection">
+            <summary>
+            Occurs when the end-user selects the text in
+            the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.OnSelectionCleared">
+            <summary>
+            Occurs when the selection is cleared in the viewer.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Controls.WinForms.DocumentViewer.OnHyperlinkClicked">
+            <summary>
+            This event is fired when the user clicks on a hyperlink present in the document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.DocumentViewer.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="T:Gnostice.Controls.WinForms.NavigationPane">
+            <summary>
+            Represents a bookmarks side pane in the viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.NavigationPane.Visibility">
+            <summary>
+            Gets or sets visibility of the navigation pane.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.NavigationPane.VisibilityState">
+            <summary>
+            Gets or sets visibility of the navigation pane.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Controls.WinForms.NavigationPane.VisiblePages">
+            <summary>
+            Pages that need to be listed in the navigation pane.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Controls.WinForms.NavigationPane.#ctor">
+            <summary>
+            Initializes a navigation pane.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Controls.WinForms.ResStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+    </members>
+</doc>

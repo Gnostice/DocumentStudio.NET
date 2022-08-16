@@ -1,0 +1,14 @@
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WPF_CS_Document_Viewer.exe.config
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WPF_CS_Document_Viewer.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WPF_CS_Document_Viewer.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\MainWindow.baml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\MainWindow.g.cs
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\App.g.cs
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_CS_Document_Viewer_MarkupCompile.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_CS_Document_Viewer.g.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_CS_Document_Viewer.Properties.Resources.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_Document_Viewer.csproj.GenerateResource.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_Document_Viewer.csproj.CopyComplete
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_CS_Document_Viewer.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_CS_Document_Viewer.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\01. Document Viewer\02. WPF\obj\Debug\WPF_Document_Viewer.csprojAssemblyReference.cache

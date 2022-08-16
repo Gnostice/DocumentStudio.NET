@@ -1,0 +1,3437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.Core</name>
+    </assembly>
+    <members>
+        <member name="P:Gnostice.Core.DigitizationEngine.DigitizationEnginePreferences.DigitizerSettings">
+            <summary>
+            Gets digitization settings. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.DigitizationMode">
+            <summary>
+            Defines sources containing content elements that can be
+            digitized.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DigitizationEngine.DigitizationMode.AllImages">
+            <summary>
+            All images.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DigitizationEngine.DigitizationMode.Off">
+            <summary>
+            Use none.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.DigitizerSettings">
+            <summary>
+            This class represents digitization settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.DigitizerSettings.DigitizationMode">
+            <summary>
+            Gets or sets the digitization mode.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.DigitizerSettings.RecognizeElementTypes">
+            <summary>
+            Gets or sets content elements that need to be digitized.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.DigitizerSettings.ImageEnhancementSettings">
+            <summary>
+            Gets or sets image enhancement settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.DigitizerSettings.OCRSettings">
+            <summary>
+            Gets or sets OCR settings.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DigitizationEngine.IDigitizationEngine.RecognizeElements(Gnostice.Core.DOM.ImageItem,Gnostice.Core.DOM.RecognizeElementTypes,System.String,Gnostice.Core.DOM.OCRPageIteratorLevel)">
+            <summary>
+            Identifies the various segments/components present in an image </summary>
+            <returns></returns>
+            <exception cref="T:Gnostice.Core.DocumentStudioException"></exception>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.ImageEnhancementMode">
+            <summary>
+            Defines image-enhancement settings.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DigitizationEngine.ImageEnhancementMode.OFF">
+            <summary>
+            Use specified techniques.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.ImageEnhancementSettings">
+            <summary>
+            This class represents image-enhancements techniques used in
+            digitization operations.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.ImageEnhancementSettings.ImageEnhancementMode">
+            <summary>
+            Gets or sets image-enhancements settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.ImageEnhancementSettings.ImageEnhancementTechniques">
+            <summary>
+            Gets or sets image-enhancement techniques that need to be
+            used in digitization operations.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.ImageEnhancementTechnique">
+            <summary>
+            This is the base class for image-enhancement technique
+            classes.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.OCRSettings">
+            <summary>
+            This class represents OCR settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.OCRSettings.DocumentLanguage">
+            <summary>
+            Gets or sets language in which OCR needs to be performed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.Scaling">
+            <summary>
+            This class represents image scaling settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DigitizationEngine.Scaling.ScalingFactor">
+            <summary>
+            Gets factor by images are scaled.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DigitizationEngine.Scaling.#ctor(System.Single)">
+            <summary>
+            Creates a new instance of this class with specified
+            image-scaling factor.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DigitizationEngine.SkewCorrection">
+            <summary>
+            This class represents image-skewing settings.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DigitizationEngine.SkewCorrection.#ctor">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.Index">
+            <summary>
+            Index of character in parent word's character list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.WordText">
+            <summary>
+            Reference to the parent word text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.Text">
+            <summary>
+            Text (character).
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.BoundingRect">
+            <summary>
+            Bounding box of the character.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.BeginIndex">
+            <summary>
+            Index of character with respect to the parent word.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.EndIndex">
+            <summary>
+            Index of character with respect to the parent word.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.BeginIndexInDocument">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.EndIndexInDocument">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.Previous">
+            <summary>
+            Gets the previous character in the parent word. Null if this is already the first character in the word.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.CharText.Next">
+            <summary>
+            Gets the next character in the parent word. Null if this is already the last character in the word.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.CompositeDocItem.ShiftByOffset(System.Single,System.Single)">
+            <summary>
+            Shifts all items in the CompositeDocItem by an offset
+            </summary>
+            <param name="xOffset">X offset to shift the element</param>
+            <param name="yOffset">Y offset to shift the element</param>
+        </member>
+        <member name="T:Gnostice.Core.DOM.DocumentInfo">
+            <summary>
+            This class represents document information properties.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Author">
+            <summary>
+            Gets or sets "Author" document information
+            property. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Creator">
+            <summary>
+            Gets or sets "Creator" application document
+            information property. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Subject">
+            <summary>
+            Gets or sets "Subject" document information
+            property. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Keywords">
+            <summary>
+            Gets or sets "Keywords" document information
+            property. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Title">
+            <summary>
+            Gets or sets "Title" document information property.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentInfo.Comments">
+            <summary>
+            Gets or sets "Comments" document information
+            property. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentText.Document">
+            <summary>
+            Reference to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentText.Text">
+            <summary>
+            Text present in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DocumentText.Pages">
+            <summary>
+            List of pages (of text) contained in this document.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.DOM.DocumentText.OnTextSearchWrapAround">
+            <summary>
+            Event to notify when the search reaches one end of the document and needs to continue from the other end.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.DocumentText.FindNext(System.String,Gnostice.Core.TextSearchMode,Gnostice.Core.TextSearchOptions,Gnostice.Core.DOM.TextSearchResult)">
+            <summary>
+            Search for text in the forward direction starting from either the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />) or the 
+            position of the last search occurrence.
+            </summary>
+            <param name="searchText">The text string to look for.</param>
+            <param name="textSearchMode">The text search mode. Whether literal search or pattern search using regex.</param>
+            <param name="searchOptions">Text search options.</param>
+            <param name="lastSearchResult">The result of the last search operation or 
+            null if the search should start at the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />).</param>
+            <returns>Details of the search text occurrence (<see cref="T:Gnostice.Core.DOM.TextSearchResult" />) or null if no more occurrences of the search text could be found.</returns>
+        </member>
+        <member name="M:Gnostice.Core.DOM.DocumentText.FindPrevious(System.String,Gnostice.Core.TextSearchMode,Gnostice.Core.TextSearchOptions,Gnostice.Core.DOM.TextSearchResult)">
+            <summary>
+            Search for text in the reverse direction starting from either the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />) or the 
+            position of the last search occurrence.
+            </summary>
+            <param name="searchText">The text string to look for.</param>
+            <param name="textSearchMode">The text search mode. Whether literal search or pattern search using regex.</param>
+            <param name="searchOptions">Text search options.</param>
+            <param name="lastSearchResult">The result of the last search operation or 
+            null if the search should start at the current cursor position (<see cref="P:Gnostice.Core.DOM.IDocument.CursorPosition" />).</param>
+            <returns>Details of the search text occurrence (<see cref="T:Gnostice.Core.DOM.TextSearchResult" />) or null if no more occurrences of the search text could be found.</returns>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DrawingProperties.ParsedPositionX">
+            <summary>
+            This property provides the 'X' position of the drawing as read from the document.
+            The position is without applying the offset properties of the drawing.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.DrawingProperties.ParsedPositionY">
+            <summary>
+            This property provides the 'Y' position of the drawing as read from the document.
+            The position is without applying the offset properties of the drawing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.RecognizeElementTypes">
+            <summary>
+            Recognised Element Types
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.PageRange">
+            <summary>
+            Defines page range options.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.PageRange.Even">
+            <summary>
+            All pages.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.PageRange.Odd">
+            <summary>
+            Even-numbered pages.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.PageRange.Custom">
+            <summary>
+            Odd-numbered pages.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.FileInfo">
+            <summary>
+            This class returns file information for the given file.
+            </summary>
+            <seealso cref="!:DocumentManager.GetFileInfo(string, string)" />
+            <see cref="M:Gnostice.Core.DOM.IDocument.GetFileInfo(System.String,System.String)" />
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.FileName">
+            <summary>
+            Returns the supplied file. File name or path will be null if Stream is supplied.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.InputStream">
+            <summary>
+            Returns the supplied stream. Stream will be null if file name or path is supplied.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.FileSize">
+            <summary>
+            Returns the size of the file in bytes.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.MIMEType">
+            <summary>
+            Returns the MIME type of the file.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.Extension">
+            <summary>
+            Returns the extension/suffix of the file. For instance, it returns ".pdf" if the MIMEType is "application/pdf".
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.PageCount">
+            <summary>
+            Returns PageCount ie., the number of pages in the file/document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.IsEncrypted">
+            <summary>
+            Returns whether the file/document is encrypted using Password encryption method.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.IsOpenPasswordRequired">
+            <summary>
+            Returns whether the file/document requires an Open-password to read/open the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.IsSuppliedPasswordCorrect">
+            <summary>
+            Returns whether the supplied password is correct.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.FileInfo.IsStreamInput">
+            <summary>
+            Returns whether supplied file input is of type System.IO.Stream.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.FileInfo.#ctor(System.String,System.IO.Stream,System.Int64,System.String,System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            For internal use.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.IDocument">
+            <summary>
+            This interface represents a document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.CursorPosition">
+            <summary>
+            Current cursor position.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.IsLoadingCompleted">
+            <summary>
+            Boolean to indicate if the entire document (all pages) have been read and are therefore available for access.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.Item(System.Int32)">
+            <summary>
+            Internal use only.
+            Returns the corresponding page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.Count">
+            <summary>
+            Indicates number of pages in the document. 
+            Note that the page count can change unless <see cref="!:Gnostice.Documents.IDocument.IsLoadingCompleted">IsLoadingCompleted</see> is true.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.FileName">
+            <summary>
+            Indicates file name of the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.DocInfo">
+            <summary>
+            Indicates document information.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.EncoderSettings">
+            <summary>
+            Gets or sets file-format conversion settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.Preferences">
+            <summary>
+            Gets preferences for the document engine.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.DigitizerSettings">
+            <summary>
+            Gets settings related to OCR.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.LoadCompletedNotifier">
+            <summary>
+            Triggered when document is fully loaded (all pages are available for access).
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.FormatType">
+            <summary>
+            Gets format of the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.IsLoadingFaultTolerant">
+            <summary>
+            Property to indicate if the document engine can handle corrupted documents 
+            by fixing faults encountered in the document during the loading process.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.BaseBuilder">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IDocument.IsDefaultEngine">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.DOM.IDocument.NeedPassword">
+            <summary>
+            Called when a password is required to decrypt a document.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.DOM.IDocument.NeedFileName">
+            <summary>
+            Called when a page or the whole document is about to be saved to a file.
+            </summary>
+            <remarks>
+            When a document is converted to multipage images, the <see cref="!:Gnostice.Documents.NeedFileNameEventArgs.PageNumber" text="NeedFileNameEventArgs.PageNumber" />
+            property will contain the original page number from the input document.
+            When a document is converted to a single image or a single
+            document, this property will represent total page count.
+            </remarks>
+        </member>
+        <member name="E:Gnostice.Core.DOM.IDocument.NeedStream">
+            <summary>
+            Called when a stream is required to save an document.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.DOM.IDocument.OperationProgress">
+            <summary>
+            Called when progress occurs in a document-processing operation.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.DOM.IDocument.ProcessingError">
+            <summary>
+            Called when an error occurs in a document-processing operation.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.LoadDocument(System.IO.Stream,System.String)">
+            <summary>
+            Loads a document from specified stream and decrypts it with specified password.
+            </summary>
+            <param name="stream">Stream from which the document needs
+                                 to be loaded.</param>
+            <param name="password">Password with which the loaded
+                                   document needs to be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.LoadDocument(System.String,System.String)">
+            <summary>
+            Loads a document from specified file and decrypts it with specified password.
+            </summary>
+            <param name="fileName">\File from which the document needs
+                                   to be loaded.</param>
+            <param name="password">Password with which the loaded
+                                   document needs to be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.Check(System.String)">
+            <summary>
+            Only for internal use.
+            Returns whether the supplied file conforms to the document format supported by this document engine.
+            </summary>
+            <param name="fileName"></param>
+            <returns>True if it confirms, false otherwise.</returns>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.Check(System.IO.Stream)">
+            <summary>
+            Only for internal use.
+            Returns whether the supplied stream conforms to the document format supported by this document engine.
+            </summary>
+            <param name="stream"></param>
+            <returns>True if it confirms, false otherwise.</returns>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.GetFileInfo(System.String,System.String)">
+            <summary>
+            Returns file information such as MIME type, size, whether open password is required to open the document and other essential information.
+            </summary>
+            <param name="fileName">FileName of the file for which file information needs to be retrieved.</param>
+            <param name="password">Open/Permissions password of the file if the file is encrypted.</param>
+            <returns>File information.</returns>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.GetFileInfo(System.IO.Stream,System.String)">
+            <summary>
+            Returns file information such as MIME type, size, whether open password is required to open the document and other essential information.
+            </summary>
+            <param name="stream">Stream of the file for which file information needs to be retrieved.</param>
+            <param name="password">Open/Permissions password of the file if the file is encrypted.</param>
+            <returns>File information.</returns>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.GetDocumentText(System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Gets the text contained in the document.
+            </summary>
+            <param name="cancellationToken">Optional cancellation token to cancel the operation.</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.CloseDocument">
+            <summary>
+            Close the document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.DisposePage(System.Int32)">
+            <summary>
+            Request the engine to dispose the specified page thereby freeing resources used by it.
+            </summary>
+            <param name="pageNum"></param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.UpdatePage(System.Int32)">
+            <summary>
+            Request the engine to load the specified page if it has been disposed.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.CanCopyFrom(Gnostice.Core.DOM.IDocument)">
+            <summary>
+            Returns whether current document can be converted to the format of the specified document.
+            </summary>
+            <param name="document">Document to which pages need to
+                                   be copied.</param>
+            <param name="selectedPages">Specific digitizaer settings</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.CopyFrom(Gnostice.Core.DOM.IDocument,Gnostice.Core.DOM.PageRange,System.String)">
+            <summary>
+            Copies specified pages from the document to specified document.
+            </summary>
+            <param name="document">Document to which pages need to
+                                   be copied.</param>
+            <param name="pageRange">Pages in the current document
+                                    that need to be copied.</param>
+            <param name="selectedPages">Specific pages that need to
+                                        copied (valid when pageRange is
+                                        set to <see cref="!:Gnostice.Documents.PageRange.Custom" text="PageRange.Custom" />).</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.CopyFrom(Gnostice.Core.DOM.IDocument)">
+            <summary>
+            Copies specified document to specified document.
+            </summary>
+            <param name="document">Document to which pages need to
+                                   be copied.</param>
+            <param name="selectedPages">Specific digitizaer settings</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.SaveDocument(System.String)">
+            <summary>
+            Saves document to specified directory with specified file name prefix.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IDocument.SaveDocument(System.IO.Stream)">
+            <summary>
+            Saves document to specified stream.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.IFixedDocument">
+            <summary>
+            This interface represents a fixed document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.IFlowDocument">
+            <summary>
+            This interface represents a flow document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.ImageItem">
+            <summary>
+            ImageItem Class consists of properties relating to an Image segment
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.ImageItem.BoundingRect">
+            <summary>
+            BoundingRect holds the bounding rectangle of the Image segment
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.ImageItem.Dirty">
+            <summary>
+            Dirty specifies whether the Image has been modified or not
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.ImageItem.Image">
+            <summary>
+            Image holds the Image segment as a Stream object
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DOM.ImageItem.#ctor(System.String)">
+            <summary>
+            Initializes Stream image by opening the image at specified path
+            </summary>
+            <param name="path">Path of image</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.ImageItem.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes image by using the specified stream
+            </summary>
+            <param name="stream">Stream of image</param>
+        </member>
+        <member name="M:Gnostice.Core.DOM.IPage.DisposeRenderingResources">
+            <summary>
+            Dispose any resources that may have been cached for speeding up rendering
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.Text">
+            <summary>
+            Gets the text present in this element.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.BoundingRect">
+            <summary>
+            Gets the boundary of the text present in this element with respect to the containing page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.Next">
+            <summary>
+            Gets the next element at the same level. Null if no more elements after this one at the same level.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.Previous">
+            <summary>
+            Gets the previous element at the same level. Null if no more elements before this one at the same level.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.Index">
+            <summary>
+            Index of element in parent element's list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.BeginIndex">
+            <summary>
+            Begin index of text with respect to the parent container.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.EndIndex">
+            <summary>
+            End index of text with respect to the parent container.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.BeginIndexInDocument">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.IText.EndIndexInDocument">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DOM.Keys">
+            <summary>
+            Defines state of keys that have been pressed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.None">
+            <summary>
+            The bitmask to extract modifiers from a key value.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LButton">
+            <summary>
+            No key pressed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.RButton">
+            <summary>
+            The left mouse button.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Cancel">
+            <summary>
+            The right mouse button.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.MButton">
+            <summary>
+            The CANCEL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.XButton1">
+            <summary>
+            The middle mouse button (three-button mouse).
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.XButton2">
+            <summary>
+            The first x mouse button (five-button mouse).
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Back">
+            <summary>
+            The second x mouse button (five-button mouse).
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Tab">
+            <summary>
+            The BACKSPACE key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LineFeed">
+            <summary>
+            The TAB key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Clear">
+            <summary>
+            The LINEFEED key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Enter">
+            <summary>
+            The CLEAR key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Return">
+            <summary>
+            The ENTER key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.ShiftKey">
+            <summary>
+            The ENTER key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.ControlKey">
+            <summary>
+            The SHIFT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Menu">
+            <summary>
+            The CTRL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Pause">
+            <summary>
+            The ALT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.CapsLock">
+            <summary>
+            The PAUSE key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Capital">
+            <summary>
+            The CAPS LOCK key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.KanaMode">
+            <summary>
+            The CAPS LOCK key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.HanguelMode">
+            <summary>
+            The IME Kana mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.HangulMode">
+            <summary>
+            The IME Hanguel mode key. (maintained for compatibility; use
+            HangulMode )
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.JunjaMode">
+            <summary>
+            The IME Hangul mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.FinalMode">
+            <summary>
+            The IME Junja mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.KanjiMode">
+            <summary>
+            The IME final mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.HanjaMode">
+            <summary>
+            The IME Kanji mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Escape">
+            <summary>
+            The IME Hanja mode key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.IMEConvert">
+            <summary>
+            The ESC key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.IMENonconvert">
+            <summary>
+            The IME convert key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.IMEAceept">
+            <summary>
+            The IME nonconvert key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.IMEAccept">
+            <summary>
+            The IME accept key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Space">
+            <summary>
+            The IME mode change key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Prior">
+            <summary>
+            The SPACEBAR key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.PageUp">
+            <summary>
+            The PAGE UP key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Next">
+            <summary>
+            The PAGE UP key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.PageDown">
+            <summary>
+            The PAGE DOWN key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.End">
+            <summary>
+            The PAGE DOWN key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Home">
+            <summary>
+            The END key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Left">
+            <summary>
+            The HOME key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Up">
+            <summary>
+            The LEFT ARROW key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Right">
+            <summary>
+            The UP ARROW key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Down">
+            <summary>
+            The RIGHT ARROW key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Select">
+            <summary>
+            The DOWN ARROW key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Print">
+            <summary>
+            The SELECT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Execute">
+            <summary>
+            The PRINT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.PrintScreen">
+            <summary>
+            The EXECUTE key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Snapshot">
+            <summary>
+            The PRINT SCREEN key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Insert">
+            <summary>
+            The PRINT SCREEN key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Delete">
+            <summary>
+            The INS key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Help">
+            <summary>
+            The DEL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D0">
+            <summary>
+            The HELP key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D1">
+            <summary>
+            The 0 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D2">
+            <summary>
+            The 1 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D3">
+            <summary>
+            The 2 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D4">
+            <summary>
+            The 3 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D5">
+            <summary>
+            The 4 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D6">
+            <summary>
+            The 5 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D7">
+            <summary>
+            The 6 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D8">
+            <summary>
+            The 7 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D9">
+            <summary>
+            The 8 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.A">
+            <summary>
+            The 9 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.B">
+            <summary>
+            The A key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.C">
+            <summary>
+            The B key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.D">
+            <summary>
+            The C key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.E">
+            <summary>
+            The D key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F">
+            <summary>
+            The E key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.G">
+            <summary>
+            The F key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.H">
+            <summary>
+            The G key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.I">
+            <summary>
+            The H key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.J">
+            <summary>
+            The I key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.K">
+            <summary>
+            The J key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.L">
+            <summary>
+            The K key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.M">
+            <summary>
+            The L key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.N">
+            <summary>
+            The M key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.O">
+            <summary>
+            The N key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.P">
+            <summary>
+            The O key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Q">
+            <summary>
+            The P key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.R">
+            <summary>
+            The Q key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.S">
+            <summary>
+            The R key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.T">
+            <summary>
+            The S key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.U">
+            <summary>
+            The T key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.V">
+            <summary>
+            The U key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.W">
+            <summary>
+            The V key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.X">
+            <summary>
+            The W key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Y">
+            <summary>
+            The X key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Z">
+            <summary>
+            The Y key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LWin">
+            <summary>
+            The Z key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.RWin">
+            <summary>
+            The left Windows logo key (Microsoft Natural Keyboard).
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Apps">
+            <summary>
+            The right Windows logo key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Sleep">
+            <summary>
+            The application key (Microsoft Natural Keyboard).
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad1">
+            <summary>
+            The 0 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad2">
+            <summary>
+            The 1 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad3">
+            <summary>
+            The 2 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad4">
+            <summary>
+            The 3 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad5">
+            <summary>
+            The 4 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad6">
+            <summary>
+            The 5 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad7">
+            <summary>
+            The 6 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad8">
+            <summary>
+            The 7 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumPad9">
+            <summary>
+            The 8 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Multiply">
+            <summary>
+            The 9 key on the numeric keypad.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Add">
+            <summary>
+            The multiply key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Separator">
+            <summary>
+            The add key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Subtract">
+            <summary>
+            The separator key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Decimal">
+            <summary>
+            The subtract key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Divide">
+            <summary>
+            The decimal key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F1">
+            <summary>
+            The divide key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F2">
+            <summary>
+            The F1 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F3">
+            <summary>
+            The F2 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F4">
+            <summary>
+            The F3 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F5">
+            <summary>
+            The F4 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F6">
+            <summary>
+            The F5 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F7">
+            <summary>
+            The F6 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F8">
+            <summary>
+            The F7 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F9">
+            <summary>
+            The F8 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F10">
+            <summary>
+            The F9 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F11">
+            <summary>
+            The F10 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F12">
+            <summary>
+            The F11 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F13">
+            <summary>
+            The F12 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F14">
+            <summary>
+            The F13 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F15">
+            <summary>
+            The F14 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F16">
+            <summary>
+            The F15 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F17">
+            <summary>
+            The F16 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F18">
+            <summary>
+            The F17 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F19">
+            <summary>
+            The F18 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F20">
+            <summary>
+            The F19 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F21">
+            <summary>
+            The F20 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F22">
+            <summary>
+            The F21 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F23">
+            <summary>
+            The F22 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.F24">
+            <summary>
+            The F23 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NumLock">
+            <summary>
+            The F24 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Scroll">
+            <summary>
+            The NUM LOCK key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LShiftKey">
+            <summary>
+            The SCROLL LOCK key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.RShiftKey">
+            <summary>
+            The left SHIFT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LControlKey">
+            <summary>
+            The right SHIFT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.RControlKey">
+            <summary>
+            The left CTRL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LMenu">
+            <summary>
+            The right CTRL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.RMenu">
+            <summary>
+            The left ALT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserBack">
+            <summary>
+            The right ALT key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserForward">
+            <summary>
+            The browser back key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserRefresh">
+            <summary>
+            The browser forward key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserStop">
+            <summary>
+            The browser refresh key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserSearch">
+            <summary>
+            The browser stop key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserFavorites">
+            <summary>
+            The browser search key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.BrowserHome">
+            <summary>
+            The browser favorites key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.VolumeMute">
+            <summary>
+            The browser home key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.VolumeDown">
+            <summary>
+            The volume mute key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.VolumeUp">
+            <summary>
+            The volume down key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.MediaNextTrack">
+            <summary>
+            The volume up key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.MediaPreviousTrack">
+            <summary>
+            The media next track key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.MediaStop">
+            <summary>
+            The media previous-track key
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.MediaPlayPause">
+            <summary>
+            The media Stop key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LaunchMail">
+            <summary>
+            The media play-pause key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.SelectMedia">
+            <summary>
+            The launch mail key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LaunchApplication1">
+            <summary>
+            The select media key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.LaunchApplication2">
+            <summary>
+            The start application one key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem1">
+            <summary>
+            The start application two key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oemcomma">
+            <summary>
+            The OEM plus key on any country/region keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.OemMinus">
+            <summary>
+            The OEM comma key on any country/region keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.OemPeriod">
+            <summary>
+            The OEM minus key on any country/region keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.OemQuestion">
+            <summary>
+            The OEM period key on any country/region keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem2">
+            <summary>
+            The OEM question mark key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem3">
+            <summary>
+            The OEM tilde key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.OemPipe">
+            <summary>
+            The OEM open bracket key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem5">
+            <summary>
+            The OEM pipe key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem7">
+            <summary>
+            The OEM close bracket key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem8">
+            <summary>
+            The OEM singled/double quote key on a US standard keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Oem102">
+            <summary>
+            OEM specific.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.ProcessKey">
+            <summary>
+            The OEM angle bracket or backslash key on the RT 102 key
+            keyboard.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Packet">
+            <summary>
+            The PROCESS KEY key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Crsel">
+            <summary>
+            The ATTN key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Exsel">
+            <summary>
+            The CRSEL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.EraseEof">
+            <summary>
+            The EXSEL key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Play">
+            <summary>
+            The ERASE EOF key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Zoom">
+            <summary>
+            The PLAY key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.NoName">
+            <summary>
+            The ZOOM key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Pa1">
+            <summary>
+            A constant reserved for future use.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.OemClear">
+            <summary>
+            The PA1 key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.KeyCode">
+            <summary>
+            The CLEAR key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Shift">
+            <summary>
+            The bitmask to extract a key code from a key value.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Control">
+            <summary>
+            The SHIFT modifier key.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.DOM.Keys.Alt">
+            <summary>
+            The CTRL modifier key.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.Index">
+            <summary>
+            Index of this line in the parent page's line list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.PageText">
+            <summary>
+            Reference to the parent page text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.Text">
+            <summary>
+            Text present on this line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.BoundingRect">
+            <summary>
+            Bounding box of the text contained on this line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.BeginIndex">
+            <summary>
+            Begin index of text with respect to the parent page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.EndIndex">
+            <summary>
+            End index of text with respect to the parent page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.BeginIndexInDocument">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.EndIndexInDocument">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.Previous">
+            <summary>
+            Gets the previous line in the parent page. Null if this is already the first line in the page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.Next">
+            <summary>
+            Gets the next line in the parent page. Null if this is already the last line in the page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.LineText.Words">
+            <summary>
+            List of words contained on this line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.Index">
+            <summary>
+            Index of this page in the parent document pages list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.DocumentText">
+            <summary>
+            Reference to the parent document text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.PageNumber">
+            <summary>
+            Page number of this page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.Text">
+            <summary>
+            Text present on this page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.BoundingRect">
+            <summary>
+            Bounding box of the text contained on this page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.BeginIndex">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.EndIndex">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.BeginIndexInDocument">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.EndIndexInDocument">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.Previous">
+            <summary>
+            Gets the previous page in the parent document. Null if this is already the first page in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.Next">
+            <summary>
+            Gets the next page in the parent document. Null if this is already the last page in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.SkewAngle">
+            <summary>
+            Skew angle of the page. This may be non-zero for pages that go through the OCR process.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.PageText.Lines">
+            <summary>
+            List of lines contained on this page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Run.FinalRunProperties">
+            <summary>
+            RunProperties represents the overall compiled and final, run properties
+            from direct run properties and from style heirarchy.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Run.RunProperties">
+            <summary>
+            Direct run properties are stored directly under this run.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Run.ContainsParaItems">
+            <summary>
+            Flag to indicate if the run contains para level items such as text box or images
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.RunProperties.ExplicitlySetValues">
+            <summary>
+            This property is to know what styles are explicitly set in this run
+            If 'BOLD' is set to false, we cannot know if it is explicitly set or its
+            the default value
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Style.StyleName">
+            <summary>
+             primary name for the current style in the document. This name can be used in an
+            application's user interface as desired.
+             </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Style.ConstructedStyle">
+            <summary>
+            All the style heirarchy is properly applied and final constructed style is stored in 
+            ConstructedStyle property.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.Table.CantSplit">
+            <summary>
+            The presence of the cantSplit element specifies that the table row must not be broken across multiple pages,
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.SearchText">
+            <summary>
+            The search term.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.DocumentTextIndex">
+            <summary>
+            The index of the occurrence of the search text within the entire document text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.PageBeginIndex">
+            <summary>
+            The starting page index within the document where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.PageEndIndex">
+            <summary>
+            The ending page index within the document where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.LineBeginIndex">
+            <summary>
+            The starting line index within the page (<see cref="P:Gnostice.Core.DOM.TextSearchResult.PageBeginIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.LineEndIndex">
+            <summary>
+            The ending line index within the page (<see cref="P:Gnostice.Core.DOM.TextSearchResult.PageEndIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.WordBeginIndex">
+            <summary>
+            The starting word index within the line (<see cref="P:Gnostice.Core.DOM.TextSearchResult.LineBeginIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.WordEndIndex">
+            <summary>
+            The ending word index within the line (<see cref="P:Gnostice.Core.DOM.TextSearchResult.LineEndIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.CharBeginIndex">
+            <summary>
+            The starting chracter index within the word (<see cref="P:Gnostice.Core.DOM.TextSearchResult.WordBeginIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.CharEndIndex">
+            <summary>
+            The ending chracter index within the word (<see cref="P:Gnostice.Core.DOM.TextSearchResult.WordEndIndex" />) where the search text was found.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.SearchBeginIndex">
+            <summary>
+            The index position where the search first started.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.TextSearchResult.DocumentBoundaryCrossed">
+            <summary>
+            Flag that indicates if the occurrence was found after a wraparound of the document boundary.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.Index">
+            <summary>
+            Index of this word in the parent line's word list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.LineText">
+            <summary>
+            Reference to the parent line text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.Text">
+            <summary>
+            Text present in this word.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.BoundingRect">
+            <summary>
+            Bounding box of the text contained in this word.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.BeginIndex">
+            <summary>
+            Begin index of text with respect to the parent line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.EndIndex">
+            <summary>
+            End index of text with respect to the parent line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.BeginIndexInDocument">
+            <summary>
+            Begin index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.EndIndexInDocument">
+            <summary>
+            End index of text with respect to the parent document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.Previous">
+            <summary>
+            Gets the previous word in the parent line. Null if this is already the first word in the line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.Next">
+            <summary>
+            Gets the next word in the parent line. Null if this is already the last word in the line.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DOM.WordText.Chars">
+            <summary>
+            List of characters contained in this word.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.EncoderSettings">
+            <summary>
+            This is the base class for format-specific document encoder settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.EncoderSettings.FileFormat">
+            <summary>
+            Gets file extension identifying the output format.
+            </summary>
+            <remarks>
+            Windows bitmap, for example, will be specified as ".bmp".
+            </remarks>
+        </member>
+        <member name="P:Gnostice.Core.EncoderSettings.MimeType">
+            <summary>
+            Gets MIME type identifying the format.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.EncoderSettings.GetEncoderSettings(System.String)">
+            <summary>
+            Gets default conversion settings of specified format.
+            </summary>
+            <param name="fileFormat">\File extension indicating the file
+                                     format.</param>
+        </member>
+        <member name="T:Gnostice.Core.Platform">
+            <summary>
+            Defines the supported platforms.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.FormatType">
+            <summary>
+            Defines the possible document types.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.TextSearchDirection">
+            <summary>
+            Defines the text search direction.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchDirection.Forward">
+            <summary>
+            Search is moving in the forward direction or 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.TextSearchMode">
+            <summary>
+            Defines the text search modes.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchMode.Literal">
+            <summary>
+            Literal search where no special interpretation is given to the escape sequences present in the string.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchMode.Regex">
+            <summary>
+            Regex search.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.TextSearchOptions">
+            <summary>
+            Defines the text search options.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchOptions.CaseSensitive">
+            <summary>
+            Whether the search should match the case of the text being search.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchOptions.WholeWord">
+            <summary>
+            Whether the search should treat the text being searched as a whole word.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.TextSearchOptions.WrapAround">
+            <summary>
+            Whether the search should continue from the other end of the document once it goes past the beginning or end of the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.PropertyChangedEventArgs.PropertyName">
+            <summary>
+            Gets name of the property that was changed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DocEventArgs">
+            <summary>
+            This class represents event data about operations performed
+            by <see cref="!:Gnostice.Controls.WinForms.DocumentViewer" text="DocumentViewer" />.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DocEventArgs.Document">
+            <summary>
+            Gets document that caused this event.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.NeedPasswordEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Core.NeedPassword" text="IDocument.NeedPassword" />
+            event.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.NeedPasswordEventArgs.#ctor(System.Int32)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedPasswordEventArgs.Password">
+            <summary>
+            Gets or sets the password for decrypting the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedPasswordEventArgs.Cancel">
+            <summary>
+            Gets or sets whether to proceed with decrypting the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedPasswordEventArgs.AttemptCount">
+            <summary>
+            Gets number of this attempt to provide a password. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.NeedOutputStreamEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.DocumentManager.NeedStream" text="DocumentManager.NeedStream" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedOutputStreamEventArgs.FileExtension">
+            <summary>
+            Gets file extension representing the format.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedOutputStreamEventArgs.Stream">
+            <summary>
+            Gets or sets stream to which the output document is saved. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.OperationProgressEventArgs">
+            <summary>
+            This class represents details related to <see cref="!:Gnostice.Documents.IDocument.OperationProgress" text="IDocument.OperationProgress" /> event. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.OperationProgressEventArgs.#ctor(Gnostice.Core.DOM.IDocument,System.Int32)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.OperationProgressEventArgs.PercentDone">
+            <summary>
+            Gets percentage of completion of the document operation. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.NeedFileNameEventArgs">
+            <property name="autolink" value="off" />
+            <summary>
+            This class represents details related to <see cref="!:Gnostice.Documents.IDocument.NeedFileName" text="IDocument.NeedFileName" /> event. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.NeedFileNameEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="doc">Document that needs to be saved.</param>
+            <param name="pageNumber">Number of the original page of the
+                                     \input document or the total page
+                                     count of the input document.</param>
+        </member>
+        <member name="P:Gnostice.Core.NeedFileNameEventArgs.FileName">
+            <summary>
+            Gets or sets name or pathname of output file.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.NeedFileNameEventArgs.FileExtension">
+            <summary>
+            Gets extension of the output document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DocumentEngineIdentifiedEventArgs">
+            <summary>
+            Represents details about event fired when a document engine that can load a document has been identified.
+            This event can be utilized to set properties and other events on the document engine before the document is loaded.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DocumentEngineIdentifiedEventArgs.#ctor(Gnostice.Core.DOM.IDocument)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.DocumentProcessingErrorEventArgs">
+            <summary>
+            Represents details about event fired when a document engine encounters an error when processing the document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.DocumentProcessingErrorEventArgs.#ctor(Gnostice.Core.DOM.IDocument,System.Exception)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.DocumentProcessingErrorEventArgs.Exception">
+            <summary>
+            Gets the exception thrown when processing the document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.LoadCompletedEventArgs.#ctor(Gnostice.Core.DOM.IDocument,System.Int32)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="pageCount">Number of pages in the input
+                                    document.</param>
+        </member>
+        <member name="P:Gnostice.Core.LoadCompletedEventArgs.PageCount">
+            <summary>
+            Gets number of pages in the document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.PageEventArgs">
+            <summary>
+            Base class for page related event argument classes.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.PageEventArgs.PageNumber">
+            <summary>
+            Gets number of the current page.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.TextSearchWrapAroundEventArgs.SearchDirection">
+            <summary>
+            Text search direction.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.TextSearchWrapAroundEventArgs.AllowWrapAround">
+            <summary>
+            Whether to allow the wrap around and continue the search. True by default. If this is set to false then
+            the search will terminate without wrapping around.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.MeasurementUnit">
+            <summary>
+            Defines measurement units with which dimensions are specified.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.Orientation">
+            <summary>
+            Defines page orientations.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.Orientation.Landscape">
+            <summary>
+            Portrait.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.HAlignment">
+            <summary>
+            Defines how pages are horizontally aligned.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.VAlignment">
+            <summary>
+            Defines page alignments. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.FontStyle">
+            <summary>
+            Specifies the font style.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.DashStyle">
+            <summary>
+            Specifies the line dash style.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.FillType">
+            <summary>
+            Specifies the type of fill.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.FillType.NoFill">
+            <summary>
+            Specifies no fill
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.FillType.SolidFill">
+            <summary>
+            Specifies a solid fill with a specified color
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.FillMode">
+            <summary>
+            Specifies how the interior of a closed path is filled.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.CombineMode">
+            <summary>
+            Specifies how different clipping regions can be combined.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Complement">
+            <summary>
+            Specifies that the existing region is replaced by the result of the existing region being removed from the new region. Said differently, the existing region is excluded from the new region.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Exclude">
+            <summary>
+            Specifies that the existing region is replaced by the result of the new region being removed from the existing region. Said differently, the new region is excluded from the existing region.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Intersect">
+            <summary>
+            Two clipping regions are combined by taking their intersection.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Replace">
+            <summary>
+            One clipping region is replaced by another.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Union">
+            <summary>
+            Two clipping regions are combined by taking the union of both.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.CombineMode.Xor">
+            <summary>
+            Two clipping regions are combined by taking only the areas enclosed by one or the other region, but not both.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.ResolutionMode">
+            <summary>
+            Defines DPI options.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.ResolutionMode.UseSpecifiedDPI">
+            <summary>
+            Use the pixel density of the source.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.CompositingMode">
+            <summary>
+            Specifies how the source colors are combined with the background colors.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.CompositingQuality">
+            <summary>
+            Specifies the quality level to use during compositing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.InterpolationMode">
+            <summary>
+            Specifies the algorithm that is used when images are scaled or rotated.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.PixelOffsetMode">
+            <summary>
+            Specifies how pixels are offset during rendering.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.SmoothingMode">
+            <summary>
+            Defines how smoothing (antialiasing) is applied to lines and curves and the edges of filled areas.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.SmoothingMode.Default">
+            <summary>
+            An invalid mode.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.SmoothingMode.HighSpeed">
+            <summary>
+            No antialiasing.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.SmoothingMode.HighQuality">
+            <summary>
+            No antialiasing.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.SmoothingMode.None">
+            <summary>
+            Antialiased rendering.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.SmoothingMode.AntiAlias">
+            <summary>
+            No antialiasing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.TextRenderingHint">
+            <summary>
+            Defines text-rendering quality levels.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.TextRenderingHint.SingleBitPerPixelGridFit">
+            <summary>
+            Each character is drawn using its glyph bitmap, with the
+            system default rendering hint. The text will be drawn using
+            whatever font-smoothing settings the user has selected for
+            the system.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.TextRenderingHint.SingleBitPerPixel">
+            <summary>
+            Each character is drawn using its glyph bitmap. Hinting is
+            used to improve character appearance on stems and curvature.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.TextRenderingHint.AntiAliasGridFit">
+            <summary>
+            Each character is drawn using its glyph bitmap. Hinting is
+            not used.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.TextRenderingHint.AntiAlias">
+            <summary>
+            Each character is drawn using its antialiased glyph bitmap
+            with hinting. Much better quality due to antialiasing, but at
+            a higher performance cost.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.TextRenderingHint.ClearTypeGridFit">
+            <summary>
+            Each character is drawn using its antialiased glyph bitmap
+            without hinting. Better quality due to antialiasing. Stem
+            width differences may be noticeable because hinting is turned
+            off.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.TextRenderingMode">
+            <summary>
+            Defines the text rendering modes.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.LineCap">
+            <summary>
+            Defines the line cap styles.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.DashCap">
+            <summary>
+            Defines the dash cap styles.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.LineJoin">
+            <summary>
+            Defines the line join styles.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.PenType.SolidColor">
+            <summary>
+            Specifies a solid fill.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.PenType.HatchFill">
+            <summary>
+            Specifies a hatch fill.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.PenType.TextureFill">
+            <summary>
+            Specifies a bitmap texture fill.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.PenType.PathGradient">
+            <summary>
+            Specifies a path gradient fill.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Graphics.PenType.LinearGradient">
+            <summary>
+            Specifies a linear gradient fill.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.TextAlignment">
+            <summary>
+            Defines the text alignment types.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.MatrixOrder">
+            <summary>
+            Defines the order of operations carried out on a matrix
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphics.GetAvailableFont(Gnostice.Core.Graphics.Font,Gnostice.Core.Graphics.Font)">
+            <summary>
+            Returns the same font object (or the alternate font) if the font is available, else returns the font closest to the available font.
+            </summary>
+            <param name="font"></param>
+            <param name="alternateFont"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphics.Measure(System.String,Gnostice.Core.Graphics.Font,Gnostice.Core.Graphics.TextAlignment,Gnostice.Core.Graphics.MeasurementUnit,System.Boolean,Gnostice.Core.Graphics.Font)">
+            <summary></summary>
+            <param name="text"></param>
+            <param name="font"></param>
+            <param name="alignment"></param>
+            <param name="unit"></param>
+            <param name="measureTrailingSpace"></param>
+            <param name="altFont"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IGraphicsPath.FillMode">
+            <summary>
+            Gets or sets a FillMode enumeration that determines how the interiors of shapes in this graphics path are filled.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IGraphicsPath.PointCount">
+            <summary>
+            Gets the number of elements in the path points or the path types array.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IGraphicsPath.LastPoint">
+            <summary>
+            Gets the last point in the path points array of this graphics path.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.StartFigure">
+            <summary>
+            Starts a new figure without closing the current figure. All subsequent points added to the path are added to this new figure.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.CloseFigure">
+            <summary>
+            Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the 
+            method closes the loop by connecting a line from the endpoint to the starting point.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.MoveTo(System.Single,System.Single)">
+            <summary>
+            Set the last point in the graphics path.
+            </summary>
+            <param name="x">The x-coordinate of the last point of the path.</param>
+            <param name="y">The y-coordinate of the last point of the path.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddLine(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Appends a line segment to this graphics path.
+            </summary>
+            <param name="x1">The x-coordinate of the starting point of the line.</param>
+            <param name="y1">The y-coordinate of the starting point of the line.</param>
+            <param name="x2">The x-coordinate of the end point of the line.</param>
+            <param name="y2">The y-coordinate of the end point of the line.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddLineTo(System.Single,System.Single)">
+            <summary>
+            Appends a line segment to this graphics path.
+            </summary>
+            <param name="x2">The x-coordinate of the end point of the line.</param>
+            <param name="y2">The y-coordinate of the end point of the line.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddLine(Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.Point)">
+            <summary>
+            Appends a line segment to this graphics path.
+            </summary>
+            <param name="pt1">A Point that represents the starting point of the line.</param>
+            <param name="pt2">A Point that represents the end point of the line.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddRectangle(Gnostice.Core.Graphics.SimpleRect)">
+            <summary>
+            Adds a rectangle to this path.
+            </summary>
+            <param name="rect">A SimpleRect that represents the rectangle to add.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddBezier(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Adds a cubic Bézier curve to the current figure.
+            </summary>
+            <param name="x1">The x-coordinate of the starting point of the curve.</param>
+            <param name="y1">The y-coordinate of the starting point of the curve.</param>
+            <param name="x2">The x-coordinate of the first control point for the curve.</param>
+            <param name="y2">The y-coordinate of the first control point for the curve.</param>
+            <param name="x3">The x-coordinate of the second control point for the curve.</param>
+            <param name="y3">The y-coordinate of the second control point for the curve.</param>
+            <param name="x4">The x-coordinate of the endpoint of the curve.</param>
+            <param name="y4">The y-coordinate of the endpoint of the curve.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddBezier(System.Nullable{Gnostice.Core.Graphics.Point},Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.Point)">
+            <summary>
+            Adds a cubic Bézier curve to the current figure.
+            </summary>
+            <param name="point2">The first control point for the curve.</param>
+            <param name="point3">The second control point for the curve.</param>
+            <param name="point4">The endpoint of the curve.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddBezier(Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.Point)">
+            <summary>
+            Adds a cubic Bézier curve to the current figure.
+            </summary>
+            <param name="point1">The starting point of the curve.</param>
+            <param name="point2">The first control point for the curve.</param>
+            <param name="point3">The second control point for the curve.</param>
+            <param name="point4">The endpoint of the curve.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddPath(Gnostice.Core.Graphics.IGraphicsPath,System.Boolean)">
+            <summary>
+            Appends the specified graphics path to this path.
+            </summary>
+            <param name="addingPath">The graphics path to add.</param>
+            <param name="connect">A Boolean value that specifies whether the first figure in the added path is part of the last figure in this path. 
+            A value of true specifies that (if possible) the first figure in the added path is part of the last figure in this path. 
+            A value of false specifies that the first figure in the added path is separate from the last figure in this path.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.AddString(System.String,System.String,Gnostice.Core.Graphics.FontStyle,System.Single,Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.StringFormat,Gnostice.Core.Graphics.Font)">
+            <summary>
+            Adds a text string to this path.
+            </summary>
+            <param name="str">The text to add.</param>
+            <param name="fontName">The name of the font with which the text is drawn.</param>
+            <param name="style">A FontStyle enumeration that represents style information about the text (bold, italic, and so on).</param>
+            <param name="emSize">The height of the em square box that bounds the character.</param>
+            <param name="origin">A Point that represents the point where the text starts.</param>
+            <param name="format">A StringFormat that specifies text formatting information, such as line spacing and alignment.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.Flatten(Gnostice.Core.Graphics.IMatrix,System.Single)">
+            <summary>
+            Converts each curve in this graphics path into a sequence of connected line segments.
+            </summary>
+            <param name="matrix">A matrix by which to transform this graphics path before flattening.</param>
+            <param name="flatness">Specifies the maximum permitted error between the curve and its flattened approximation. 
+            A value of 0.25 is the default. Reducing the flatness value will increase the number of line segments in the approximation.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.Transform(Gnostice.Core.Graphics.IMatrix)">
+            <summary>
+            Applies a transform matrix to this graphics path.
+            </summary>
+            <param name="matrix">A matrix that represents the transformation to apply.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.Reset">
+            <summary>
+            Empties all the points in the path and sets the FillMode to Alternate.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.GetBounds">
+            <summary>
+            Returns a rectangle that bounds this graphics path.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.GetBounds(Gnostice.Core.Graphics.IMatrix)">
+            <summary>
+            Returns a rectangle that bounds this graphics path when this path is transformed by the specified matrix.
+            </summary>
+            <param name="matrix">The matrix that specifies a transformation to be applied to this path before the bounding rectangle is calculated. 
+            This path is not permanently transformed; the transformation is used only during the process of calculating the bounding rectangle.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.Clone">
+            <summary>
+            Returns a copy of this graphics path.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsPath.GetNativeObject">
+            <summary>
+            Returns the platform-specific graphics path object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsSurface.FillClip">
+            <summary>
+            Fills the current clipping area present on the gprahics surface. This is needed for 
+            the PDF engine when performing gradient filling.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsSurface.SetClip(Gnostice.Core.Graphics.IGraphicsPath,Gnostice.Core.Graphics.CombineMode)">
+            <summary>
+            Sets the clipping region of this graphics surface to the result of the specified operation combining the current clip region 
+            and the specified graphics path.
+            </summary>
+            <param name="path">Graphics path to combine.</param>
+            <param name="combineMode">Specifies the combining operation to use.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphicsSurface.SetClip(Gnostice.Core.Graphics.SimpleRect,Gnostice.Core.Graphics.CombineMode)">
+            <summary>
+            Sets the clipping region of this graphics surface to the result of the specified operation combining the current clip region 
+            and the specified rectangle.
+            </summary>
+            <param name="rect">SimpleRect to combine.</param>
+            <param name="combineMode">Specifies the combining operation to use.</param>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.ImageRenderingSettings">
+            <summary>
+            This class represents the settings used during rendering of images.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ImageRenderingSettings.InterpolationMode">
+            <summary>
+            Specifies the algorithm that is used when images are scaled or rotated.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.OffsetX">
+            <summary>
+            Gets the x translation value of this matrix.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.OffsetY">
+            <summary>
+            Gets the y translation value of this matrix.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.ScaleX">
+            <summary>
+            Gets the x scale value of this matrix.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.ScaleY">
+            <summary>
+            Gets the y scale value of this matrix.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.Elements">
+            <summary>
+            Gets an array of floating-point values that represents the elements of this matrix.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.IMatrix.IsIdentity">
+            <summary>
+            Gets a value indicating whether this Matrix is the identity matrix.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Reset">
+            <summary>
+            Resets this matrix to have the elements of the identity matrix.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Clone">
+            <summary>
+            Creates an exact copy of this matrix.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.GetNativeObject">
+            <summary>
+            Returns the platfom-specific matrix object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Equals(System.Object)">
+            <summary>
+            Tests whether the specified object is a matrix and is identical to this matrix.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Translate(System.Single,System.Single,Gnostice.Core.Graphics.MatrixOrder)">
+            <summary>
+            Applies the specified translation vector to this matrix in the specified order.
+            </summary>
+            <param name="offsetX">The x value by which to translate this matrix.</param>
+            <param name="offsetY">The y value by which to translate this matrix.</param>
+            <param name="order">A MatrixOrder that specifies the order (append or prepend) in which the translation 
+            is applied to this matrix.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Rotate(System.Single,Gnostice.Core.Graphics.MatrixOrder)">
+            <summary>
+            Applies a clockwise rotation of an amount specified in the angle parameter, around the origin (zero x and y coordinates)
+            for this matrix.
+            </summary>
+            <param name="angleDegrees">The angle (extent) of the rotation, in degrees.</param>
+            <param name="order"></param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.RotateAt(System.Single,Gnostice.Core.Graphics.Point,Gnostice.Core.Graphics.MatrixOrder)">
+            <summary>
+            Applies a clockwise rotation to this matrix around the point specified in the point parameter and in the specified order
+            </summary>
+            <param name="angleDegrees">The angle (extent) of the rotation, in degrees.</param>
+            <param name="point">A Gnostice.Core.Drawing.Point that represents the center of the rotation.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Scale(System.Single,System.Single,Gnostice.Core.Graphics.MatrixOrder)">
+            <summary>
+            Applies the specified scale vector (scaleX and scaleY) to this matrix using the specified order.
+            </summary>
+            <param name="scaleX">The value by which to scale this matrix in the x-axis direction.</param>
+            <param name="scaleY">The value by which to scale this matrix in the y-axis direction.</param>
+            <param name="order">A MatrixOrder that specifies the order (append or prepend) in which the scale vector is 
+            applied to this matrix.</param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Multiply(Gnostice.Core.Graphics.IMatrix,Gnostice.Core.Graphics.MatrixOrder)">
+            <summary>
+            Multiplies this Matrix by the matrix specified in the matrix parameter, and in the order specified in the order parameter.
+            </summary>
+            <param name="matrix"></param>
+            <param name="order"></param>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IMatrix.Invert">
+            <summary>
+            Inverts this matrix, if it is invertible.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.RenderingSettings">
+            <summary>
+            This class specifies rendering settings for the graphics sub-system.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.ResolutionSettings">
+            <summary>
+            This class represents settings related to pixel density.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ResolutionSettings.DPI">
+            <summary>
+            Sets specified value as the horizontal and vertical pixel
+            density.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ResolutionSettings.DpiX">
+            <summary>
+            Gets or sets specified value as the horizontal pixel density.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ResolutionSettings.DpiY">
+            <summary>
+            Gets or sets specified value as the vertical pixel density. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ResolutionSettings.ResolutionMode">
+            <summary>
+            Gets or sets how to choose the pixel density.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.ShapeRenderingSettings">
+            <summary>
+            This class represents the settings used during rendering of shapes (paths).
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ShapeRenderingSettings.CompositingMode">
+            <summary>
+            Specifies how the source colors are combined with the background colors.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ShapeRenderingSettings.CompositingQuality">
+            <summary>
+            Specifies the quality level to use during compositing.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ShapeRenderingSettings.SmoothingMode">
+            <summary>
+            Specifies whether smoothing (antialiasing) is applied to lines and curves and the edges of filled areas.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.ShapeRenderingSettings.PixelOffsetMode">
+            <summary>
+            Specified how pixels are offset during rendering.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.SimpleRect">
+            <summary>
+            Represents a simple rectangle having a left, top, width and height
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.SimpleRect.Intersect(Gnostice.Core.Graphics.SimpleRect)">
+            <summary>
+            Replaces this rectangle with the intersection of itself and the specified rectangle.
+            </summary>
+            <param name="rect">The rectangle to intersect.</param>
+        </member>
+        <member name="T:Gnostice.Core.Graphics.TextRenderingSettings">
+            <summary>
+            This class represents the settings used during rendering of text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.TextRenderingSettings.TextRenderingHint">
+            <summary>
+            Specified the rendering mode for text.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Graphics.TextRenderingSettings.TextContrast">
+            <summary>
+            Specifies gamma correction value for rendering text. Used for antialiased and ClearType text.
+            </summary>
+            <remarks>
+            The gamma correction value must be between 0 and 12. The default value is 4.
+            </remarks>
+        </member>
+        <member name="T:Gnostice.Core.Image.PageScaling">
+            <summary>
+            Defines how images need to be scaled.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.PageScaling.UseRenderingResolution">
+            <summary>
+            No resizing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Image.TiffCompressionType">
+            <summary>
+            Defines TIFF compression methods.
+            </summary>                       
+            Taken from definitions in LibTiff (https://www.awaresystems.be/imaging/tiff/tifftags/compression.html)
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Rgb24bpp">
+            <summary>
+            Specifies that the format is 24 bits per pixel; 8 bits each are used for the red, green, and blue components.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Rgb32bpp">
+            <summary>
+            Specifies that the format is 32 bits per pixel; 8 bits each are used for the red, green, and blue components. The remaining 8 bits are not used.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Argb32bpp">
+            <summary>
+            Specifies that the format is 32 bits per pixel; 8 bits each are used for the alpha, red, green, and blue components.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Indexed1bpp">
+            <summary>
+            Specifies that the pixel format is 1 bit per pixel and that it uses indexed color. The color table therefore has two colors in it.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Indexed8bpp">
+            <summary>
+            Specifies that the format is 8 bits per pixel, indexed. The color table therefore has 256 colors in it.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Indexed4bpp">
+            <summary>
+            Specifies that the format is 4 bits per pixel, indexed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Image.ImageColorType.Unknown">
+            <summary>
+            An unsupported pixel format
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Image.IBitmapImage.Palette">
+            <summary>
+            Returns the palette of colors used in this bitmap.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Image.IBitmapImage.GetPixel(System.Int32,System.Int32)">
+            <summary>
+            Gets the color of the specified pixel in this bitmap.
+            </summary>
+            <param name="x">The x-coordinate of the pixel to retrieve.</param>
+            <param name="y">The y-coordinate of the pixel to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Image.IBitmapImage.SetPixel(System.Int32,System.Int32,Gnostice.Core.Graphics.Color)">
+            <summary>
+            Sets the color of the specified pixel in this bitmap.
+            </summary>
+            <param name="x">The x-coordinate of the pixel to set.</param>
+            <param name="y">The y-coordinate of the pixel to set.</param>
+            <param name="color">A Color object that represents the color to assign to the specified pixel.</param>
+        </member>
+        <member name="M:Gnostice.Core.Image.IBitmapImage.Clone(Gnostice.Core.Image.ImageColorType)">
+            <summary>
+            Create a copy of this bitmap with a new pixel color type.
+            </summary>
+            <param name="newColorType">Pixel color type of the new image.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gnostice.Core.Image.ImageEncoderSettings">
+            <summary>
+            This base class specifies image format settings used when encoding images.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Image.ImageEncoderSettings.RenderingSettings">
+            <summary>
+            Gets or sets rendering options with which images need to be
+            encoded.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Image.ImageEncoderSettings.ResolutionSettings">
+            <summary>
+            Gets or sets pixel density settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Image.ImageEncoderSettings.PageScaling">
+            <summary>
+            Gets or sets how an image needs to be scaled.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.PasswordDialogSettings">
+            <summary>
+            This class represents password dialog settings of the viewer/printer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.PasswordDialogSettings.ShowDialog">
+            <summary>
+            Gets or sets whether the end-user should be prompted to enter
+            the password in the dialog.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.PasswordDialogSettings.Attempts">
+            <summary>
+            Gets or sets maximum number of times the password dialog can
+            be shown to accept the correct password.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.PasswordSettings">
+            <summary>
+            This is base class for password settings of viewer components.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.PasswordSettings.ForceFullPermission">
+            <summary>
+            Gets or sets whether document user permissions should be
+            ignored when performing operations on the document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Preferences">
+            <summary>
+            This represents the base class for the settings of certain
+            document processing operations.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Core.Preferences.PropertyChanged">
+            <summary>
+            Occurs when a property of this instance has changed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PagePosition">
+            <summary>
+            Represents how printed content is positioned on the print
+            output medium (paper).
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PagePosition.Horizontal">
+            <summary>
+            Gets or sets how printed pages are positioned horizontally on
+            the output medium.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PagePosition.Vertical">
+            <summary>
+            Gets or sets how printed pages are positioned vertically on
+            the output medium.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PageSelection">
+            <summary>
+            This class represents details about pages selected for a
+            print job.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PageSelection.SelectionType">
+            <summary>
+            Gets or sets how pages have been selected for a print job.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PageSelection.CurrentPageNumber">
+            <summary>
+            Sets current page that needs to be printed. (This property
+            takes effect when <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelection.SelectionType" text="DocumentPrinter.PageSelection.SelectionType" />
+            is set to <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelectionType.CurrentPage" text="PageSelectionType.CurrentPage" />.)
+            
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PageSelection.CustomRange">
+            <summary>
+            Sets a specific selection of pages for printing. (This
+            property takes effect when <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelection.SelectionType" text="DocumentPrinter.PageSelection.SelectionType" />
+            is set to <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelectionType.CustomRange" text="PageSelectionType.CustomRange" />.)
+            
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PrinterBeginJobEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentPrinter.BeginPreparePage" text="DocumentPrinter.StartPrintPage" />
+            event.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Printer.PrinterBeginJobEventArgs.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentPrinter.BeginPreparePage" text="DocumentPrinter.StartPrintPage" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterBeginJobEventArgs.PrintJobPageCount">
+            <summary>
+            Gets number of the page to be printed among all the pages in
+            the print job. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterBeginJobEventArgs.DocumentPageCount">
+            <summary>
+            Gets number of pages in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterBeginJobEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the print job needs to be canceled.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PrinterEndJobEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentPrinter.EndJob" text="DocumentPrinter.EndPrintJob" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterEndJobEventArgs.PrintJobPageCount">
+            <summary>
+            Gets number of pages that were printed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterEndJobEventArgs.DocumentPageCount">
+            <summary>
+            Gets number of pages in the printed document. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PrinterErrorEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentPrinter.Error" text="DocumentPrinter.PrinterError" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterErrorEventArgs.ErrorMessage">
+            <summary>
+            Gets message describing the error.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterErrorEventArgs.DocumentPageNumber">
+            <summary>
+            Gets number of the page that was printed when the error occurred.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Printer.PrinterErrorEventArgs.InnerException">
+            <summary>
+            Gets the exception that was raised.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.HPagePosition">
+            <summary>
+            Defines how pages are horizontally aligned on the output
+            medium.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.HPagePosition.Center">
+            <summary>
+            Pages are aligned to the left margin.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.HPagePosition.Right">
+            <summary>
+            Pages are aligned to both left and right margins.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.VPagePosition">
+            <summary>
+            Defines how pages are vertically aligned on the output
+            medium.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.VPagePosition.Center">
+            <summary>
+            Pages are aligned to the top margin.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.VPagePosition.Bottom">
+            <summary>
+            Pages are aligned to the top and bottom margin.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PrintScaling">
+            <summary>
+            Defines how page content can be scaled when it is printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PrintScaling.Fit">
+            <summary>
+            Prints page content without any scaling.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PrintScaling.ShrinkOverSizedPages">
+            <summary>
+            Fits page content within the margins of the output medium.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PrintSubRange">
+            <summary>
+            Defines built-in page-range subsets for printing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PageSelectionType">
+            <summary>
+            Defines options with which pages have been selected for
+            printing.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageSelectionType.All">
+            <summary>
+            All pages are printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageSelectionType.Even">
+            <summary>
+            Only even pages are printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageSelectionType.Odd">
+            <summary>
+            Only odd pages are printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageSelectionType.CurrentPage">
+            <summary>
+            A selected current page is printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageSelectionType.CustomRange">
+            <summary>
+            A specific selection of pages are printed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PageScalingOptions">
+            <summary>
+            Defines how page content is resized when it is printed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageScalingOptions.Original">
+            <summary>
+            Pages are printed as is without any resizing.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageScalingOptions.Fit">
+            <summary>
+            Pages are always resized to fit within the boundaries of the
+            print output medium.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PageScalingOptions.ShrinkOverSizedPages">
+            <summary>
+            Pages are resized only when the contents do not fit within
+            the boundaries of the output medium.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Printer.PagePositioningOptions">
+            <summary>
+            Defines how the page content is positioned on the printer
+            output medium. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PagePositioningOptions.OriginalPosition">
+            <summary>
+            Default position
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Printer.PagePositioningOptions.Centered">
+            <summary>
+            Centered
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Utils.ParsePageSelection(Gnostice.Core.DOM.PageRange,System.String,System.Int32)">
+            <summary>
+            Returns list of page numbers.
+            </summary>
+            <param name="pageRange"></param>
+            <param name="selectedPages"></param>
+            <param name="pageCount"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ZoomChangedEventArgs.ZoomPercent">
+            <summary>
+            Gets number of the page where the magnification was changed. 
+            </summary>
+            <summary>
+            Gets percentage of the magnification. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ZoomChangedEventArgs.ZoomType">
+            <summary>
+            Gets type of page magnification applied to the page.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Viewer.ZoomChangedEventArgs.#ctor(System.Double,Gnostice.Core.Viewer.ZoomMode)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="pageNum">Number of the page where the
+                                  change in magnification has
+                                  occurred.</param>
+            <param name="zoomValue">Current level of page
+                                    magnification.</param>
+            <param name="stdZoomType">Type of page magnification.</param>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.IDocumentOperation.ActiveDocument">
+            <summary>
+            Gets currently loaded document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.PageChangedEventArgs.PageNumber">
+            <summary>
+            Gets number of the current page.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Viewer.PageChangedEventArgs.#ctor(System.Int32)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="pageNum">Number of the page to which the viewer
+                                  has navigated.</param>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.PropertyChangedEventArgs.PropertyName">
+            <summary>
+            Gets name of the property that was changed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.ScrollBarInfo">
+            <summary>
+            This class represents settings of a scroll bar.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.Enabled">
+            <summary>
+            Gets or sets whether the scroll bar is visible.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.Visible">
+            <summary>
+            Gets or sets whether the scroll bar is visible.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.Visibility">
+            <summary>
+            Gets or sets whether the scroll bar is visible.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.SmallChange">
+            <summary>
+            Gets or sets distance to which the thumb button needs to move
+            when the end-user clicks on one of the arrow buttons on the
+            scroll bar.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.LargeChange">
+            <summary>
+            Gets or sets distance to which the viewer thumb button needs
+            to move when the end-user clicks in between the thumb button
+            and the arrow button on the scroll bar.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.ScrollBarInfo.Value">
+            <summary>
+            Gets or sets position of the thumb button on the scroll bar
+            of the viewer.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.VScrollBarInfo">
+            <summary>
+            This class represents settings of a vertical scroll bar.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.HScrollBarInfo">
+            <summary>
+            This class represents settings of a horizontal scroll bar.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Viewer.UriActionEventArgs.#ctor(System.String)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="uri">Uri to be loaded</param>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.ViewerOrientation">
+            <summary>
+            Define document viewing orientation to verticle/horizontal
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.ZoomMode">
+            <summary>
+            Defines page magnification with which a document needs to be
+            displayed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ZoomMode.ActualSize">
+            <summary>
+            100% page magnification (original size)
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ZoomMode.FitPage">
+            <summary>
+            Page magnified to fit the entire width and height of the
+            current page within the full width and height of the viewer
+            component.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ZoomMode.FitWidth">
+            <summary>
+            Page magnified to fit the entire width of the current page
+            within the full width of the viewer component.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ZoomMode.FitHeight">
+            <summary>
+            Page magnified to fit the entire height of the current page
+            within the full height of the viewer component.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ZoomMode.CustomZoomPercent">
+            <summary>
+            Custom page magnification (specified by <see cref="!:Gnostice.XDS.WinForms.Controls.DocumentViewer.ZoomPercent" text="DocumentViewer.ZoomPercent" />
+            property)
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.RotationAngle">
+            <summary>
+            Defines pre-defined angles for rotating the page contents
+            within the viewer.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.Clockwise180">
+            <summary>
+            270 degree, clockwise 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.Clockwise90">
+            <summary>
+            180 degree, clockwise
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.Zero">
+            <summary>
+            90 degree, clockwise
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.AntiClockwise90">
+            <summary>
+            0 degree (no rotation)
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.AntiClockwise180">
+            <summary>
+            90 degree, counter-clockwise 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.RotationAngle.AntiClockwise270">
+            <summary>
+            180 degree, counter-clockwise 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.Visibility">
+            <summary>
+            Defines how the navigation pane is displayed in the document
+            viewer by default.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.Visibility.Never">
+            <summary>
+            When a document with bookmarks is loaded.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.VisibilityState">
+            <summary>
+            Defines how the navigation pane is displayed in the document
+            viewer whether it should be expanded/collapsed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.VisibilityState.Collapsed">
+            <summary>
+            Collapsed navigation pane when NavigationPane.Visibility set to Auto.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.VisibilityState.Expanded">
+            <summary>
+            Expanded navigation pane when NavigationPane.Visibility set to Auto.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.ScrollBarVisibility">
+            <summary>
+            Defines scroll bar visibility of the viewer control.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ScrollBarVisibility.Never">
+            <summary>
+            Always displayed
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ScrollBarVisibility.Auto">
+            <summary>
+            Not displayed
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.MouseActivityType">
+            <summary>
+            Defines types of mouse activity occurring on a PDF page in
+            the <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentViewer" text="DocumentViewer" />
+            component.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.MouseActivityType.None">
+            <property name="autolink" value="off" />
+            <summary>
+            No mouse activity on the PDF page. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.MouseActivityType.ButtonDown">
+            <property name="autolink" value="off" />
+            <summary>
+            A mouse button was pressed down within a PDF page. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.MouseActivityType.ButtonUp">
+            <property name="autolink" value="off" />
+            <summary>
+            A mouse button was released within a PDF page. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.MouseActivityType.Moving">
+            <property name="autolink" value="off" />
+            <summary>
+            Mouse movement activity without selection (click-and-drag). 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.MouseActivityType.Selecting">
+            <property name="autolink" value="off" />
+            <summary>
+            Mouse movement activity with selection (click-and-drag). 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.PageLayoutMode">
+            <summary>
+            Defines page arrangement options.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.PageLayoutMode.TwoPage">
+            <summary>
+            A column of single pages is displayed. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.PageLayoutMode.AutoFitPagesInWindow">
+            <summary>
+            A column of two pages are displayed.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.PageLayoutMode.SpecifiedColumns">
+            <summary>
+            Pages are automatically resized to fit the current number of
+            page columns within the window.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Core.Viewer.ScrollMode">
+            <summary>
+            Defines page scrolling modes.
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ScrollMode.NonContinuous">
+            <summary>
+            Viewer displays pages one below the other. If end-user
+            scrolls up or down, viewer may show portions of previous page
+            or next page. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Core.Viewer.ScrollMode.NonPageSwitching">
+            <summary>
+            Viewer displays pages individually. If end-user scrolls up or
+            down, the viewer will totally replace the current page with
+            the previous page or next page. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.Zoom.ZoomPercent">
+            <summary>
+            Gets or sets page magnification as a percentage of the original size.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.Zoom.ZoomMode">
+            <summary>
+            Gets or sets page magnification to one of the pre-defined settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.Zoom.InternalZoomPercent">
+            <summary>
+            For internal use only. Do not use this method. Instead use @ZoomPercent.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Core.Viewer.Zoom.InternalZoomMode">
+            <summary>
+            For internal use only. Do not use this method. Instead use @ZoomMode.
+            </summary>
+        </member>
+    </members>
+</doc>

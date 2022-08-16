@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication12</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="~/demo/Stylesheet/Demo-Stylesheet.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/lib/gnostice-documentviewer/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/gnostice-documentviewer/css/solid.min.css" />
+    <link rel="stylesheet" href="~/lib/gnostice-documentviewer/css/documentviewer.css" />
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script src="~/lib/gnostice-documentviewer/js/jquery-ui.min.js" asp-append-version="true"></script>
+    <script src="~/lib/gnostice-documentviewer/js/documentviewer.min.js" asp-append-version="true"></script>
+
+</head>
+<body>
+
+
+
+    <div class="centerBodyContent">
+
+
+        <div class="gnostice-header">
+            <img src="~/demo/Images/gnostice.png" />
+            <span style="float:right;font-size:35px;color:#428bca;">
+                ASP.NET Core Document Viewer Demo
+            </span>
+        </div>
+
+        @RenderBody()
+
+        <div class="container">
+            &copy; 2002 - 2021. Gnostice Information Technologies Private Limited. All Rights
+            Reserved.
+        </div>
+
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

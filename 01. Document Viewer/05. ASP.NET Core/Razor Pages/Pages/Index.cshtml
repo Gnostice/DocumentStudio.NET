@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Gnostice ASP.NET Core Document Viewer";
+}
+
+
+
+
+            
+<div>
+    <br />
+    <div class="body">
+        <div class="article-container">
+            <div id="doc-viewer-id" style="height:700px;width:100%;">
+            </div>
+        </div>
+    </div>
+</div>
+ <hr />
+            
+
+
+    
+
+
+<script type="text/javascript">
+        var documentViewer = null;
+        $(document).ready(function () {
+            documentViewer = new gnostice.DocumentViewer("doc-viewer-id");
+            var docURI='@Model.documentUri';
+            if(docURI!=null)
+            {
+                documentViewer.loadDocument(docURI);
+            }
+        });
+
+</script>

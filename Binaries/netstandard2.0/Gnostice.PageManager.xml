@@ -1,0 +1,942 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.PageManager</name>
+    </assembly>
+    <members>
+        <member name="E:Gnostice.PageManager.DocControlManager.NeedPassword">
+            <summary>
+            Occurs when a password is required to open the loaded
+            document. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.ViewerPreferences">
+            <summary>
+            This class represents settings of the <see cref="!:Gnostice.Documents.Controls.WinForms.DocumentViewer" text="document viewer" />.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.PasswordSettings">
+            <summary>
+            Gets or sets password dialog settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.KeyNavigation">
+            <summary>
+            Gets or sets whether keyboard strokes should be sent to the
+            viewer.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.ViewerPreferences.FormatterSettings">
+            <summary>
+            Gets or sets FormatterSettings
+            viewer.
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.AbstractShapeView">
+            <summary>
+            Description of AbstractShapeView.
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.AbstractView">
+            <summary>
+            Represents an abstract light-weight view.
+            </summary>
+            <remarks>
+            This class implements the <see cref="T:Gnostice.PageManager.IWidget" /> interface and provides
+            facilities that help the developer to implement various views.
+            </remarks>
+        </member>
+        <member name="T:Gnostice.PageManager.AbstractView.StateBit">
+            <summary>
+            Declares bits for the <see cref="!:View" />'s internal state.
+            </summary>
+        </member>
+        <member name="F:Gnostice.PageManager.AbstractView.state">
+            <summary>
+            Keeps the <see cref="T:Gnostice.PageManager.IWidget" />'s state.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:View" /> class with it's
+            desired size and location.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Gnostice.PageManager.AbstractView.Parent" -->
+        <member name="P:Gnostice.PageManager.AbstractView.X">
+            <summary>
+            Gets or sets the horizontal coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Y">
+            <summary>
+            Gets or sets the vertical coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Width">
+            <summary>
+            Gets or sets the width of the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Height">
+            <summary>
+            Gets or sets the height of the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Enabled">
+            <summary>
+            Enables or disables the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Visible">
+            <summary>
+            Shows or hides the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Active">
+            <summary>
+            Activates or deactivates the view.
+            </summary>
+            <value>
+                <c>true</c> is the view is active and <c>false</c> otherwise.
+            </value>
+            <remarks>
+            This property is an extension of the <see cref="!:IView" /> interface.
+            It's up to the developer to interprete this flag.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Selected">
+            <summary>
+            Selects or deselects the view.
+            </summary>
+            <value>
+                <c>true</c> is the view is selected and <c>flase</c> otherwise.
+            </value>
+            <remarks>
+            This property is an extension of the <see cref="!:IView" /> interface.
+            It's up to the developer to interprete this flag.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Tracking">
+            <summary>
+            Keeps the tracking state of the view
+            </summary>
+            <value>
+                <c>true</c> is the view is in tracking mode (think of hyperlink
+            being underlined when the mouse points at it) and <c>flase</c>
+            otherwise.
+            </value>
+            <remarks>
+            This property is an extension of the <see cref="!:IView" /> interface.
+            It's up to the developer to interprete this flag.
+            </remarks>
+            <seealso cref="M:Gnostice.PageManager.AbstractView.OnMouseEnter(System.Object,System.Int32,System.Int32)" />
+            <seealso cref="M:Gnostice.PageManager.AbstractView.OnMouseHover(System.Object,System.Int32,System.Int32)" />
+            <seealso cref="M:Gnostice.PageManager.AbstractView.OnMouseLeave(System.Object,System.Int32,System.Int32)" />
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Pressed">
+            <summary>
+            Presses or releases the view with mouse.
+            </summary>
+            <value>
+                <c>true</c> is the view is pressed and <c>flase</c> otherwise.
+            </value>
+            <remarks>
+            This property is an extension of the <see cref="!:IView" /> interface.
+            It's up to the developer to interprete this flag.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Focused">
+            <summary>
+            Sets focus to or removes focus from the view with mouse.
+            </summary>
+            <value>
+                <c>true</c> is the view has focus and <c>false</c> otherwise.
+            </value>
+            <remarks>
+            This property is an extension of the <see cref="!:IView" /> interface.
+            It's up to the developer to interprete this flag.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Location">
+            <summary>
+            Gets the view location - it's top left corner coordinates.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Size">
+            <summary>
+            Gets the view size.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.AbstractView.Bounds">
+            <summary>
+            Gets the bounds of the view relative to it's parent object.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.Invalidate">
+            <summary>
+            Invalidates the view's contents.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.Invalidate(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Invalidates a rectangular area specified in the view's cooridinates.
+            </summary>
+            <param name="x">
+            The x-coordinate of the upper-left corner of the view.
+            </param>
+            <param name="y">
+            The y-coordinate of the upper-left corner of the view.
+            </param>
+            <param name="width">
+            The width of the view.
+            </param>
+            <param name="height">
+            The height of the view.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.Draw(Gnostice.Core.Graphics.IGraphicsSurface)">
+            <summary>
+            Override this method in derived classes to paint the views.
+            </summary>
+            <param name="graphics">An instance of the <see cref="!:Graphics" />
+            object to paint on.</param>
+            <remarks>
+            A view can be non-rectangular.
+            </remarks>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.OnMouseDown(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse down notification callback.
+            </summary>
+            <param name="posX">
+            The horizontal position of the mouse.
+            </param>
+            <param name="posY">
+            The vertical position of the mouse.
+            </param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.OnMouseUp(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse up notification callback.
+            </summary>
+            <param name="posX">
+            The horizontal position of the mouse.
+            </param>
+            <param name="posY">
+            The vertical position of the mouse.
+            </param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.OnMouseEnter(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse entered into the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.OnMouseLeave(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse left the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.OnMouseHover(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse is being moved in the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.AbstractView.HitTest(System.Int32,System.Int32)">
+            <summary>
+            Checks if the mouse is in the view's bounds.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="T:Gnostice.PageManager.CompositeView">
+            <summary>
+            Represents a light-weight view that hosts other light-weight views.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gnostice.PageManager.CompositeView" /> class.
+            </summary>
+            <param name="x">The horizontal coordinate of the view relative to
+            it's parent object.</param>
+            <param name="y">The vertical coordinate of the view relative to
+            it's parent object.</param>
+            <param name="width">The width of the view.</param>
+            <param name="height">The height of the view.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.InvalidateRectangle(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Invalidates a rectangular area area of the view.
+            </summary>
+            <param name="x">
+            The x-coordinate of the upper-left corner of the view.
+            </param>
+            <param name="y">
+            The y-coordinate of the upper-left corner of the view.
+            </param>
+            <param name="width">
+            The width of the view.
+            </param>
+            <param name="height">
+            The height of the view.
+            </param>
+        </member>
+        <member name="P:Gnostice.PageManager.CompositeView.Views">
+            <summary>
+            Gets a collection of all light-weight views that are handled by
+            the <see cref="!:ViewContainer" /> control.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.HitTest2(System.Int32,System.Int32)">
+            <summary>
+            Retrieves the <see cref="T:Gnostice.PageManager.IWidget" /> object at the specified control
+            coordinates.
+            </summary>
+            <param name="posX">The horizontal coordinate.</param>
+            <param name="posY">The vertical coordinate.</param>
+            <returns>
+            An <see cref="T:Gnostice.PageManager.IWidget" /> the mouse points at or <c>null</c> if
+            the mouse does not point at a view.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.Draw(Gnostice.Core.Graphics.IGraphicsSurface)">
+            <summary>
+            Perfoms the view painting.
+            </summary>
+            <param name="graphics">An instance of the <see cref="!:Graphics" />
+            object to paint on.</param>
+            <remarks>
+            A view can be non-rectangular.
+            </remarks>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.OnMouseDown(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse down notification callback.
+            </summary>
+            <param name="posX">
+            The horizontal position of the mouse.
+            </param>
+            <param name="posY">
+            The vertical position of the mouse.
+            </param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.OnMouseUp(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse up notification callback.
+            </summary>
+            <param name="posX">
+            The horizontal position of the mouse.
+            </param>
+            <param name="posY">
+            The vertical position of the mouse.
+            </param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.OnMouseHover(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse is being moved in the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.CompositeView.OnMouseLeave(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse left the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="T:Gnostice.PageManager.EllipseWidget">
+            <summary>
+            Description of EllipseView.
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.IControlService">
+            <summary>
+            Provides access to the parent control (<see cref="!:ViewContainer" />) for
+            views that inserted to other views.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.IControlService.InvalidateRectangle(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Invalidates a rectangular area area of the control.
+            </summary>
+            <param name="x">
+            The x-coordinate of the upper-left corner of the rectangle.
+            </param>
+            <param name="y">
+            The y-coordinate of the upper-left corner of the rectangle.
+            </param>
+            <param name="width">
+            The width of the view.
+            </param>
+            <param name="height">
+            The height of the view.
+            </param>
+        </member>
+        <member name="T:Gnostice.PageManager.ImageViewSizeMode">
+            <summary>
+            Specifies how an image is positioned within a <see cref="T:Gnostice.PageManager.ImageView" />.
+            </summary>
+        </member>
+        <member name="F:Gnostice.PageManager.ImageViewSizeMode.AutoSize">
+            <summary>
+            The <see cref="T:Gnostice.PageManager.ImageView" /> is sized equal to the size of the image
+            that it contains.
+            </summary>
+        </member>
+        <member name="F:Gnostice.PageManager.ImageViewSizeMode.CenterImage">
+            <summary>
+            The image is displayed in the center if the <see cref="T:Gnostice.PageManager.ImageView" />.
+            </summary>
+        </member>
+        <member name="F:Gnostice.PageManager.ImageViewSizeMode.Normal">
+            <summary>
+            The image is placed in the upper-left corner of
+            the <see cref="T:Gnostice.PageManager.ImageView" />.
+            </summary>
+        </member>
+        <member name="F:Gnostice.PageManager.ImageViewSizeMode.StretchImage">
+            <summary>
+            The image within the <see cref="T:Gnostice.PageManager.ImageView" /> is stretched or shrunk
+            to fit the size of the <c>PictureBox</c>.
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.ImageView">
+            <summary>
+            Represents a light-weight view that displays an image.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.ImageView.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Gnostice.PageManager.ImageView" />.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.ImageView.#ctor(Gnostice.Core.Image.IBitmapImage)">
+            <summary>
+            Initializes a new instance of <see cref="T:Gnostice.PageManager.ImageView" /> with
+            the <paramref name="image" />.
+            </summary>
+            <param name="image">
+            The <see cref="P:Gnostice.PageManager.ImageView.Image" /> to display in the view.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.ImageView.#ctor(Gnostice.Core.Image.IBitmapImage,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Gnostice.PageManager.ImageView" /> with
+            the <paramref name="image" /> and the view's bounds.
+            </summary>
+            <param name="image">
+            The <see cref="P:Gnostice.PageManager.ImageView.Image" /> to display in the view.
+            </param>
+            <param name="x">The horizontal coordinate of the view relative to
+            it's parent object.</param>
+            <param name="y">The vertical coordinate of the view relative to
+            it's parent object.</param>
+            <param name="width">The width of the view.</param>
+            <param name="height">The height of the view.</param>
+        </member>
+        <member name="P:Gnostice.PageManager.ImageView.Image">
+            <summary>
+            Gets or sets the image that the view displays.
+            </summary>
+            <value>
+            The <see cref="P:Gnostice.PageManager.ImageView.Image" /> to display in the view.
+            </value>
+        </member>
+        <member name="P:Gnostice.PageManager.ImageView.SizeMode">
+            <summary>
+            Gets or sets the image sizing mode for the view.
+            </summary>
+            <value>
+            The <see cref="T:Gnostice.PageManager.ImageViewSizeMode" /> value that spedifies how
+            the image is going toi be displayed in the view.
+            </value>
+        </member>
+        <member name="M:Gnostice.PageManager.ImageView.Draw(Gnostice.Core.Graphics.IGraphicsSurface)">
+            <summary>
+            Paints the <see cref="P:Gnostice.PageManager.ImageView.Image" />.
+            </summary>
+            <param name="graphics">An instance of the <see cref="!:Graphics" />
+            object to paint on.</param>
+        </member>
+        <member name="T:Gnostice.PageManager.IWidget">
+            <summary>
+            Represents a light-weight view abstraction.
+            </summary>
+            <remarks>
+            A view (an object that implements this interface) can be placed either
+            to a <see cref="!:ViewContainer" /> or to <see cref="T:Gnostice.PageManager.CompositeView" />.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Parent">
+            <summary>
+            Gets or sets a parent object that provides support for
+            <see cref="T:Gnostice.PageManager.IControlService" />.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.X">
+            <summary>
+            Gets or sets the horizontal coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Y">
+            <summary>
+            Gets or sets the vertical coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Width">
+            <summary>
+            Gets or sets the width of the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Height">
+            <summary>
+            Gets or sets the height of the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Enabled">
+            <summary>
+            Enables or disables the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.IWidget.Visible">
+            <summary>
+            Shows or hides the view.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.Invalidate(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Invalidates a rectangular area specified in the view's cooridinates.
+            </summary>
+            <param name="x">
+            The x-coordinate of the upper-left corner of the rectangle in
+            the view's coordinates.
+            </param>
+            <param name="y">
+            The y-coordinate of the upper-left corner of the rectangle in
+            the view's coordinates.
+            </param>
+            <param name="width">
+            The width of the view.
+            </param>
+            <param name="height">
+            The height of the view.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.Draw(Gnostice.Core.Graphics.IGraphicsSurface)">
+            <summary>
+            Performs the view painting.
+            </summary>
+            <param name="graphics">An instance of the <see cref="!:Graphics" />
+            to paint on.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.OnMouseDown(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse down notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.OnMouseUp(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse up notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+            <param name="buttons">
+            A <see cref="!:MouseButtons" /> that describes the mouse buttons
+            pressed.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.OnMouseEnter(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse entered into the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.OnMouseLeave(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse left the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.OnMouseHover(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Mouse is being moved in the view's bounds notification callback.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.IWidget.HitTest(System.Int32,System.Int32)">
+            <summary>
+            Checks if the mouse is in the view's bounds.
+            </summary>
+            <param name="posX">The x-coordinate of the mouse.</param>
+            <param name="posY">The y-coordinate of the mouse.</param>
+            <remarks>
+            This method is for views that are non-rectangular.
+            </remarks>
+        </member>
+        <member name="T:Gnostice.PageManager.Widget">
+            <summary>
+            Represents an abstract light-weight view.
+            </summary>
+            <remarks>
+            This class implements the <see cref="!:IView" /> interface and provides
+            facilities that help the developer to implement various views.
+            </remarks>
+        </member>
+        <member name="M:Gnostice.PageManager.Widget.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="!:View" /> class with it's
+            desired size and location.
+            </summary>
+            <param name="x">The horizontal coordinate of the view relative to
+            it's parent object.</param>
+            <param name="y">The vertical coordinate of the view relative to
+            it's parent object.</param>
+            <param name="width">The width of the view.</param>
+            <param name="height">The height of the view.</param>
+        </member>
+        <member name="M:Gnostice.PageManager.Widget.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:View" /> class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.Widget.X">
+            <summary>
+            Gets or sets the horizontal coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.Widget.Y">
+            <summary>
+            Gets or sets the vertical coordinate of the view relative to it's
+            parent object.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.Widget.Width">
+            <summary>
+            Gets or sets the width of the view.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.Widget.Height">
+            <summary>
+            Gets or sets the height of the view.
+            </summary>
+        </member>
+        <member name="T:Gnostice.PageManager.WidgetCollection">
+            <summary>
+            Represents a typed collection of <see cref="T:Gnostice.PageManager.IWidget" /> objects.
+            </summary>
+            <remarks>
+            This is an abstract class. The <see cref="!:ViewContainer" /> and
+            <see cref="T:Gnostice.PageManager.CompositeView" /> classes implement their own version of this
+            collection class.
+            </remarks>
+        </member>
+        <member name="T:Gnostice.PageManager.WidgetCollection.Enumerator">
+            <summary>
+            Represents a enumerator for the <see cref="T:Gnostice.PageManager.WidgetCollection" /> class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.Enumerator.Current">
+            <summary>
+            Gets the current view in the collection.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Enumerator.Reset">
+            <summary>
+            Sets the enumerator to its initial position, which is before
+            the first element in the collection.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            The collection was modified after the enumerator was created.
+            </exception>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Enumerator.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns>
+                <c>true</c> if the enumerator was successfully advanced to
+            the next element; <c>false</c> if the enumerator has passed
+            the end of the collection.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The collection was modified after the enumerator was created.
+            </exception>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            class.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.#ctor(Gnostice.PageManager.IWidget[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            class with <paramref name="views" /></summary>
+            <param name="views">
+            An array of <see cref="T:Gnostice.PageManager.IWidget" /> objects to take the contents from.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.#ctor(Gnostice.PageManager.WidgetCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            class with <paramref name="collection" />.
+            </summary>
+            <param name="collection">
+            Another collection to take the contents from.
+            </param>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">
+            The zero-based index of the <see cref="T:Gnostice.PageManager.IWidget" /> to get or set.
+            </param>
+            <value>
+            The zero-based index of the view to get or set.
+            </value>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            is read-only.
+            </summary>
+            <value>
+                <c>true</c> if the <see cref="T:Gnostice.PageManager.WidgetCollection" /> is read-only;
+            otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            has a fixed size.
+            </summary>
+            <value>
+                <c>true</c> if the <see cref="T:Gnostice.PageManager.WidgetCollection" /> has a fixed size;
+            otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:Gnostice.PageManager.IWidget" /> at the specified index of
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="index">
+            The zero-based index of the element to remove.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Remove(Gnostice.PageManager.IWidget)">
+            <summary>
+            Removes the first occurrence of a specific <see cref="T:Gnostice.PageManager.IWidget" /> from
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="view">
+            The <see cref="T:Gnostice.PageManager.IWidget" /> to remove from
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Insert(System.Int32,Gnostice.PageManager.IWidget)">
+            <summary>
+            Inserts an <see cref="T:Gnostice.PageManager.IWidget" /> into the <see cref="T:Gnostice.PageManager.WidgetCollection" />
+            at the specified <paramref name="index" />.
+            </summary>
+            <param name="index">
+            The zero-based index at which value should be inserted.
+            </param>
+            <param name="view">
+            The <see cref="T:Gnostice.PageManager.IWidget" /> to insert.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.IndexOf(Gnostice.PageManager.IWidget)">
+            <summary>
+            Searches for the specified <see cref="T:Gnostice.PageManager.IWidget" /> and returns
+            the zero-based index of the first occurrence within
+            the entire <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="view">
+            The <see cref="T:Gnostice.PageManager.IWidget" /> to locate in
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of
+            <paramref name="view" /> within the entire
+            <see cref="T:Gnostice.PageManager.WidgetCollection" />, if found; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Clear">
+            <summary>
+            Removes all views from the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Contains(Gnostice.PageManager.IWidget)">
+            <summary>
+            Determines whether the <see cref="T:Gnostice.PageManager.WidgetCollection" /> contains
+            a specific <see cref="T:Gnostice.PageManager.IWidget" />.
+            </summary>
+            <param name="view">
+            The <see cref="T:Gnostice.PageManager.IWidget" /> to locate in
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </param>
+            <returns>
+                <c>true</c> if the <see cref="T:Gnostice.PageManager.IWidget" /> is found in
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.Add(Gnostice.PageManager.IWidget)">
+            <summary>
+            Adds an <see cref="T:Gnostice.PageManager.IWidget" /> to the end of
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="view">
+            The <see cref="T:Gnostice.PageManager.IWidget" /> to be added to the end of
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </param>
+            <returns>
+            The index at which the <paramref name="view" /> has been added.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.AddRange(Gnostice.PageManager.IWidget[])">
+            <summary>
+            Adds all elements of the <paramref name="views" /> array to the end
+            of the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="views">
+            An array of <see cref="T:Gnostice.PageManager.IWidget" /> objects.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.AddRange(Gnostice.PageManager.WidgetCollection)">
+            <summary>
+            Adds all elements of the <paramref name="collection" /> array to
+            the end of the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <param name="collection">
+            An instance of the <see cref="T:Gnostice.PageManager.WidgetCollection" /> class.
+            </param>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.Count">
+            <summary>
+            Gets the number of elements actually contained in
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <value>
+            The number of elements actually contained in the collection.
+            </value>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <value>
+            An object that can be used to synchronize access to
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </value>
+        </member>
+        <member name="P:Gnostice.PageManager.WidgetCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to
+            the <see cref="T:Gnostice.PageManager.WidgetCollection" /> is synchronized (thread-safe).
+            </summary>
+            <value>
+                <c>true</c> if access to the <see cref="T:Gnostice.PageManager.WidgetCollection" /> is
+            synchronized (thread-safe); otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.CopyTo(Gnostice.PageManager.IWidget[],System.Int32)">
+            <summary>
+            Copies the <see cref="T:Gnostice.PageManager.WidgetCollection" /> or a portion of it to
+            a one-dimensional array.
+            </summary>
+            <param name="array">
+            An array of <see cref="T:Gnostice.PageManager.IWidget" /> objects.
+            </param>
+            <param name="index">
+            The zero-based index in <paramref name="array" /> at which copying
+            begins.
+            </param>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator for the entire <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </summary>
+            <returns>
+            An instance of the <see cref="T:Gnostice.PageManager.WidgetCollection.Enumerator" /> for
+            the entire <see cref="T:Gnostice.PageManager.WidgetCollection" />.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.MoveForward(Gnostice.PageManager.IWidget)">
+            <summary>
+            Makes a view most forward.
+            </summary>
+            <param name="view">A view to move forward.</param>
+            <returns>
+                <c>true</c> if the view successfully moved; <c>false</c> otherwise.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.MoveBackward(Gnostice.PageManager.IWidget)">
+            <summary>
+            Makes a view most backward.
+            </summary>
+            <param name="view">A view to move backward.</param>
+            <returns>
+                <c>true</c> if the view successfully moved; <c>false</c> otherwise.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.MoveFront(Gnostice.PageManager.IWidget)">
+            <summary>
+            Moves a view one step up in z-order of views.
+            </summary>
+            <param name="view">A view to move forward.</param>
+            <returns>
+                <c>true</c> if the view successfully moved; <c>false</c> otherwise.
+            </returns>
+        </member>
+        <member name="M:Gnostice.PageManager.WidgetCollection.MoveBack(Gnostice.PageManager.IWidget)">
+            <summary>
+            Moves a view one step down in z-order of views.
+            </summary>
+            <param name="view">A view to move backward.</param>
+            <returns>
+                <c>true</c> if the view successfully moved; <c>false</c> otherwise.
+            </returns>
+        </member>
+    </members>
+</doc>

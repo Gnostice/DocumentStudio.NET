@@ -1,0 +1,2281 @@
+﻿/* Workaround for Safari browser issue where entered text was not visible till the text input lost focus*/
+/*input, button, textarea, select {
+	-webkit-transform: translate3d(0,0,0);
+}*/
+
+/**:not(html) {
+    -webkit-transform: translate3d(0, 0, 0);
+}*/
+
+.git-docviewer-container {
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    font-family: "Droid Sans","Liberation Sans",FreeSans,"DejaVu Sans","Helvetica CY","Helvetica CE","Lucida Grande","Segoe UI",Tahoma,"Lucida Sans Unicode","Doulos SIL","TITUS Cyberbit Basic","Last Resort","Arial Unicode MS",Helvetica,sans-serif;
+}
+
+.git-viewer-rightpane-header {
+    vertical-align: central;
+    text-align: center;
+}
+
+.git-docviewer-toolbar {
+    height: 37px;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+}
+
+.git-docviewer-page > canvas {
+    padding: 0px;
+}
+
+
+.git-docviewer-page-drag {
+    cursor: default;
+}
+
+.git-docviewer-page-dragging {
+    cursor: default;
+}
+
+.git-docviewer-controlcontainer {
+    width: 20px;
+    height: 20px;
+}
+
+.git-docviewer-dual-controlcontainer {
+    width: 41px;
+    height: 27px;
+}
+
+.git-docviewer-container > * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.git-docviewer-controlcontainer {
+    float: left;
+    color: hsla(0,0%,100%,.8);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    flex-align: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    line-height: 20px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0px;
+}
+
+    .git-docviewer-controlcontainer:hover {
+        background-clip: padding-box;
+        border: 1px solid hsla(0,0%,0%,.35);
+        border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+        box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+        -webkit-transition-property: background-color, border-color, box-shadow;
+        -webkit-transition-duration: 150ms;
+        -webkit-transition-timing-function: ease;
+        transition-property: background-color, border-color, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    .git-docviewer-controlcontainer[disabled]:hover {
+        opacity: 0.5;
+    }
+
+    .git-docviewer-controlcontainer[disabled] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+.git-docviewer-download {
+    width: 30px;
+    height: 24px;
+    float: left;
+    padding: 4px;
+    padding-top:6px;
+}
+
+.git-docviewer-downloadAs {
+    width: 10px;
+    height: 20px;
+    float: left;
+}
+
+    .git-docviewer-downloadAs > select {
+        background-color: transparent;
+        color: white;
+        padding: 2px;
+        border-width: 0px;
+        outline-width: 0px;
+    }
+
+        .git-docviewer-downloadAs > select > option {
+            background-color: #f1f1f1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+.git-docviewer-download[disabled] {
+    opacity: 0.5;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.click-nav[disabled] {
+    opacity: 0.5;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.git-docviewer-thumbnail-active {
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.git-viewer-button-container {
+    float: left;
+    color: hsla(0,0%,100%,.8);
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    background-position: center;
+    display: inline-block;
+    flex-align: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px;
+    margin:0px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+
+    .git-viewer-button-container:hover:enabled {
+        background-clip: padding-box;
+        border: 1px solid hsla(0,0%,0%,.35);
+        border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+        box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+        -webkit-transition-property: background-color, border-color, box-shadow;
+        -webkit-transition-duration: 150ms;
+        -webkit-transition-timing-function: ease;
+        transition-property: background-color, border-color, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        /*background-color: hsla(0,0%,0%,.12);*/
+    }
+
+    .git-viewer-button-container[disabled] {
+        opacity: 0.5;
+        margin-left: 2px;
+        margin-right: 2px;
+        cursor: default;
+    }
+
+.git_viewer_saveAs_button_container {
+    float: left;
+    color: hsla(0,0%,100%,.8);
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    background-position: center;
+    display: inline-block;
+    flex-align: center;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 14px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+    .git_viewer_saveAs_button_container:hover {
+        border: 1px solid hsla(0,0%,0%,.35);
+        border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+        box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+        -webkit-transition-property: background-color, border-color, box-shadow;
+        -webkit-transition-duration: 150ms;
+        -webkit-transition-timing-function: ease;
+        transition-property: background-color, border-color, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+.git-docviewer-find {
+    display: inline-block;
+    float: left;
+    padding: 0px 6px;
+    margin: 4px 2px;
+    border-radius: 2px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.38) rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+    outline-style: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    width: 45px;
+    color: #F2F2F2;
+    font-size: 12px;
+}
+
+.git-viewer-button-container[disabled] {
+    opacity: 0.5;
+}
+
+.git-viewer-dual-button-container {
+    height: 15px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVQ4jc2QQQrCMBBFf6TknCLiDTyDi1JKj+FCShGPV54LR4ljErUL8UMgDP89hpH+JsCi7soGO0lHoPkAbqy7vQ82wMwtIxArcARO1p2BtYCe50w5icGj6w4CBAw1icGThx+3KEjOBkb75+H0shnJxV6a/gV2En+TNF0RdpJuEewkbQK3JTjUJJIOkhpJ+xCK1bebfA/+NFfQTFahdDBuaQAAAABJRU5ErkJggg==') no-repeat scroll;
+    background-size: 10px 10px;
+    float: left;
+    color: hsla(0,0%,100%,.8);
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    background-position: center;
+    display: inline-block;
+    flex-align: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 14px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+    .git-viewer-dual-button-container > select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        outline: none;
+        color: #404040;
+        opacity: 0;
+        margin: 0px;
+        padding: 0px;
+        border: medium none;
+        background: none repeat scroll 0% 0 % transparent;
+        border-style: none;
+    }
+
+        .git-viewer-dual-button-container > select > option {
+            background: none repeat scroll 0% 0% #3D3D3D;
+            color: #F2F2F2;
+        }
+
+
+.git_viewer_box_shadow .git-viewer-toolbar-drpdwn-zoom {
+    box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.08) inset, 0px 1px 1px rgba(0, 0, 0, 0.15) inset, 0px -1px 0px rgba(255, 255, 255, 0.05) inset, 0px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.git-docviewer-goto {
+    display: inline-block;
+    float: left;
+    padding: 0px 6px;
+    margin: 4px 2px;
+    border-radius: 2px;
+    /*background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));*/
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.38) rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+    outline-style: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+}
+
+    .git-docviewer-goto:disabled {
+        color: gray;
+        user-select: none;
+    }
+
+.git-docviewer-zoominput {
+    display: inline-block;
+    float: left;
+    background-image: linear-gradient(hsla(0,0%,0%,1), rgba(255, 255, 255, 1));
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.38) rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+    outline-style: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+}
+
+
+
+.git-viewer-toolbar-drpdwn-zoom {
+    float: left;
+    width: 70px;
+    max-width: 120px;
+    overflow: hidden;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVQ4jc2QQQrCMBBFf6TknCLiDTyDi1JKj+FCShGPV54LR4ljErUL8UMgDP89hpH+JsCi7soGO0lHoPkAbqy7vQ82wMwtIxArcARO1p2BtYCe50w5icGj6w4CBAw1icGThx+3KEjOBkb75+H0shnJxV6a/gV2En+TNF0RdpJuEewkbQK3JTjUJJIOkhpJ+xCK1bebfA/+NFfQTFahdDBuaQAAAABJRU5ErkJggg==') no-repeat scroll;
+    background-size: 10px 10px;
+    background-position: 91% center;
+    height: 26px;
+}
+
+    .git-viewer-toolbar-drpdwn-zoom:focus {
+        background-clip: padding-box;
+        border-width: 1px;
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image: none;
+    }
+
+    .git-viewer-toolbar-drpdwn-zoom > select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        min-width: 70px;
+        color: #404040;
+        opacity: 0;
+        margin: 0px;
+        padding: 0px;
+        border: medium none;
+        background: none repeat scroll 0% 0% transparent;
+        border-style: none;
+    }
+
+        .git-viewer-toolbar-drpdwn-zoom > select > option {
+            background: none repeat scroll 0% 0% #3D3D3D;
+            color: #F2F2F2;
+        }
+
+
+div.git-viewer-button-container:hover, .git-viewer-toolbar-drpdwn-zoom {
+    background-color: hsla(0,0%,0%,.12);
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+}
+
+.git_xdoc_docviewer_toolbar_container_class_center {
+    display: inline-block;
+    min-width: 16px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: #D8D8D8;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+    -moz-user-select: none;
+    cursor: default;
+}
+
+.git-xdoc-viewer-toolbar-drpdwn-class-zoom {
+    display: none;
+    z-index: 5;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.12);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.38) rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset, 0px 0px 1px rgba(255, 255, 255, 0.15) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+}
+
+
+.git-xdoc-viewer-toolbar-toggle-button {
+    display: none;
+    color: hsla(0,0%,100%,.8);
+    z-index: 5;
+    cursor: pointer;
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.38) rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset, 0px 0px 1px rgba(255, 255, 255, 0.15) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+}
+
+.git-xdoc-viewer-toolbar-drpdwn-class-zoom {
+    background: #555;
+    max-width: 140px;
+    text-align: right;
+    position: absolute;
+    right: 6px;
+    z-index: 5000;
+    top: 36px;
+}
+
+.OKBtn {
+    color: buttontext;
+    outline: none;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    background-color: #cccccc;
+    font-family: tahoma;
+    font-size: 9pt;
+    background-repeat: no-repeat;
+    background-position: 200px;
+    border-radius: 5px;
+    border: 1px solid rgb(92, 92, 92);
+}
+
+.git-docviewer-find-notFound {
+    display: inline-block;
+    float: left;
+    padding: 0px 6px;
+    margin: 4px 2px;
+    border-radius: 2px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(255, 0, 0, 0.32) rgba(255, 0, 0, 0.38) rgba(255, 0, 0, 0.42);
+    box-shadow: 0px 1px 0px rgba(255, 0, 0, 0.05) inset, 0px 1px 0px rgba(255, 255, 255, 0.05);
+    outline-style: none;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    background-color: #F5F5F5;
+    width: 45px;
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+}
+
+
+.searchBusy {
+    background: url('Images/spinner_transp.gif') no-repeat right center;
+}
+
+.messageDIV {
+    z-index: 1001;
+    height: 70px;
+    width: 240px;
+    font-family: tahoma;
+    font-size: 10pt;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1002;
+    display: none;
+    text-align: center;
+    border: 2px solid rgb(92, 92, 92);
+    border-radius: 10px;
+}
+
+/*Overlay message box or loading animation placeholder*/
+
+.git_xdoc_viewer_class_overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 5555;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+}
+
+.git_xdoc_viewer_white_content_placeholder {
+    display: none;
+    position: absolute;
+    left: calc(50% - 111px);
+    top: calc(50% - 58px);
+    width: 255px;
+    height: 85px;
+    /*padding: 16px;*/
+    /*border: 16px solid orange;*/
+    background-color: white;
+    z-index: 5002;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+}
+
+.transparentoverlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 5556;
+}
+
+.progressmessage {
+    display: none;
+    position: absolute;
+    width: 255px;
+    height: 77px;
+    background-color: white;
+    z-index: 5557;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    box-sizing: content-box;
+}
+
+.ui-progressbar {
+    position: relative;
+    color: #362878;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ui-widget-header {
+    border: 1px solid #E8D1CF;
+    background-color: #C3AEE0;
+    font-weight: bold;
+    margin-left: -40px;
+}
+
+
+
+
+.passworddialog {
+    display: none;
+    z-index: 5557;
+    position: absolute;
+    min-width: 300px;
+    width: 400px;
+    padding: 6px;
+    background: white;
+    border: 1px solid #000;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: black;
+    cursor: default;
+    font-size: 15px;
+    -webkit-user-select: text;
+}
+
+.messageboxyesnocancel .passworddialog .passworWarningMessage .white_content_messagebox .white_content .white-content-messagebox .xdoc_viewer_printdialogBox .git_xdoc_viewer_white_content_placeholder .progressmessage {
+    border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAA6UlEQVR4Xl2Pi2rEMAwE16fm1f7/r14v7w4rI0IzLAF7hLxNevBSEMEF5+OilNCsRd8ZMyn+a4NmsOT8WJw1lFbSYgGFzF2bLFoLjTClWjKKGRWpDYAGXUnZ4uhbBUzF3Oe/GG/ue2fn4GgsyXhNgysV2JnrhKEMg4fEZcALmiKbNhBBRFpSyDOj1G4QOVly6O1FV54ZZq8OVygrciDt6JazRgi1ljTPH0gbrPmHPXAbCiDd4GawIjip1TPh9tt2sz24qaCjr/jAb/GBFTbq9KZ7Ke/Cqt8nayUikZKsWZK7Fe6bg5dOUt8fZHWG2BHc+6EAAAAASUVORK5CYII=') 9 9 9 9 repeat repeat;
+}
+
+
+    .passworWarningMessage {
+        display: none;
+        z-index: 5557;
+        position: absolute;
+        width: 400px;
+        background-color: white;
+        border: 1px solid #000;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        color: black;
+        cursor: default;
+        font-size: 15px;
+        -webkit-user-select: text;
+    }
+
+.white_content {
+    display: block;
+    position: absolute;
+    left: calc(50% - 127px);
+    top: calc(50% - 58px);
+    width: 255px;
+    height: 77px;
+    /* padding: 16px; */
+    /* border: 16px solid orange; */
+    background-color: white;
+    z-index: 5003;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    box-sizing: content-box;
+}
+
+.white_content_messagebox {
+    display: block;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 50px);
+    /*width: 400px;
+    height: 100px;*/
+    background-color: white;
+    z-index: 6556;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    
+    box-sizing: content-box;
+}
+
+.white-content-messagebox {
+    display: block;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 50px);
+    width: 400px;
+    background-color: white;
+    z-index: 5556;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    box-sizing: content-box;
+}
+
+
+.messageboxyesnocancel {
+    display: block;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 50px);
+    width: 400px;
+    height: 87px;
+    background-color: white;
+    z-index: 5556;
+    overflow: auto;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    box-sizing: content-box;
+}
+
+.git-docviewer-page {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    direction: ltr;
+    position: relative;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.xdoc_viewer_printdialogBox {
+    margin-top: -100px;
+    margin-left: -141px;
+    width: 286px;
+    height: 203px;
+    top: 50%;
+    left: 50%;
+    z-index: 1004;
+    display: none;
+    background-color: #e7e9ef;
+    position: absolute;
+    text-align: center;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-clip: content-box;
+}
+
+.xdoc_docviewer_printdialog_col {
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+.xdoc_docviewer_printdialog_row {
+    clear: both;
+    margin: 0 0 7px;
+    font-size: 20px;
+}
+
+.git_xdoc_docviewer_printdialog_class_close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.git_xdoc_docviewer_printdialog_class_print {
+    float: left;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    vertical-align: middle;
+    margin: 7px 0px 7px 0px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.xdoc_viewer_printdialog_printbutton {
+    border: none;
+    outline: none;
+    /*box-shadow: 0px 3px 2px 0px #2c80a2;*/
+    color: #888;
+    font-size: 14px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    background-color: #fbfcfd;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: 200px;
+}
+
+    .xdoc_viewer_printdialog_printbutton:hover {
+        background-color: hsla(0,0%,0%,.12);
+        cursor: pointer;
+    }
+
+    .xdoc_viewer_printdialog_printbutton:active {
+        padding-top: 2px;
+        box-shadow: none;
+    }
+
+
+.click-nav {
+    width: 12px;
+    float: left;
+    height: 28px;
+}
+
+    .click-nav ul {
+        font-weight: 900;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .click-nav ul li {
+            position: relative;
+            list-style: none;
+            cursor: pointer;
+            text-align: left;
+            width: 117px;
+        }
+
+            .click-nav ul li ul {
+                position: absolute;
+                left: -30px;
+                right: 0;
+                border: 2px solid gray;
+            }
+
+        .click-nav ul .clicker {
+            background: #404040;
+            color: #F2F2F2;
+        }
+
+            .click-nav ul .clicker:hover,
+            .click-nav ul .active {
+                background: none repeat scroll 0% 0% #3D3D3D;
+            }
+
+    .click-nav img {
+        position: absolute;
+        top: 9px;
+        left: 12px;
+    }
+
+    .click-nav ul li a {
+        transition: background-color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out;
+        -moz-transition: background-color 0.2s ease-in-out;
+        display: block;
+        padding: 4px 1px 4px 12px;
+        background: none repeat scroll 0% 0% #3D3D3D;
+        color: #F2F2F2;
+        text-decoration: none;
+        width: 130px;
+    }
+
+        .click-nav ul li a:hover {
+            background: none repeat scroll 0% 0% #a9b2b2;
+            border: 1px solid hsla(0,0%,0%,.35);
+            border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+            box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+            -webkit-transition-property: background-color, border-color, box-shadow;
+            -webkit-transition-duration: 150ms;
+            -webkit-transition-timing-function: ease;
+            transition-property: background-color, border-color, box-shadow;
+            transition-duration: 150ms;
+            transition-timing-function: ease;
+        }
+    /* Fallbacks */
+    .click-nav .no-js ul {
+        padding: 0px;
+        top: 29px;
+        display: none;
+    }
+/*.click-nav .no-js:hover ul {
+    padding:0px;
+    top: 29px;
+	display:block;
+}*/
+.git-zoom-text-input {
+    position: absolute;
+    padding-left: 4px;
+    width: 50px;
+    left: 2px;
+    top: 3px;
+    height: 24px;
+    border: none;
+    background-color: #404040;
+    color: white;
+}
+
+input[class=git-zoom-text-input]:disabled {
+    color: gray;
+    user-select: none;
+}
+
+.git_xdoc_docviewer_formfill_hover {
+    border: 2px solid #000;
+}
+
+
+.git-messagebox-botton {
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 15px 0px 0px;
+}
+
+/*Thumbnail Properties*/
+.git-viewer-toolbarContent {
+    box-shadow: inset -1px 0 0 hsla(0,0%,0%,.25);
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.git-viewer-thumbnail {
+    box-shadow: 0 0 0 1px hsla(0,0%,0%,.5);
+    opacity: 1;
+    border: 1px solid transparent;
+}
+
+.git-viewer-thumbnail-page-container {
+    opacity: 1;
+    padding: 0px;
+    margin: auto;
+    padding-top: 5px;
+}
+
+.git-viewer-thumbnail-page {
+    border: 1px solid #F0F8FF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    margin: auto;
+}
+
+    .git-viewer-thumbnail-page:hover {
+        border: 1px solid #d6dbe9;
+        padding: 0px;
+        margin: auto;
+        background-clip: padding-box;
+        -webkit-box-shadow: 0px 0px 3px 4px rgba(204,206,219,0.7);
+        -moz-box-shadow: 0px 0px 3px 4px rgba(204,206,219,0.7);
+        box-shadow: 0px 0px 3px 4px rgba(204,206,219,0.7);
+    }
+
+.git-viewer-thumbnail-page-active {
+    border: 1px solid #abcde1;
+    padding: 0px;
+    margin: auto;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 2px 3px rgba(173,205,225,0.8);
+    -moz-box-shadow: 0px 0px 2px 3px rgba(173,205,225,0.8);
+    box-shadow: 0px 0px 2px 3px rgba(173,205,225,0.8);
+}
+
+.git-viewer-bookmark {
+    box-shadow: 0 0 0 1px hsla(0,0%,0%,.5);
+    border: 1px solid transparent;
+}
+
+.git-viewer-outlines {
+    box-shadow: 0 0 0 1px hsla(0,0%,0%,.5);
+    border: 1px solid transparent;
+}
+
+.toggled {
+    background-color: hsla(0,0%,0%,.3);
+    border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
+    box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 10ms;
+    transition-timing-function: linear;
+}
+
+    .toggled:hover {
+        background-color: hsla(0,0%,0%,.4);
+        border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
+        box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset, 0 0 1px hsla(0,0%,0%,.2) inset, 0 1px 0 hsla(0,0%,100%,.05);
+        transition-property: background-color, border-color, box-shadow;
+        transition-duration: 10ms;
+        transition-timing-function: linear;
+    }
+
+
+
+/*JQTree CSS*/
+ul.jqtree-tree {
+    list-style: none outside;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+    ul.jqtree-tree ul.jqtree_common {
+        list-style: none outside;
+        margin-left: 12px;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 0;
+        display: block;
+    }
+
+    ul.jqtree-tree li.jqtree-closed > ul.jqtree_common {
+        display: none;
+    }
+
+    ul.jqtree-tree li.jqtree_common {
+        clear: both;
+        list-style-type: none;
+    }
+
+    ul.jqtree-tree .jqtree-toggler {
+        border-bottom: none;
+        color: #f2f2f2;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+        ul.jqtree-tree .jqtree-toggler:hover {
+            text-decoration: none;
+        }
+
+        ul.jqtree-tree .jqtree-toggler.jqtree-closed {
+            background-position: 0 0;
+        }
+
+        ul.jqtree-tree .jqtree-toggler.jqtree-toggler-left {
+            margin-right: 0.5em;
+        }
+
+        ul.jqtree-tree .jqtree-toggler.jqtree-toggler-right {
+            margin-left: 0.5em;
+        }
+
+    ul.jqtree-tree .jqtree-element {
+        cursor: pointer;
+        position: relative;
+    }
+
+    ul.jqtree-tree .jqtree-title {
+        vertical-align: middle;
+        margin-left: 1.5em;
+        display: inline-block;
+        font-size: 13px;
+    }
+
+        ul.jqtree-tree .jqtree-title.jqtree-title-folder {
+            margin-left: 0px;
+        }
+
+    ul.jqtree-tree li.jqtree-folder {
+        margin-bottom: 4px;
+    }
+
+        ul.jqtree-tree li.jqtree-folder.jqtree-closed {
+            margin-bottom: 1px;
+        }
+
+    ul.jqtree-tree li.jqtree-ghost {
+        position: relative;
+        z-index: 10;
+        margin-right: 10px;
+        /* todo: add classes to span? */
+    }
+
+        ul.jqtree-tree li.jqtree-ghost span {
+            display: block;
+        }
+
+            ul.jqtree-tree li.jqtree-ghost span.jqtree-circle {
+                border: solid 2px #0000ff;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                height: 8px;
+                width: 8px;
+                position: absolute;
+                top: -4px;
+                left: -6px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            ul.jqtree-tree li.jqtree-ghost span.jqtree-line {
+                background-color: #0000ff;
+                height: 2px;
+                padding: 0;
+                position: absolute;
+                top: -1px;
+                left: 2px;
+                width: 100%;
+            }
+
+        ul.jqtree-tree li.jqtree-ghost.jqtree-inside {
+            margin-left: 48px;
+        }
+
+    ul.jqtree-tree span.jqtree-border {
+        position: absolute;
+        display: block;
+        left: -2px;
+        top: 0;
+        border: solid 2px #0000ff;
+        border-radius: 6px;
+        margin: 0;
+        box-sizing: content-box;
+    }
+
+    ul.jqtree-tree li.jqtree-selected > .jqtree-element,
+    ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
+        background-color: #97BDD6;
+        background: -webkit-gradient(linear, left top, left bottom, from(#BEE0F5), to(#89AFCA));
+        background: -moz-linear-gradient(top, #BEE0F5, #89AFCA);
+        background: -ms-linear-gradient(top, #BEE0F5, #89AFCA);
+        background: -o-linear-gradient(top, #BEE0F5, #89AFCA);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    ul.jqtree-tree .jqtree-moving > .jqtree-element .jqtree-title {
+        outline: dashed 1px #0000ff;
+    }
+
+    ul.jqtree-tree.jqtree-rtl {
+        direction: rtl;
+    }
+
+        ul.jqtree-tree.jqtree-rtl ul.jqtree_common {
+            margin-left: 0;
+            margin-right: 12px;
+        }
+
+        ul.jqtree-tree.jqtree-rtl .jqtree-toggler {
+            margin-left: 0.5em;
+            margin-right: 0;
+        }
+
+        ul.jqtree-tree.jqtree-rtl .jqtree-title {
+            margin-left: 0;
+            margin-right: 1.5em;
+        }
+
+            ul.jqtree-tree.jqtree-rtl .jqtree-title.jqtree-title-folder {
+                margin-right: 0;
+            }
+
+        ul.jqtree-tree.jqtree-rtl li.jqtree-ghost {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+            ul.jqtree-tree.jqtree-rtl li.jqtree-ghost span.jqtree-circle {
+                right: -6px;
+            }
+
+            ul.jqtree-tree.jqtree-rtl li.jqtree-ghost span.jqtree-line {
+                right: 2px;
+            }
+
+            ul.jqtree-tree.jqtree-rtl li.jqtree-ghost.jqtree-inside {
+                margin-left: 0;
+                margin-right: 48px;
+            }
+
+        ul.jqtree-tree.jqtree-rtl span.jqtree-border {
+            right: -2px;
+        }
+
+span.jqtree-dragging {
+    color: #fff;
+    background: #000;
+    opacity: 0.6;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+
+/* IE 6, 7, 8 */
+@media \0screen\,screen\9 {
+    ul.jqtree-tree li.jqtree-ghost span.jqtree-circle {
+        background: url(jqtree-circle.png) no-repeat;
+        border: 0 none;
+    }
+}
+
+
+
+/*Custom css*/
+
+ul.jqtree-tree .jqtree-toggler.jqtree-toggler-left {
+    position: absolute;
+    font: normal 0.36cm "Times New Roman";
+    padding: 2px 4px;
+}
+
+ul.jqtree-tree .jqtree-title.jqtree-title-folder {
+    margin-left: 20px;
+}
+
+
+/*Splitter CSS*/
+.splitter_panel {
+    position: relative;
+}
+
+    .splitter_panel .vsplitter {
+        background-color: grey;
+        cursor: col-resize;
+        z-index: 1;
+        width: 2px;
+    }
+
+    .splitter_panel .hsplitter {
+        background-color: #5F5F5F;
+        cursor: row-resize;
+        z-index: 800;
+        height: 7px;
+    }
+
+        .splitter_panel .vsplitter.splitter-invisible,
+        .splitter_panel .hsplitter.splitter-invisible {
+            background: none;
+        }
+
+    .splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel,
+    .splitter_panel .hsplitter, .splitter_panel .top_panel, .splitter_panel .bottom_panel {
+        position: absolute;
+        overflow: auto;
+    }
+
+    .splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel {
+        height: 100%;
+    }
+
+    .splitter_panel .hsplitter, .splitter_panel .top_panel, .splitter_panel .bottom_panel {
+        width: 100%;
+    }
+
+    .splitter_panel .top_panel, .splitter_panel .left_panel, .splitter_panel .vsplitter {
+        top: 0;
+    }
+
+    .splitter_panel .top_panel, .splitter_panel .bottom_panel, .splitter_panel .left_panel, .splitter_panel .hsplitter {
+        left: 0;
+    }
+
+    .splitter_panel .bottom_panel {
+        bottom: 0;
+    }
+
+    .splitter_panel .right_panel {
+        right: 0;
+    }
+
+.splitterMask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+
+
+/* Annotation Styles*/
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+    padding: 0;
+}
+
+    /* Each of the items in the list */
+    .custom-menu li {
+        padding: 8px 12px;
+        cursor: pointer;
+        list-style-type: none;
+        transition: all .3s ease;
+    }
+
+        .custom-menu li:hover {
+            background-color: #DEF;
+        }
+
+
+
+.git-annot-focus-rect {
+    position: absolute;
+    z-index: 3001;
+    display: block;
+    color: black;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+    width: 1px;
+}
+
+.git-annot-focus-rect-left {
+    border-width: 0px 0px 0px 2px;
+    border-style: none none none dotted;
+}
+
+.git-annot-focus-rect-top {
+    border-width: 2px 0px 0px;
+    border-style: dotted none none;
+}
+
+.git-annot-focus-rect-right {
+    border-width: 0px 2px 0px 0px;
+    border-style: none dotted none none;
+}
+
+.git-annot-focus-rect-bottom {
+    border-width: 0px 0px 2px;
+    border-style: none none dotted;
+}
+
+
+
+.git-annots-panel {
+    background-color: transparent;
+    z-index: 10;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.git-sign-panel {
+    background-color: transparent;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 120;
+}
+
+
+.active-signature {
+    background-color: rgb(200,255,200);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#mySignatures > table tr td img:not(.active-signature):hover {
+    background-color: rgb(200,255,220);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#mySignatures > table tr td img {
+    width: 100%;
+    border: 1px dotted lightblue;
+}
+
+.git-draggable-widget {
+    position: absolute;
+    z-index: 4000;
+    display: none;
+    color: black;
+    background-color: transparent;
+    background: transparent;
+    text-align: center;
+    border: dashed 1px #CCC;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+.draggable {
+    background-color: yellow;
+}
+
+.git-annot-status {
+    background-repeat: no-repeat;
+    background-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 1px;
+    border: 1px solid transparent;
+    box-sizing: initial;
+}
+
+.git-annot-label-status {
+    color: gray;
+    font-size: medium;
+    font-family: "Verdana";
+    margin-left: -5px;
+}
+
+
+
+.git-right-pane-resizer-icon {
+    background-repeat: no-repeat;
+    background-size: 11px;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    top: 0;
+}
+
+
+
+.git-right-pane-icon-minimize {
+    left: 2px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1UlEQVQ4jZ2PMUoDURgGh8UiRUhlYZkDKIKFpakHhHgDBdEDaJEzpPAAguARArH4S5sUgYCi6XOAlCktxMaFx5JN9u1U+97yDfPgH3WsHpNJkXyfAQv1QS3qBrsEBdABnoB3tZ8rSLkAvtQbNasgpQe8AhP1MLcg5QpYqpdtBQBHwJv6rHbbCErugU/1vK2g3BTpIYcX4DQi5uXFQcPhGriLiOm2nH1MgZNt46rgt/JvA9wCw4hY19nrnjADriNitS+vWvADjIBBk3G14AN4jIjvJsOSPzV1NIjaaP4XAAAAAElFTkSuQmCC');
+}
+
+.git-right-pane-icon-maximize {
+    left: 0px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVQ4jZ3QMS5EURQG4C8vKqVS1CIaYQ0k/gVQSGyAyjJkoqUSzej0V2UFCokdKFQKlahE4c3kzcTjvjndyc3/3T+HgZNkPclosi8NCDY4wTmeBgFJ1nCD3fm3piJ8hOe58DTX2yDJCq5w+NcHvwJJ9nGN1f8azgBJljHyc6yqmQJJdnCLjdows0dsVBy1FyilPGIbl4s2UEr5KKWcIngdDHSge2zhbiGgRd5wgGO8DwZaRCll3LZ56Dx9VQEd6AV7OMNnTaZ3kmwmuZjs38XsMbwMzBtcAAAAAElFTkSuQmCC');
+}
+
+
+.git-right-pane-resizer {
+    background-color: rgb(241, 241, 241);
+    border: 1px solid #ddd;
+}
+
+    .git-right-pane-resizer:hover {
+        background-clip: padding-box;
+        background-repeat: no-repeat;
+        background-color: #C8C8C8;
+        box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+        -webkit-transition-property: background-color, border-color, box-shadow;
+        -webkit-transition-duration: 150ms;
+        -webkit-transition-timing-function: ease;
+        transition-property: background-color, border-color, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+.git-annot-reply-count {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAIVJREFUOMtjKGUgDTIMUw0NpGloKP1PigaQchI0QJQTrQGm/H/py9ItpVmlwvg1IJTD4LfSCaWCuDRgKofAp6U2pGn4X/qj1JtYJyGcZkDI089KP6JouVrKSjhYuUqNS/NKD0BF8omPOJ3SzWDPs5CSNJJLf5b6kZb4PEpnkZq8XYdPFgUAdWlnZkjM6IQAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-right: -5px;
+    float: right;
+    border: 1px solid transparent;
+}
+
+.git-annot-status:hover {
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.git-viewer-rightpane-header-text {
+    color: white;
+    font-size: small;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.git-rightclick-menu-item {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+    z-index: 3002;
+}
+
+.git-right-click-menu {
+    position: absolute;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-family: Helvetica;
+    font-size: 14px;
+    padding: 5px 0;
+    list-style: none;
+    margin: 0;
+    width: 100px;
+    height: auto;
+    border: 1px solid gray;
+    z-index: 3002;
+    display: none;
+}
+
+.git-rightclick-menu-item:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.ui-tooltip-content {
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.git-docviewer-sec-download {
+    width: 23px;
+    height: 20px;
+    margin: 3px 4px 0px 2px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.git-panel {
+    padding: 0.01em 16px;
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+    .git-panel:after, .git-panel:before {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+.git-green {
+    color: #fff !important;
+    background-color: #4CAF50 !important
+}
+
+.git-blue {
+    color: #fff !important;
+    background-color: #2196F3 !important
+}
+
+.git-red {
+    color: #fff !important;
+    background-color: #f44336 !important
+}
+
+
+/* Default Theme Settings */
+
+/* Document Viewer*/
+.git-docviewer-container {
+    background-color: #424242;
+}
+
+/* Toolbar, Left Pane Header, Right Pane Header */
+.git-docviewer-toolbar {
+    background-image: url('data:image/png;base64,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'), linear-gradient(rgba(81, 81, 81, 0.99), rgba(68, 68, 68, 0.95));
+    box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.08) inset, 0px 1px 1px rgba(0, 0, 0, 0.15) inset, 0px -1px 0px rgba(255, 255, 255, 0.05) inset, 0px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #424242;
+}
+
+.git-viewer-leftpane-header, .git-viewer-rightpane-header {
+    background-image: url('data:image/png;base64,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'), linear-gradient(rgba(81, 81, 81, 0.99), rgba(68, 68, 68, 0.95));
+    box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.08) inset, 0px 1px 1px rgba(0, 0, 0, 0.15) inset, 0px -1px 0px rgba(255, 255, 255, 0.05) inset, 0px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #424242;
+}
+
+/* Navigation Pane - Left Pane Content, Right Pane Content */
+.git-viewer-toolbarContent, .git-viewer-comment-toolbarContent {
+    background-color: #494949;
+    box-shadow: inset -1px 0 0 hsla(0,0%,0%,.25);
+    /*background-color: hsla(0,0%,0%,.7);*/
+}
+
+/* Display Page & Thumbanil Page*/
+.git-docviewer-page, .git-viewer-thumbnail-page {
+    border-color: transparent;
+    background-color: #FFF;
+}
+
+    .git-viewer-thumbnail-page:hover {
+        background-color: #d6dbe9;
+    }
+
+.git-viewer-thumbnail-page-active {
+    background-color: #abcde1;
+}
+
+
+/*Bookmark Tree CSS*/
+.jqtree-element:hover {
+    background-color: #696969;
+}
+
+ul.jqtree-tree .jqtree-title {
+    color: white;
+    color: hsla(0,0%,100%,.8);
+}
+
+.git-docviewer-quick-find-panel {
+    height: 34px;
+    background-image: url('data:image/png;base64,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');
+    box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.08) inset, 0px 1px 1px rgba(0, 0, 0, 0.15) inset, 0px -1px 0px rgba(255, 255, 255, 0.05) inset, 0px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: -webkit-linear-gradient(rgba(81, 81, 81, 0.99), rgba(68, 68, 68, 0.95));
+    background-color: #474747;
+}
+
+.git-docviewer-controlcontainer:hover {
+    background-color: hsla(0,0%,0%,.12);
+}
+
+/* Toolbar Control Icons */
+
+.git-password-icon {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+}
+
+.gif-docviewer-pagecount-animation {
+    background-image: url('data:image/gif;base64,R0lGODlhLQAQAPMAAP789f////788/79+f799/7++v778f7+/P778P79+P789//+/v79+////v778wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hoiQ3JlYXRlZCB3aXRoIENoaW1wbHkuY29tIgAh+QQJCgAAACwAAAAALQAQAAACI4SPqcvtD6OctNqLs7ah+7BNnxdKY1dGJ5g+awvH8kzXtlUAACH5BAkKAAAALAAAAAAtABAAAAMvCLrc/jDKSau9OOvNcRkgWHRZcZznSF4meqhr1aJwPM2pLbuvTvEnn3BILBqPjwQAIfkECQoAAAAsAAAAAC0AEAAABDcQyEmrvTjrzbv/YChqiWKayTgmRdumasi6BRx/s2vfXf7yOFoN6PENiRzjDokZOJ8DpnRKrTIjACH5BAkKAAUALAAAAAAtABAAAANDWLrc/jDKSau9mIC9Cf4NMYyjB54iOZjnl5JmIM9BG72lQs82hK+6Xa3n+MWExKIKWBAOkwsjtCKdTgjYLMvK7XolCQAh+QQJCgABACwAAAAALQAQAAAEUzDISau9OOvNu3AgKHTkJhAoOpasdabE2s7Bm67FoOsFrdkqSeFAJPZ8GGBMWDQik7BlYNg8PitKXPNgvU6yzKoXG11tiWMKOG0qszeAuBzwro8jACH5BAkKAAEALAAAAAAtABAAAARaMMhJq704B4N6N1ooVgZgmuCoauUJpGtMuq+k0IostmeqFEBgTsei+YJCYtF1RA6VFx7Khiw8oTMm1YmNGrfBa1cirQV+3DGlnBq43wP1+isPseshgX4vwGciACH5BAkKAAEALAAAAAAtABAAAARmMKBJUbg46837RUIYWl5pcqAokGdrpiIJqALg3vB4AUPf27dWbrXz/YJCmsw4AC6e0AUSM1wandHn9KMsXi9Z7bbq9WGzW0k3wPsGwtLxum1Oe8hsJtC+wSf+gAl8KGuDSSoshiURACH5BAkKAAEALAAAAAAtABAAAARxMMhJq704B4N6N1ooVgZgmmAgGCwrjLBUnkAqJDj+xuN82jkdr0erSW7BHWPAZDKGEx/qGEwoD1jsE7opApMSRlbL7dK+uet4C5UaVVV1lj10o4UB8bpsp4IDY1l8Xn5pZRl9cH+HFolFJowXLZORMBEAIfkECQoAAQAsAAAAAC0AEAAABHkwyEmrvThrg3o3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');
+}
+
+.inputPageCountProgress {
+    background: url('data:image/gif;base64,R0lGODlhEAAQAPIAAG9ra+3r64uIiMvIyO3r67u5uauoqKOgoCH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==') no-repeat 92% 50%;
+    background-size: 12px 12px;
+}
+
+
+
+.activeToolbarButton {
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgb(92, 92, 92);
+}
+
+
+.git-docviewer-findControls:hover {
+    background-clip: padding-box;
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    background-color: hsla(0,0%,0%,.12);
+}
+
+.git-docviewer-OKBtn:hover {
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgb(92, 92, 92);
+}
+
+
+.git-docviewer-quick-find-bubble {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVQ4je3MQQ5AMBhE4ScuVtcSmiFxrzoZG6TS9k9ZilnP++CfOUlekrc+rRUDE9A557YQwloNRPG5IpIAmdhEboARF5ELqIizSHvEAzBXxAnSSOqB5UEcb3zZfWo7kG80C65uVC4AAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.messageDIV {
+    background-color: #cccccc;
+}
+
+.git_xdoc_viewer_class_overlay {
+    background-color: rgb(92, 92, 92);
+}
+
+
+/*navigation controls*/
+
+.git-docviewer-goto {
+    background-color: rgba(255, 255, 255, 0.09);
+    width: 45px;
+    color: #F2F2F2;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.git-docviewer-quickFind_clicked {
+    background-clip: padding-box;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset, 0 0 1px hsla(0,0%,100%,.15) inset, 0 1px 0 hsla(0,0%,100%,.05);
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: hsla(0,0%,0%,.12);
+}
+
+
+.git-docviewer-sec-zoomout {
+    display: block;
+}
+
+.git-docviewer-sec-zoomin {
+    display: block;
+}
+
+.git-docviewer-sec-print {
+    display: block;
+}
+
+.git-docviewer-sec-download {
+    display: block;
+}
+
+
+.git-popUpBox-overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(92, 92, 92);
+    z-index: 5555;
+    -moz-opacity: 0.65;
+    opacity: .65;
+    filter: alpha(opacity=65);
+}
+
+.git-popUpBox-messagebox {
+    display: block;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    position: relative;
+    z-index: 5005;
+}
+
+.git-popUpBox-validation {
+    color: #D63301;
+    background-color: #FFCCBA;
+}
+
+
+.git-annot-status-accepted {
+    color: #FF8C9097;
+}
+
+.git-annot-status-accepted_enabled {
+    color: #FF5890FF;
+}
+
+.git-annot-status-rejected-enabled {
+    color: #FF5890FF;
+}
+
+.git-annot-status-cancelled-enabled {
+    color: #FF5890FF;
+}
+
+.git-annot-status-completed-enabled {
+    color: #FF5890FF;
+}
+
+.git-annot-status-rejected {
+    color: #FF8C9097;
+}
+
+.git-annot-status-cancelled {
+    color: #FF8C9097;
+}
+
+.git-annot-status-completed {
+    color: #FF8C9097;
+}
+
+
+.git-annot-popup-user-icon {
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.git-annot-minimize {
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.git-annot-note {
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+
+
+.git-popUpBox-validation-color {
+    background-color: #FFCCBA;
+}
+
+.git-popUpBox-popupbox {
+    padding: 10px 15px 10px 15px;
+    z-index: 5555;
+}
+
+.git-popUpBox-popupbox-message {
+    text-align: left;
+    margin: 8px 0px 8px 0px;
+}
+
+.git-popUpBox-popupbox-message-color {
+    background-color: #BDE5F8;
+}
+
+.git-popUpBox-popupbox-cancel {
+    background-color: #d4b9b9;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
+.git-popUpBox-closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    /* When moving the mouse over the close button */
+    .git-popUpBox-closebtn:hover {
+        color: black;
+    }
+
+
+
+
+.git-actionlist {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACAElEQVRYhcXXsWoUURTG8V+uQwgiwSeQVUQkSAoFBRGZRi3EOsXYGOYJBCufQIP4AkOwmSJPoHaDnQoiJKRIIYtY2SghyBrCYrG7kszMbhJ2dvcPpzl3uN93z72HuZcZM1eXjJN0HvMI/VQofdIdMeeosb0iz+oNxEl6Ds/wGJdGTDIOP7COtSLP9v4biJO0hfe4MiHhMjt4UORZe65f7s9YnpL4gG3cCFidgTgsYTXCSs3gH3zTO1CDOExX9WAex2UslnIrEVo1k98q8mzrlAIjiZN0CZuOGm8FvXYrG2hUHIo828ZBKT0fEJWSQbVUY9Nv87JWFKnuZcDbOEmLhj3crdOqMwC3+zFpQhhiYGrMVJzqoRjwHB/QMfznMsz8sPwdvDqJgQO8LPKs3DJjESfpV6wpGaxzO9VtqatAwNM4Sd81rHVfzeKGnYEX/Zg4M++CYPQVauJEQwx86sdp23BURW/qteJhunUGurhX5NnuiMlOTZyki/jlqMluUP1FdtGoeJ9d1cUeBOyXkhGuTcDAkuoW7Udoq96KPsZJ+l2vOuVr2XGH9vBbYhARLtQYaEfYQFwaOIurxwg1wUbQeyg0fgU7AdtYD0We7eOR3mNhWuzgYZFnnTPQ3vzyu7V8/Q3+4iLOT0i4jdd4UuTZT4Y/Thew0LB4p8izTsNzjs8/x9R6Oj4qTT8AAAAASUVORK5CYII=');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+
+.git-region-delete {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    font: 11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAChUlEQVRIiZWUMWgUYRCFv7ccwSoEC5EQuDQBJRAkgoiCZFOIIKls7KyC2UAEwTT2ltqoXMSUthaBpNQVC7GwUAmnRCJ3FpYWQSyOkGdxu3u7e3t3yXLHzs4/82bmzcwvRjxh1J43PAYuCGqJ+hDYxawjPsaN+kD/YAT4NLAluCbo2D4ADsAd4ApiCzg3DGNoAOA2MGX8CpiVNGOYAZ0HNoEztu8MA6jlPxai1jxmAoG6qqvYSNoHz0GqF4YfydmlMGovgrs/cSDrU7xRp2ffo+MbcKoyFSdvVZ7mzTqCi3GjvgsJReFKaxwT4QTcFZ4qgbtalhkzLIdR+3QWAGnC8oMMQIDd9bMLstM/g2Xse+CzkPbA/iNpDZi1WRW8R3otDMqxLg1kyPim0HWbTeQvoN99jIZRawEUA8/iRn1tAFblE0btR8BDw9K7Rn071deKZsK9pAmj1ipwC7QOfMd+AYyBlhGTtp9L2okb9ScphVKxxlIAjiSOemUzI7QITGDXkC7TnbKaYVzSIuZnQkWAhF2ckOKilafHuWxymZkct4mQ4pYKKG9yMYLkwpETQVXWaaDSGAy6KoKel6E7fNkWp+jKRckm3M4o7g9Qri9zVRLKOS4G7JpGVFDsUbkpom8Ret9BlUdfD4oJnJwihk5Rpf54FGXWIyki73h8ioyDigLKAXQkQD75FGVU5RYV+jc53aK0YS+F3gBfJf5h3zUEgr+gPcMS8CtBrmxy31WRJDgZrrRrcaPeBJq587c5uQNsA4RRO7A9ldQ0tIImsAe+AdoPV1qHpCU7DZ41Ici9A4kpTEvwOQ/Yt1lh1J4HngJzhUsnkY0RSrpCJgs1se/HG9Mf8nj/AZBDGXlKgJVCAAAAAElFTkSuQmCC');
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+
+
+/*Drop down: select region action*/
+ul.git-redact-list-ul {
+    width: 32px;
+    height: 32px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.git-action-dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1px 4px;
+    text-decoration: none;
+}
+
+    li.git-redact-list-li a.git-action-anchor:hover, .git-action-dropbtn:hover .git-action-dropbtn {
+        background-color: red;
+    }
+
+li.git-action-dropdown {
+    display: inline-block;
+}
+
+.git-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .git-dropdown-content a.git-action-anchor {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        cursor: default;
+    }
+
+        .git-dropdown-content a.git-action-anchor:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+.git-action-dropdown:hover .git-dropdown-content {
+    display: block;
+}
+
+
+.git-default-cursor {
+    cursor: default;
+}
+
+.git-move-cursor {
+    cursor: move;
+}
+
+.git-draw-cursor {
+    cursor: crosshair;
+}
+
+
+
+
+
+.git-docviewer-container:fullscreen, .git-docviewer-container:-webkit-full-screen, .git-docviewer-container:-moz-full-screen {
+    background-color: #404040;
+}
+
+.git-viewer-thumbnail-page-container:fullscreen, .git-viewer-thumbnail-page-container:-webkit-full-screen, .git-viewer-thumbnail-page-container:-moz-full-screen {
+    background-color: #404040;
+}
+
+.git-viewer-thumbnail-page:fullscreen, .git-viewer-thumbnail-page:-webkit-full-screen, .git-viewer-thumbnail-page:-moz-full-screen {
+    background-color: #fff;
+}
+
+
+#bookmark:fullscreen, #bookmark:-webkit-full-screen, #bookmark:-moz-full-screen {
+    background-color: #404040;
+}
+
+#bookmark > *:fullscreen, #bookmark > *:-webkit-full-screen, #bookmark > *:-moz-full-screen {
+    background-color: #404040;
+}
+
+#thumbnail:fullscreen, #thumbnail:-webkit-full-screen, #thumbnail:-moz-full-screen {
+    background-color: #404040;
+}
+
+#thumbnail > *:fullscreen, #thumbnail > *:-webkit-full-screen, #thumbnail > *:-moz-full-screen {
+    background-color: #404040;
+}
+
+*:fullscreen, *:-webkit-full-screen, *:-moz-full-screen {
+    background-color: #404040;
+}
+
+
+
+/*Document Properties Window*/
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 0px;
+    height: 34px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #DDE0E5;
+}
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        float: left;
+        border: 0px;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 16px;
+        transition: 0.3s;
+        font-size: 16px;
+        margin-right: 2px;
+        border-left-width: thin;
+        height: 34px;
+        width: 135px;
+    }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #DFE2E7;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: white;
+            border-bottom-right-radius: 0px;
+            border-top: 0px;
+            border-top-right-radius: 4px;
+        }
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.documentProperties {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 600px;
+    background-color: lightblue;
+    height: 300px;
+}
+
+
+.tableContainer {
+    padding: 6px 4px 4px 4px;
+}
+
+.documentpropertytbl > tr > td {
+    max-width: 175px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.propertiesDlg {
+    z-index: 66666;
+    position: absolute;
+    display: inline-block;
+    color: black;
+    background-color: white;
+    box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08), inset 0 1px 1px hsla(0,0%,0%,.15), inset 0 -1px 0 hsla(0,0%,100%,.05), 0 1px 0 hsla(0,0%,0%,.15), 0 1px 1px hsla(0,0%,0%,.1);
+    border: 1px solid hsla(0,0%,0%,.5);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAA6UlEQVR4Xl2Pi2rEMAwE16fm1f7/r14v7w4rI0IzLAF7hLxNevBSEMEF5+OilNCsRd8ZMyn+a4NmsOT8WJw1lFbSYgGFzF2bLFoLjTClWjKKGRWpDYAGXUnZ4uhbBUzF3Oe/GG/ue2fn4GgsyXhNgysV2JnrhKEMg4fEZcALmiKbNhBBRFpSyDOj1G4QOVly6O1FV54ZZq8OVygrciDt6JazRgi1ljTPH0gbrPmHPXAbCiDd4GawIjip1TPh9tt2sz24qaCjr/jAb/GBFTbq9KZ7Ke/Cqt8nayUikZKsWZK7Fe6bg5dOUt8fZHWG2BHc+6EAAAAASUVORK5CYII=') 9 9 9 9 repeat repeat;
+    width: 340px;
+    min-height: 310px;
+}
+
+
+/* Signature Module*/
+.signatureDlg {
+    z-index: 66666;
+    position: absolute;
+    display: inline-block;
+    color: black;
+    background-color: white;
+    box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08), inset 0 1px 1px hsla(0,0%,0%,.15), inset 0 -1px 0 hsla(0,0%,100%,.05), 0 1px 0 hsla(0,0%,0%,.15), 0 1px 1px hsla(0,0%,0%,.1);
+    border: 1px solid hsla(0,0%,0%,.5);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAA6UlEQVR4Xl2Pi2rEMAwE16fm1f7/r14v7w4rI0IzLAF7hLxNevBSEMEF5+OilNCsRd8ZMyn+a4NmsOT8WJw1lFbSYgGFzF2bLFoLjTClWjKKGRWpDYAGXUnZ4uhbBUzF3Oe/GG/ue2fn4GgsyXhNgysV2JnrhKEMg4fEZcALmiKbNhBBRFpSyDOj1G4QOVly6O1FV54ZZq8OVygrciDt6JazRgi1ljTPH0gbrPmHPXAbCiDd4GawIjip1TPh9tt2sz24qaCjr/jAb/GBFTbq9KZ7Ke/Cqt8nayUikZKsWZK7Fe6bg5dOUt8fZHWG2BHc+6EAAAAASUVORK5CYII=') 9 9 9 9 repeat repeat;
+    width: 100%;
+    height: 100%;
+    max-width: 650px;
+    max-height: 400px;
+}
+
+.signature-pad-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid #f4f4f4;
+}
+
+.signature-pad {
+    left: 0px;
+    top: 0px;
+    background-color: white;
+}
+
+.signature-dialog-option-container {
+    position: absolute;
+    text-align: left;
+    padding: 2px 1px 8px 1px;
+    float: left;
+    margin: 5px;
+}
+
+.signature-dialog-button-container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    padding: 2px 1px 8px 1px;
+}
+
+    .signature-dialog-button-container > input {
+        border: 1px solid gray;
+        font-weight: bold;
+        padding: 4px 16px 4px 16px;
+        margin: 5px;
+    }
+
+
+.printRangeItem {
+    padding: 2px 0px;
+}
+
+.printBtn {
+    border: 1px solid gray;
+    font-weight: bold;
+    padding: 1px 16px;
+    float: right;
+}
+
+.printDialogFooter {
+    padding: 5px 5px;
+    background-color: white;
+    color: black;
+    float: right;
+}
+
+.printDialogHeader {
+    padding: 8px 11px;
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+}
+
+.printDialogBody {
+    background-color: #fefefe;
+    padding: 10px 20px 0px 20px;
+}
+
+
+
+/* The Close Button */
+.closePrintDialog {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    .closePrintDialog:hover,
+    .closePrintDialog:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.printDialog {
+    z-index: 66666;
+    position: absolute;
+    display: inline-block;
+    color: black;
+    background-color: white;
+    box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08), inset 0 1px 1px hsla(0,0%,0%,.15), inset 0 -1px 0 hsla(0,0%,100%,.05), 0 1px 0 hsla(0,0%,0%,.15), 0 1px 1px hsla(0,0%,0%,.1);
+    border: 1px solid hsla(0,0%,0%,.5);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAA6UlEQVR4Xl2Pi2rEMAwE16fm1f7/r14v7w4rI0IzLAF7hLxNevBSEMEF5+OilNCsRd8ZMyn+a4NmsOT8WJw1lFbSYgGFzF2bLFoLjTClWjKKGRWpDYAGXUnZ4uhbBUzF3Oe/GG/ue2fn4GgsyXhNgysV2JnrhKEMg4fEZcALmiKbNhBBRFpSyDOj1G4QOVly6O1FV54ZZq8OVygrciDt6JazRgi1ljTPH0gbrPmHPXAbCiDd4GawIjip1TPh9tt2sz24qaCjr/jAb/GBFTbq9KZ7Ke/Cqt8nayUikZKsWZK7Fe6bg5dOUt8fZHWG2BHc+6EAAAAASUVORK5CYII=') 9 9 9 9 repeat repeat;
+    width: 310px;
+}
+
+.documentPropertiesTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.sign-menu-item:hover {
+    background-color: rgb(30,144,255);
+}
+
+.sign-menu-item > a {
+    color: black;
+}
+
+.sign-menu-item:hover > a {
+    color: white;
+}

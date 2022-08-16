@@ -1,0 +1,28 @@
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\ASP.NET_Web Converter.dll.config
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\ASP.NET_Web Converter.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\ASP.NET_Web Converter.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\AngleSharp.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\BitMiracle.LibJpeg.NET.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\DotNetZip.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Converter.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Core.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.DigitizationEngine.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Documents.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Graphics.GDIPlus.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\log4net.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Tesseract.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\AngleSharp.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\BitMiracle.LibJpeg.NET.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\DotNetZip.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\DotNetZip.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Converter.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Core.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.DigitizationEngine.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Documents.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\Gnostice.Graphics.GDIPlus.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\bin\log4net.xml
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\obj\Debug\ASP.NET_Web Converter.dll.licenses
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\obj\Debug\ASP.NET_WebForms_Document_Converter.csproj.CopyComplete
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\obj\Debug\ASP.NET_Web Converter.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\obj\Debug\ASP.NET_Web Converter.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET WebForms\obj\Debug\ASP.NET_WebForms_Document_Converter.csprojAssemblyReference.cache

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99c07b77-7e42-4e8b-9c4e-cd91c5efd20d": {
+      "ProjectGuid": "99c07b77-7e42-4e8b-9c4e-cd91c5efd20d",
+      "DisplayName": "ASPNETCore_MVC_Document_Viewer",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

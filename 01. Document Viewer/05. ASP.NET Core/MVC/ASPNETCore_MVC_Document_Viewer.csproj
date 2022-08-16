@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNetZip" Version="1.15.0" />
+		<PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.6" />
+		<PackageReference Include="SkiaSharp" Version="1.68.3" />
+		<PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+		<PackageReference Include="System.IO.Packaging" Version="5.0.0" />
+		<PackageReference Include="System.Security.Permissions" Version="5.0.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+    <Reference Include="AngleSharp">
+      <HintPath>..\..\..\Binaries\netstandard2.0\AngleSharp.dll</HintPath>
+    </Reference>
+	  <Reference Include="Gnostice.Controls.ASP">
+      <HintPath>..\..\..\Binaries\netcoreapp3.1\Gnostice.Controls.ASP.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Converter">
+      <HintPath>..\..\..\Binaries\netcoreapp3.1\Gnostice.Converter.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Core">
+      <HintPath>..\..\..\Binaries\netcoreapp3.1\Gnostice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Documents">
+      <HintPath>..\..\..\Binaries\netcoreapp3.1\Gnostice.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Graphics.GDIPlus">
+      <HintPath>..\..\..\Binaries\netcoreapp3.1\Gnostice.Graphics.Skia.dll</HintPath>
+    </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\lib\gnostice-documentviewer\css\webfonts\" />
+	  <Folder Include="wwwroot\lib\gnostice-documentviewer\js\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\lib\gnostice-documentviewer\css\webfonts\" />
+		<Folder Include="wwwroot\lib\gnostice-documentviewer\js\" />
+	</ItemGroup>
+</Project>

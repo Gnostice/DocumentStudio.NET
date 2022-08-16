@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="centerBodyContent">
+    <div>
+
+        <div>
+            <br />
+            <div class="body">
+                <div class="article-container">
+                    <div id="doc-viewer-id" class="gnostice-doc-viewer-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+    </div>
+</div>
+
+<script type="text/javascript">
+        var documentViewer = null;
+        $(document).ready(function () {
+            documentViewer = new gnostice.DocumentViewer("doc-viewer-id");
+            var docURI='@ViewBag.docUri';
+            if(docURI!=null)
+            {
+                documentViewer.loadDocument(docURI);
+            }
+        });
+
+</script>

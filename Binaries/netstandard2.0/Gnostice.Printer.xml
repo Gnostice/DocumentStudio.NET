@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.Printer</name>
+    </assembly>
+    <members>
+        <member name="T:Gnostice.Printer.DocumentPrinter">
+            <summary>
+            Represents the document printer component.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.#ctor">
+            <summary>
+            Creates an instance of this component.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.AutoRotate">
+            <summary>
+            Gets or sets whether the printer automatically rotates the
+            pages to suit the current orientation of the physical printer
+            (landscape or portrait). 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.PageSelection">
+            <summary>
+            Gets or sets pages that need to be printed. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.OffsetHardMargins">
+            <summary>
+            Gets or sets whether the hard margins of the physical printer
+            should be ignored and ensure PDF page contents falling over
+            the hard margins to be clipped.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.PageScaling">
+            <summary>
+            Gets or sets how printed content needs to be resized on the output medium. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.PagePositioning">
+            <summary>
+            Gets or sets how printed content needs to be positioned on the output medium. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.Preferences">
+            <summary>
+            Gets or sets printing Preferences.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.DocumentPrinter.PrintDocument">
+            <summary>
+            Gets or sets System.Drawing.Printing.PrintDocument instance
+            for sending output to the current printer.
+            </summary>
+            <remarks>
+            The settings of the current printer are available in the
+            PrintDocument.PrinterSettings property. 
+            </remarks>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.BeginJob">
+            <summary>
+            Occurs when a document is about to be printed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.BeginPreparePage">
+            <summary>
+            Occurs when a page is about to be printed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.EndPreparePage">
+            <summary>
+            Occurs after a page is printed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.EndJob">
+            <summary>
+            Occurs after a document is printed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.NeedPassword">
+            <summary>
+            Occurs when the printer component requires a password to
+            decrypt a document.
+            </summary>
+        </member>
+        <member name="E:Gnostice.Printer.DocumentPrinter.Error">
+            <summary>
+            Occurs when the printer component is unable to create the
+            print output for the whole or part of the document.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.LoadDocument(System.String,System.String)">
+            <summary>
+            Loads document with specified pathname.
+            </summary>
+            <param name="fileName">Pathname of the document that needs
+                                   to be loaded.</param>
+            <param name="password">Password with which the document
+                                   needs to be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.LoadDocument(System.IO.Stream,System.String)">
+            <summary>
+            Loads a document from specified stream.
+            </summary>
+            <param name="stream">Stream from which the document needs
+                                 to be loaded.</param>
+            <param name="password">Password with which the document
+                                   should be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.Print">
+            <summary>
+            Prints currently <see cref="!:Documents.Controls.WinForms.DocumentPrinter.LoadDocument" text="loaded document" />.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.Print(System.String,System.String)">
+            <summary>
+            Opens a document from specified pathname, decrypts it with
+            specified password and prints it.
+            </summary>
+            <param name="fileName">Pathname of the file that needs to be
+                                   printed.</param>
+            <param name="password">Password with which the document
+                                   needs to be opened.</param>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.Print(System.IO.Stream,System.String)">
+            <summary>
+            Open a document from specified stream, decrypt it with
+            specified password and print it.
+            </summary>
+            <param name="stream">stream from which the document needs
+                                 to be loaded</param>
+            <param name="password">password with which the document
+                                   needs to be decrypted when it is
+                                   loaded</param>
+        </member>
+        <member name="M:Gnostice.Printer.DocumentPrinter.CloseDocument">
+            <summary>
+            Closes currently loaded document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Printer.PrinterBeginPreparePageEventArgs">
+            <summary>
+            Represents details about <see cref="E:Gnostice.Printer.DocumentPrinter.BeginPreparePage" text="DocumentPrinter.StartPrintPage" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.Cancel">
+            <summary>
+            Gets or sets whether printing of the page can be skipped.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.Graphics">
+            <summary>
+            Gets the graphics object on which the page's print content will be drawn.
+            </summary>
+            <remarks>
+            Use this event to render your own content using graphics
+            object's methods. This content will be go under the page's
+            actual content. 
+            </remarks>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.PrintJobPageCount">
+            <summary>
+            Gets number of pages that are set to be printed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.PrintJobPageNumber">
+            <summary>
+            Gets number of the printed page among all pages in the print job. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.DocumentPageCount">
+            <summary>
+            Gets number of pages in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterBeginPreparePageEventArgs.DocumentPageNumber">
+            <summary>
+            Gets number of the page that is about to be printed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.Printer.PrinterEndPreparePageEventArgs">
+            <summary>
+            Represents details about <see cref="E:Gnostice.Printer.DocumentPrinter.EndPreparePage" text="DocumentPrinter.EndPreparePage" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the printing of the page is to be canceled.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.Graphics">
+            <summary>
+            Gets the graphics object on which the page's print content will be drawn.
+            </summary>
+            <remarks>
+            Use this event to render your own content using graphics
+            object's methods. This content will be go above the page's
+            actual content. 
+            </remarks>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.PrintJobPageCount">
+            <summary>
+            Gets number of pages that were printed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.PrintJobPageNumber">
+            <summary>
+            Gets number of the current page among the total number of pages that were set to be printed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.DocumentPageCount">
+            <summary>
+            Gets number of pages in the document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Printer.PrinterEndPreparePageEventArgs.DocumentPageNumber">
+            <summary>
+            Gets number of the printed page in the document.
+            </summary>
+        </member>
+    </members>
+</doc>

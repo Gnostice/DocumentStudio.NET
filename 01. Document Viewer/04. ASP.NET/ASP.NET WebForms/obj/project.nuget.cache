@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "giLb98g5MyFNoY1g+jFZI/1w7gMWGw6ASXqYfZcmy6G87MBSpMl7dhTXJfh5TXzT8f5RuoUVO7v5PCfuHIW3+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\ASP.NET_WebForms_Document_Viewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\buildadmin\\.nuget\\packages\\bitmiracle.libjpeg.net\\1.5.324\\bitmiracle.libjpeg.net.1.5.324.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\dotnetzip\\1.15.0\\dotnetzip.1.15.0.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\log4net\\2.0.14\\log4net.2.0.14.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\msbuild.webapplication.copycontentlinkedfiles\\1.1.0-beta\\msbuild.webapplication.copycontentlinkedfiles.1.1.0-beta.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\skiasharp\\1.68.3\\skiasharp.1.68.3.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\skiasharp.views\\1.68.0\\skiasharp.views.1.68.0.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\tesseract\\3.3.0\\tesseract.3.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

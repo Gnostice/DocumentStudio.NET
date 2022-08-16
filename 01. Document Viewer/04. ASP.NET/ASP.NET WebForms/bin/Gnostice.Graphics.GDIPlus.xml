@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.Graphics.GDIPlus</name>
+    </assembly>
+    <members>
+        <member name="M:Gnostice.Graphics.GDIPlus.GDIPlusGraphics.GetAvailableFont(Gnostice.Core.Graphics.Font,Gnostice.Core.Graphics.Font)">
+            <summary>
+            Returns the same font object if the font is available, else returns the available font.
+            </summary>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

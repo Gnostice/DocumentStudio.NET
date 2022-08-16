@@ -1,0 +1,895 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\ASP.NET_WebForms_Document_Viewer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\ASP.NET_WebForms_Document_Viewer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\ASP.NET_WebForms_Document_Viewer.csproj",
+        "projectName": "HTML5_DocumentViewer",
+        "projectPath": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\ASP.NET_WebForms_Document_Viewer.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\ASPControls.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\ASPControls.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\DigitizationEngine.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\DigitizationEngine.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "dependencies": {
+            "BitMiracle.LibJpeg.NET": {
+              "target": "Package",
+              "version": "[1.5.324, )"
+            },
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            },
+            "MSBuild.WebApplication.CopyContentLinkedFiles": {
+              "target": "Package",
+              "version": "[1.1.0-beta, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\ASPControls.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\ASPControls.csproj",
+        "projectName": "Gnostice.Controls.ASP",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\ASPControls.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\ASP.NET\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj"
+              }
+            }
+          },
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[1.68.3, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj",
+        "projectName": "Gnostice.Core",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\DigitizationEngine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\DigitizationEngine.csproj",
+        "projectName": "Gnostice.DigitizationEngine",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\DigitizationEngine.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DigitizationEngine\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "Tesseract": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Tesseract": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj",
+        "projectName": "Gnostice.Converter",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\DocumentConverter.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentConverter\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj",
+        "projectName": "Gnostice.Documents",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netcoreapp3.1",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              }
+            }
+          },
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "BitMiracle.LibJpeg.NET": {
+              "target": "Package",
+              "version": "[1.5.324, )"
+            },
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            },
+            "System.IO.Packaging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "BitMiracle.LibJpeg.NET": {
+              "target": "Package",
+              "version": "[1.5.324, )"
+            },
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "BitMiracle.LibJpeg.NET": {
+              "target": "Package",
+              "version": "[1.5.324, )"
+            },
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.IO.Packaging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Security.Cryptography.Pkcs": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj",
+        "projectName": "Gnostice.Graphics.GDIPlus",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\GDIPlusGraphics.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\GDIPlusGraphics\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj",
+        "projectName": "Gnostice.Graphics.Skia",
+        "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\SkiaGraphics.csproj",
+        "packagesPath": "C:\\Users\\buildadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\SkiaGraphics\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buildadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\Core\\Core.csproj"
+              },
+              "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj": {
+                "projectPath": "C:\\work\\DocumentStudio_dotNET\\trunk\\Source\\DocumentEngines\\DocumentEngines.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[1.68.3, )"
+            },
+            "SkiaSharp.Views": {
+              "target": "Package",
+              "version": "[1.68.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[1.68.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

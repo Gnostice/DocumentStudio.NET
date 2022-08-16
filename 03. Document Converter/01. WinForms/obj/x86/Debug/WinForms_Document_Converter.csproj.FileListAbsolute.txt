@@ -1,0 +1,19 @@
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Converter.exe.config
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Converter.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Converter.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\XDocument_Converter_Demo.Demo.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\Document_Converter_Demo.Properties.Resources.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_Document_Converter.csproj.GenerateResource.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_Document_Converter.csproj.CopyComplete
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_CS_Document_Converter.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_CS_Document_Converter.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x86\liblept1753.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x86\libtesseract3052.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x64\liblept1753.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x64\libtesseract3052.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\libSkiaSharp.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\libSkiaSharp.dylib
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x86\libSkiaSharp.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\x64\libSkiaSharp.dll
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_Document_Converter.csproj.AssemblyReference.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\01. WinForms\obj\x86\Debug\WinForms_Document_Converter.csproj.CoreCompileInputs.cache

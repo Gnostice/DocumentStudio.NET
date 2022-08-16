@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.MailMerge</name>
+    </assembly>
+    <members>
+        <member name="T:Gnostice.MailMerge.EMailAction">
+            <summary>
+            Represents a post-merge action that e-mails the merged
+            documents. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.EMailAction.#ctor(System.String,Gnostice.Core.EncoderSettings)">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+            <param name="outputFileFormat">\Output file format specified
+                                           by its file extension. For
+                                           \example, ".docx". </param>
+            <param name="encoderSettings">Settings with which the
+                                          documents need to be created.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.EMailAction.#ctor(Gnostice.MailMerge.EmailSender,System.String,Gnostice.Core.EncoderSettings)">
+            <summary>
+            Creates a new instance of this class with specified
+            EmailSender instance.
+            </summary>
+            <param name="emailSender">User class instance
+                                      (implementing EmailSender)
+                                      that will send the email.</param>
+            <param name="outputFileFormat">\Output file format specified
+                                           by its file extension. For
+                                           \example, ".docx".</param>
+            <param name="encoderSettings">Settings with which the
+                                          documents need to be created.</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.EMailAction.Message">
+            <summary>
+            Gets or sets e-mail message that is sent with a merged
+            document.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.EMailAction.SMTPServerSettings">
+            <summary>
+            Gets or sets outgoing mail server settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.EMailAction.UseMergedDocumentAs">
+            <summary>
+            Gets or sets how the merged documents needs to be used in the
+            e-mail messages.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.EMailAction.BeforeSend">
+            <summary>
+            Occurs before sending an e-mail.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.EMailAction.AfterSend">
+            <summary>
+            Occurs after sending an e-mail. 
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.EMailAction.Error">
+            <summary>
+            Occurs when an error in composing or sending the e-mail.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.EmailSender">
+            <summary>
+            This is the base class from which user classes sending
+            mail-merged documents should be derived.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.EmailSender.Send(System.Net.Mail.MailMessage)">
+            <summary>
+            Send the e-mail.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MergeInstanceBreakType">
+            <summary>
+            Defines how the flow of document-creation is broken after a
+            merge instance.
+            </summary>
+        </member>
+        <member name="F:Gnostice.MailMerge.MergeInstanceBreakType.Page">
+            <summary>
+            End the generation of the current document and start with a
+            new document.
+            </summary>
+        </member>
+        <member name="F:Gnostice.MailMerge.MergeInstanceBreakType.Paragraph">
+            <summary>
+            Start with a fresh paragraph.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeCleanupOptions">
+            <summary>
+            Defines what to do with merge-fields that were not replaced
+            by a merge instance.
+            </summary>
+        </member>
+        <member name="F:Gnostice.MailMerge.MailMergeCleanupOptions.RemoveUnmappedFields">
+            <summary>
+            Do nothing.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeFieldUpdateOperations">
+            <summary>
+            Defines options for handling a merge-field in a merge
+            instance.
+            </summary>
+        </member>
+        <member name="F:Gnostice.MailMerge.MailMergeFieldUpdateOperations.Remove">
+            <summary>
+            Replace the merge-field with merge-input data.
+            </summary>
+        </member>
+        <member name="F:Gnostice.MailMerge.MailMergeFieldUpdateOperations.Skip">
+            <summary>
+            Remove the merge-field from the output document.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.ImmutableKeyToValueList">
+            <summary>
+            Represents how merge fields are mapped to merge input data.
+            </summary>
+            <remarks>
+            Use an instance of this class to set the <see cref="!:Gnostice.Documents.MailMerge.FieldMapping" text="field mapping" />
+            of a <see cref="!:Gnostice.Documents.MailMerge" text="MailMerge" />
+            job. 
+            </remarks>
+        </member>
+        <member name="P:Gnostice.MailMerge.ImmutableKeyToValueList.Item(System.String)">
+            <summary>
+            \Returns the value for the mapping with specified field name.
+            
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.ImmutableKeyToValueList.Item(System.Int32)">
+            <summary>
+            \Returns the value for the field mapping with specified
+            index. 
+            </summary>
+            <summary>
+            \Returns the value for the field mapping with specified
+            index. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.Add(Gnostice.MailMerge.ImmutableKeyToValueMap{System.String,System.Object})">
+            <summary>
+            Adds specified field mapping to the list.
+            </summary>
+            <param name="KeyValueMap">Field mapping that needs to be
+                                      added.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.Add(System.String,System.Object)">
+            <summary>
+            Adds a field mapping with specified merge-field name and
+            value.
+            </summary>
+            <summary>
+            Adds a field mapping with specified merge-field name and
+            value.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.Remove(Gnostice.MailMerge.ImmutableKeyToValueMap{System.String,System.Object})">
+            <summary>
+            Removes specified field mapping from the list.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.Remove(System.String)">
+            <summary>
+            Removes a field mapping with specified key.
+            </summary>
+            <summary>
+            Removes a field mapping with specified key.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.ContainsField(System.String)">
+            <summary>
+            \Returns whether the specified merge field is available in
+            the list.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.ImmutableKeyToValueList.Count">
+            <summary>
+            Gets number of field mappings in the list. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueList.GetEnumerator">
+            <summary>
+            \Returns an enumerator for the list.
+            </summary>
+            <summary>
+            \Returns an enumerator for the list.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.IDynamicMailMergeSource">
+            <summary>
+            Represents user defined data source for mail merge operation
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.IDynamicMailMergeSource.GetFieldResult(Gnostice.Documents.DOM.Fields.MergeField,System.Object@,Gnostice.MailMerge.MailMergeFieldUpdateOperations)">
+            <summary>
+            Mail merge operation calls this function whenever it needs to update a field.
+            </summary>
+            <remarks>
+            User can choose to not update the field or user can select to remove the field from the output document.
+             </remarks>
+            <param name="field">field to update</param>
+            <param name="result"> value to update to the current field <paramref name="field" /></param>
+            <param name="removeField">whether to remove the current field</param>
+            <param name="DoNotUpdate">whether to update the field with the field result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.MailMerge.IDynamicMailMergeSource.MoveNext">
+            <summary>
+            Mail merge operation calls this function when the current record is completed. When there are more records to merge then user should return true. Else false to specify that there are no more records to perform mail merge operation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Gnostice.MailMerge.IDynamicMailMergeSource.Count">
+            <summary>
+            Mail merge operation calls this function to know the count of records. If the count is not known then return -1 or some estimated value. The value set to count is used while calculating progress. Count can also be updated dynamically during the mail merge operation. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMerge">
+            <summary>
+            Represents the mail-merge class.
+            </summary>
+            <value>
+            Use this class to create mail-merged documents. To perform
+            mail-merge, you need a template document (DOCX, DOC, DOTX,
+            DOTM or DOT) and a data source from which merge-fields in the
+            template can be replaced at run time. You can load
+            merge-field values from Dictionary&lt;string, Object&gt;,
+            DataTable, XElement/XML, DataRow, DataSet and even custom
+            data sources. The merged documents can be <see cref="!:Gnostice.Documents.SaveToFileAction" text="saved to files" />
+            or <see cref="!:Gnostice.Documents.SaveToStreamAction" text="streams" />
+            or be sent to <see cref="!:Gnostice.Documents.EMailAction" text="e-mail recipients" />.
+            </value>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMerge.#ctor">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.FieldMapping">
+            <summary>
+            Gets field mappings for fields in input template to data source
+            columns.
+            </summary>
+            <remarks>
+            Use this property to access field-mappings that have been
+            automatically created. You can also customize the mappings if
+            required. The mail merge process fills the fields in the
+            input template using the values from the supplied data
+            source. The automatic mapping is done on merge-fields (in the
+            template) to merge input data (from the data source) where
+            the column names match.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.MailMergeCleanupOptions">
+            <summary>
+            Gets or sets how to handle fields that have not been replaced
+            by a merge instance.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.MergeInstanceBreakType">
+            <summary>
+            Gets or sets how the mail-merge operation should respond when
+            a merge instance occurs.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.TemplateFileName">
+            <summary>
+            Gets or sets filename from which the template document is
+            loaded.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.DataSource">
+            <summary>
+            Gets or sets input data for mail-merge operation.
+            </summary>
+            <value>
+            Set a valid data source such as Dictionary&lt;string,
+            Object&gt;, DataTable, XElement/XML, DataRow, or DataSet
+            object for this property.
+            </value>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.BeginJob">
+            <summary>
+            Occurs when a merge operation is about to start.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.BeginMergeInstance">
+            <summary>
+            Occurs when a merge instance is about to occur, that is, when
+            a row of merge input data is about to be consumed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.FieldUpdating">
+            <summary>
+            Occurs when a field value is about to be updated.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.BeginPostMergeAction">
+            <summary>
+            Occurs when a post-merge operation is about to start.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.EndPostMergeAction">
+            <summary>
+            Occurs when a post-merge operation has ended.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.NeedFieldMapping">
+            <summary>
+            Occurs when the merge operation requires values for
+            merge-fields that do not have a corresponding field in the input data.
+            </summary>
+            <value>
+            Set an event handler that will provide a values for the merge fields. 
+            </value>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.EndMergeInstance">
+            <summary>
+            Occurs when a merge instance has been finished successfully,
+            that is, when a row of merge input data has been consumed.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.Progress">
+            <summary>
+            Occurs when a merge instance has occurred.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.Error">
+            <summary>
+            Occurs when an error condition was encountered in the merge job.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.MailMerge.EndJob">
+            <summary>
+            Occurs when a merge operation has ended.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMerge.TemplateObject">
+            <summary>
+            Gets the <see cref="!:Gnostice.Documents.IDocument" text="IDocument" /> version of the current template document. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMerge.LoadTemplate(System.String,System.String)">
+            <summary>
+            Loads mail-merge template from specified file with the specified password.
+            </summary>
+            <param name="fileName">Pathname of the template document
+                                   \file.</param>
+            <param name="password">Password with which the document
+                                   needs to be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMerge.LoadTemplate(System.IO.Stream,System.String)">
+            <summary>
+            Loads a mail-merge template from specified stream with
+            specified password.
+            </summary>
+            <param name="stream">A stream containing a mail\-merge
+                                 template.</param>
+            <param name="password">Password with which the document
+                                   needs to be decrypted.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMerge.LoadTemplate(Gnostice.Core.DOM.IDocument)">
+            <summary>
+            Loads a mail-merge template from specified <see cref="!:Gnostice.Documents.IDocument" text="IDocument" />
+            instance.
+            </summary>
+            <value>
+            Call this method with an instance of a class implementing the
+            IDocument interface.
+            </value>
+            <param name="source">The template document.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMerge.Merge(Gnostice.MailMerge.PostMergeAction)">
+            <summary>
+            Performs the mail merge operation.
+            </summary>
+            <param name="postMergeAction">Operation that needs to be
+                                          after each merged document is
+                                          created.</param>
+            <value>
+            Before calling this method, you need set the <see cref="!:Gnostice.Documents.MailMerge.TemplateFileName" text="document template" />
+            and the <see cref="!:Gnostice.Documents.MailMerge.DataSource" text="data source" />.
+            Using this method, you can get the merged documents <see cref="!:Gnostice.Documents.SaveToFileAction" text="saved to a file" />,
+            <see cref="!:Gnostice.Documents.SaveToStreamAction" text="saved to a stream" />
+            or <see cref="!:Gnostice.Documents.EMailAction" text="sent to email recipients" />.
+            </value>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeEventArgs">
+            <summary>
+            This class is the base class for event arguments to <see cref="!:Gnostice.Documents.MailMerge" text="MailMerge" />
+            events.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the merge operation needs to be
+            canceled.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEventArgs.CurrentIndex">
+            <summary>
+            Gets index of current merge instance in the current merge
+            job. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeProgressEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.MailMerge.Progress" text="MailMerge.Progress" /> event.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMergeProgressEventArgs.#ctor(System.Double,System.Int32,System.Int32)">
+            <summary>
+            Represents details of the <see cref="!:Gnostice.Documents.MailMerge.Progress" text="MailMerge.Progress" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeProgressEventArgs.ProgressPercentage">
+            <summary>
+            Gets percentage of the merge job that has been completed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeProgressEventArgs.Total">
+            <summary>
+            Gets the total number of merge instances.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeNeedFileNameEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.SaveToFileAction.NeedOutputFileName" text="SaveToFileAction.NeedOutputFileName" /> event
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.MailMergeNeedFileNameEventArgs.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates an instance of this class
+            </summary>
+            <param name="fileName">File name of the output document</param>
+            <param name="extn">File extension of the output document</param>
+            <param name="currentIndex">Current mail merge index</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedFileNameEventArgs.FileName">
+            <summary>
+            Gets or sets name of the output file.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedFileNameEventArgs.FileFormat">
+            <summary>
+            Gets the format of the file.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedFileNameEventArgs.OutputDocument">
+            <summary>
+            Gets the output document object which has the merge fields updated and which is about to be saved.
+            </summary>
+            <remarks>
+            This helps the users to edit the output document which is about to be saved.  
+            </remarks>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeNeedOutputStreamEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.SaveToStreamAction.NeedOutputStream" text="SaveToStreamAction.NeedOutputStream" /> event
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedOutputStreamEventArgs.FileFormat">
+            <summary>
+            Gets the format of the file.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedOutputStreamEventArgs.Stream">
+            <summary>
+            Gets or sets stream to which the output documents need to be saved.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedOutputStreamEventArgs.OutputDocument">
+            <summary>
+            Gets the output document object which has the merge fields updated and which is about to be saved.
+            </summary>
+            <remarks>
+            This helps the users to edit the output document which is about to be saved.  
+            </remarks>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeBeginJobEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.BeginJob" text="MailMerge.BeginJob" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginJobEventArgs.MergeInstanceBreakType">
+            <summary>
+            Gets or sets how to cause a break when a merge instance
+            occurs in this merge operation. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginJobEventArgs.MailMergeCleanupOptions">
+            <summary>
+            Gets or sets unmapped fields are handled for this merge
+            operation.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeEndJobEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.EndJob" text="MailMerge.EndMailMerge" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEndJobEventArgs.Result">
+            <summary>
+            Gets statistical information on the outcome of the merge job.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeBeginMergeInstanceEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.BeginMergeInstance" text="MailMerge.BeginMergeInstance" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginMergeInstanceEventArgs.MailMergeCleanupOptions">
+            <summary>
+            Gets or sets sets how unmapped merge-fields are handled in
+            the merge instance.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginMergeInstanceEventArgs.Skip">
+            <summary>
+            Gets or sets whether the particular merge instance needs to
+            be skipped.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginMergeInstanceEventArgs.FieldValues">
+            <summary>
+            Gets or sets current field mapping.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeEndMergeInstanceEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.EndMergeInstance" text="MailMerge.EndMergeInstance" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEndMergeInstanceEventArgs.FieldNameToValues">
+            <summary>
+            Gets field mapping used in the event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEndMergeInstanceEventArgs.OutputDocument">
+            <summary>
+            Gets instance of the last output document that had been
+            generated.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeBeginPostMergeEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.BeginPostMergeAction" text="MailMerge.BeginPostMergeAction" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeBeginPostMergeEventArgs.PostMergeAction">
+            <summary>
+            Gets or sets a post-merge action for the event. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeEndPostMergeEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.EndPostMergeAction" text="MailMerge.EndPostMergeAction" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeEndPostMergeEventArgs.PostMergeAction">
+            <summary>
+            Gets current post-merge action in the event.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeFieldUpdatingEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.FieldUpdating" text="MailMerge.FieldUpdating" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldUpdatingEventArgs.FieldInfo">
+            <summary>
+            Gets information about the merge-field that is about to be
+            replaced.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldUpdatingEventArgs.UpdateOperation">
+            <summary>
+            Gets or sets how to replace the merge-field.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldUpdatingEventArgs.OutputDocument">
+            <summary>
+            Gets the output document in this merge instance.
+            </summary>
+            <remarks>
+            Use this property to edit the output document.
+            </remarks>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeErrorEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.MailMerge.Error" text="MailMerge.Error" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeErrorEventArgs.Exception">
+            <summary>
+            Gets the exception instance raised by the error.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeFileOutputReadyEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.SaveToFileAction.OutputReady" text="SaveToFileAction.OutputReady" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFileOutputReadyEventArgs.FileName">
+            <summary>
+            Gets filename of the document that has been saved.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeStreamOutputReadyEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.SaveToStreamAction.OutputReady" text="SaveToStreamAction.OutputReady" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeStreamOutputReadyEventArgs.Stream">
+            <summary>
+            Gets the stream to which the document has been saved.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeIDocumentOutputReadyEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.SaveToIDocumentAction.OutputReady" text="SaveToIDocumentAction.OutputReady" />
+            event.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeIDocumentOutputReadyEventArgs.OutputDocument">
+            <summary>
+            Gets the IDocument object which is mail merged.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeNeedFieldMappingArgs">
+            <summary>
+            This class represents details about the <see cref="!:Gnostice.Documents.MailMerge.NeedFieldMapping" text="MailMerge.NeedFieldMapping" />
+            event. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeNeedFieldMappingArgs.NameMapping">
+            <summary>
+            Gets or sets name-value pairs for providing values for
+            merge-fields without corresponding fields in the input data.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldInfo.Field">
+            <summary>
+            Gets the merge field to which value to be updated
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldInfo.FillValue">
+            <summary>
+            Gets or sets the value to update to the current field. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeFieldInfo.IsUnmapped">
+            <summary>
+            Indicates whether field is unmapped
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergePreferences.RemoveUnusedFields">
+            <summary>
+            Gets or sets the boolean value to indicate whether to remove all unused fields 
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.MailMergeResult">
+            <summary>
+            Represents statistical information on the outcome of a Mail Merge /&gt;.
+            
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.SucceededCount">
+            <summary>
+            Gets numbers of merge instance that were successful.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.SkippedCount">
+            <summary>
+            Gets number of merge instance that were skipped.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.FailedCount">
+            <summary>
+            Gets number of merge instances that failed.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.CancelledCount">
+            <summary>
+            Gets number of merge instance that were canceled.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.TotalCount">
+            <summary>
+            Gets number of merge instances in total.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.MailMergeResult.FailedIndicies">
+            <summary>
+            Gets list of indices of the merge instances that failed.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.ImmutableKeyToValueMap`2">
+            <summary>
+            This class maps merge-field names with specified values.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.ImmutableKeyToValueMap`2.#ctor(`0,`1)">
+            <summary>
+            Creates a new instance of this class with specified field
+            name and value.
+            </summary>
+            <param name="key">Merge\-field name.</param>
+            <param name="value">Value of the field.</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.ImmutableKeyToValueMap`2.Key">
+            <summary>
+            Gets the merge-field name.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.ImmutableKeyToValueMap`2.Value">
+            <summary>
+            Gets or sets value for the merge-field.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.Message">
+            <summary>
+            Represents an e-mail message that is sent with a merged
+            document. 
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.Message.#ctor">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.Message.#ctor(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Creates a new instance of this class with specified sender
+            and recipient e-mail addresses.
+            </summary>
+            <param name="from">EmailSender address of the sender.</param>
+            <param name="to">List of recipient e\-mail addresses.</param>
+        </member>
+        <member name="M:Gnostice.MailMerge.Message.#ctor(System.String,System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Creates a new instance of this class with specified sender
+            email addresses, recipient e-mail addresses, subject and
+            body.
+            </summary>
+            <param name="from">EmailSender address of the sender.</param>
+            <param name="to">List of recipient e\-mail addresses.</param>
+            <param name="subject">Subject of the e\-mail.</param>
+            <param name="body">Body of the e\-mail.</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Priority">
+            <summary>
+            Gets or sets priority header for the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.From">
+            <summary>
+            Gets or sets the e-mail address from which the messages need
+            to be sent.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Sender">
+            <summary>
+            Gets or sets the name of the sender of the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.To">
+            <summary>
+            Gets or sets email addresses of the recipients of the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.CC">
+            <summary>
+            Gets or sets carbon copy e-mail addresses.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.BCC">
+            <summary>
+            Gets or sets blind carbon copy email addresses.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Subject">
+            <summary>
+            Gets or sets subject of the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Body">
+            <summary>
+            Gets or sets body of the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.BodyEncoding">
+            <summary>
+            Gets or sets how the e-mail is encoded.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.SubjectEncoding">
+            <summary>
+            Gets or sets encoding of the subject of the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.ReplyTo">
+            <summary>
+            Gets "reply-to" header for the e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.DeliveryNotificationOptions">
+            <summary>
+            Describes the delivery notification options for e-mail.
+            </summary>
+            <seealso cref="T:System.Net.Mail.DeliveryNotificationOptions" />
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Headers">
+            <summary>
+            Gets or sets e-mail headers that need to be added to the
+            e-mail.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.HeadersEncoding">
+            <summary>
+            Gets or sets how the e-mail headers are encoded.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.MailFormat">
+            <summary>
+            Gets or sets email format.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.Message.Attachments">
+            <summary>
+            Gets file attachments sent with an e-mail message.
+            
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.PostMergeAction">
+            <summary>
+            Represents a post-merge action.
+            </summary>
+            <value>
+            After a mail-merge operation, the merged documents can be
+            saved to files or streams or they could be e-mail to specific
+            recipients. Use one of the derived classes to perform the
+            post-merge action.
+            </value>
+        </member>
+        <member name="M:Gnostice.MailMerge.PostMergeAction.#ctor(System.String,Gnostice.Core.EncoderSettings)">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+            <param name="outputFileFormat">\Output file format specified
+                                           by its file extension. For
+                                           \example, ".docx".</param>
+            <param name="encoderSettings">\File format settings.</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.PostMergeAction.FileFormat">
+            <summary>
+            Gets or sets output file format.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.PostMergeAction.EncoderSettings">
+            <summary>
+            Gets or sets output format encoder settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.PostMergeAction.ActionName">
+            <summary>
+            Gets name of the action.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.SaveToFileAction">
+            <summary>
+            Represents a post-merge action to save the documents to a
+            \file.
+            </summary>
+        </member>
+        <member name="M:Gnostice.MailMerge.SaveToFileAction.#ctor(System.String,System.String,System.String,Gnostice.Core.EncoderSettings)">
+            <summary>
+            Creates a new instance of this class.
+            </summary>
+            <param name="outputDir">Pathname of the output
+                                    directory.</param>
+            <param name="fileName">Name of the output file.</param>
+            <param name="outputFileFormat">\Output file format specified
+                                           by its file extension. For
+                                           \example, ".docx". </param>
+            <param name="encoderSettings">Format settings of the output
+                                          document.</param>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToFileAction.OutputFileName">
+            <summary>
+            Gets or sets the file name pattern which will act as the place holder and its value will be dynamically replaced with the data from the data source column of the current record.
+            </summary>
+            <remarks>
+            The place holder template is to be covered with double angular brackets
+            </remarks>
+            <example>
+                <code><![CDATA[
+            MailMerge mailMerge = new MailMerge();
+            Dictionary<string, Object> dataSource = new Dictionary<string, Object>()
+             {
+                 {"SenderName", "Gnostice"},
+                 {"ToName", "Somebody"}
+            };
+            mailMerge.MergeInstanceBreakType = MergeInstanceBreakType.Document;
+            mailMerge.TemplateFileName = inputDocDirectory + "Letter.docx";
+            mailMerge.DataSource = dataSource;
+            SaveToFileAction saveAction = new SaveToFileAction("c:\\", "Letter to {{ToName}}", ".docx");	
+            mailMerge.Merge(saveAction);]]></code>
+            </example>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToFileAction.OutputDirectory">
+            <summary>
+            Gets or sets the folder to which the mail merged documents
+            need to be saved.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToFileAction.Result">
+            <summary>
+            Gets the result of save to file post merge action. Result stores the list of output filenames which are successfully saved.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToFileAction.NeedOutputFileName">
+            <summary>
+            Occurs when a merged document is ready to be saved to a file.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToFileAction.OutputReady">
+            <summary>
+            Occurs when the post merge action is completed and the output
+            document has been saved.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToFileAction.Error">
+            <summary>
+            Occurs when there is an error in the save to file post merge action.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToFileAction.ActionName">
+            <summary>
+            Gets the name of the post-merge action.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.SaveToIDocumentAction">
+            <summary>
+            Represents the save to IDocument post merge action class.
+            </summary>
+            <remarks>
+            This class enables to save the mail merged documents to the IDocument object in the desired output format. This enables later operation the resultant output document object.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToIDocumentAction.Result">
+            <summary>
+            Gets the result of save to IDocument post merge action. Result stores the list of output IDocument objects which are successfully mail merged.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToIDocumentAction.OutputReady">
+            <summary>
+            Occurs when the save to IDocument post merge action is completed and the output
+            IDocument is ready.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToIDocumentAction.Error">
+            <summary>
+            Occurs when there is an error in the save to IDocument post merge action.
+            </summary>
+        </member>
+        <member name="T:Gnostice.MailMerge.SaveToStreamAction">
+            <summary>
+            Represents the save to stream post merge action class.
+            </summary>
+            <remarks>
+            This class enables to save the mail merged documents to the output stream in the desired output format.
+            </remarks>
+        </member>
+        <member name="P:Gnostice.MailMerge.SaveToStreamAction.Result">
+            <summary>
+            Gets the result of save to stream post merge action. Result stores the list of output streams which are successfully saved.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToStreamAction.NeedOutputStream">
+            <summary>
+            Occurs when a merged document is ready and needs a stream to
+            which it can be saved.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToStreamAction.OutputReady">
+            <summary>
+            Occurs when the save to stream post merge action is completed and the output
+            document has been saved to the stream.
+            </summary>
+        </member>
+        <member name="E:Gnostice.MailMerge.SaveToStreamAction.Error">
+            <summary>
+            Occurs when there is an error in the save to stream post merge action.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.SMTPServerSettings.Host">
+            <summary>
+            Gets or sets SMTP server address.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.SMTPServerSettings.Port">
+            <summary>
+            Gets or sets SMTP server port number.
+            </summary>
+        </member>
+        <member name="P:Gnostice.MailMerge.SMTPServerSettings.EnableSsl">
+            <summary>
+            Gets or sets whether SSL connection security is enabled.
+            </summary>
+        </member>
+    </members>
+</doc>

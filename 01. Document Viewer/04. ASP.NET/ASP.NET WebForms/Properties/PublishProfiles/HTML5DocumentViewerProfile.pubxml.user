@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/datasheet-de.pdf">
+      <publishTime>01/12/2015 16:32:01</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>12/18/2014 14:00:20</publishTime>
+    </File>
+    <File Include="bin/Gnostice.Core.dll">
+      <publishTime>01/01/2015 14:32:54</publishTime>
+    </File>
+    <File Include="bin/Gnostice.Documents.Controls.HTML.dll">
+      <publishTime>01/12/2015 12:11:20</publishTime>
+    </File>
+    <File Include="bin/Gnostice.Documents.dll">
+      <publishTime>01/01/2015 14:32:57</publishTime>
+    </File>
+    <File Include="bin/HTML5_DocumentViewer.dll">
+      <publishTime>01/12/2015 16:48:04</publishTime>
+    </File>
+    <File Include="bin/Ionic.Zlib.dll">
+      <publishTime>12/18/2014 14:00:50</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>12/18/2014 14:00:21</publishTime>
+    </File>
+    <File Include="Content/Images/a.png">
+      <publishTime>01/10/2015 11:32:38</publishTime>
+    </File>
+    <File Include="Content/Images/formbg.gif">
+      <publishTime>01/10/2015 11:32:38</publishTime>
+    </File>
+    <File Include="Content/Images/gnostice.png">
+      <publishTime>01/10/2015 11:32:38</publishTime>
+    </File>
+    <File Include="Content/Images/pdfe_button_175.gif">
+      <publishTime>01/10/2015 11:32:38</publishTime>
+    </File>
+    <File Include="Content/Images/selected Icons resized 60.png">
+      <publishTime>01/10/2015 11:45:31</publishTime>
+    </File>
+    <File Include="Content/Stylesheet/Stylesheet1.css">
+      <publishTime>01/12/2015 16:12:58</publishTime>
+    </File>
+    <File Include="CSS/default.theme.css">
+      <publishTime>01/12/2015 16:01:42</publishTime>
+    </File>
+    <File Include="CSS/documentviewer.css">
+      <publishTime>01/10/2015 18:20:52</publishTime>
+    </File>
+    <File Include="CSS/Images/99.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/download.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/dropdown.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/first.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/last.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/loadDocument.gif">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/loading_background.gif">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/next.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/open.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/prev.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/print.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/shadow.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/texture.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/togglemenu.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/zoomin.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/zoommenuarrows.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="CSS/Images/zoomout.png">
+      <publishTime>01/09/2015 14:22:56</publishTime>
+    </File>
+    <File Include="DocumentViewer.html">
+      <publishTime>01/12/2015 16:47:14</publishTime>
+    </File>
+    <File Include="Script/documentviewer.controller.js">
+      <publishTime>01/10/2015 18:59:10</publishTime>
+    </File>
+    <File Include="Script/documentviewer.plugin.js">
+      <publishTime>01/12/2015 16:01:31</publishTime>
+    </File>
+    <File Include="Script/documentviewer.view.js">
+      <publishTime>01/12/2015 16:03:24</publishTime>
+    </File>
+    <File Include="Script/jquery-1.11.0.min.js">
+      <publishTime>01/10/2015 17:10:27</publishTime>
+    </File>
+    <File Include="Script/jquery.smooth-scroll.js">
+      <publishTime>01/10/2015 17:10:27</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/12/2015 16:48:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

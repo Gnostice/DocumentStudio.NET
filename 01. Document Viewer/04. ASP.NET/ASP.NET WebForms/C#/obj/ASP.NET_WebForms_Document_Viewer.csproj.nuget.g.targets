@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)msbuild.webapplication.copycontentlinkedfiles\1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets" Condition="Exists('$(NuGetPackageRoot)msbuild.webapplication.copycontentlinkedfiles\1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets')" />
+  </ImportGroup>
+</Project>

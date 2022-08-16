@@ -1,0 +1,9 @@
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Printer.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_Document_Printer.pdb
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\WinForms_Document_Printer.csprojAssemblyReference.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\Printer_Demo.DocumentPrinterDemo.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\Printer_Demo.Properties.Resources.resources
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\WinForms_Document_Printer.csproj.GenerateResource.cache
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\WinForms_Document_Printer.csproj.CopyComplete
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\WinForms_CS_Document_Printer.exe
+C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\02. Document Printer\01. WinForms\obj\x86\Debug\WinForms_CS_Document_Printer.pdb

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "F4Syl6cgiVRVJgFXf4rMhvvEvaTe5uqNo6F/jJDe2bpwCCJbfGRYruf/ZCPgDy+G4bHhzhsmQT+yfoyIWa2Dgw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET MVC\\VB\\ASP.NET_MVC_VB_DocumentViewer.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\buildadmin\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.7\\microsoft.aspnet.webpages.3.2.7.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\microsoft.codedom.providers.dotnetcompilerplatform\\2.0.1\\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+    "C:\\Users\\buildadmin\\.nuget\\packages\\msbuild.webapplication.copycontentlinkedfiles\\1.1.0-beta\\msbuild.webapplication.copycontentlinkedfiles.1.1.0-beta.nupkg.sha512"
+  ],
+  "logs": []
+}

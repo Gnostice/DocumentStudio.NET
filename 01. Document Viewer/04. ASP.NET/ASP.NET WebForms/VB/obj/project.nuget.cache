@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4ixowJQMb9Ys9yfwvM8jamLAmnFV6329dMJlAPnHVZOTMH1PnAwCCi482KgTHJL8y+Qsfdkya52NLwK2lEQ2Dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\buildadmin\\Documents\\Gnostice\\Document Studio .NET\\Demos\\01. Document Viewer\\04. ASP.NET\\ASP.NET WebForms\\VB\\ASP.NET_WebForms_VB_DocumentViewer.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\buildadmin\\.nuget\\packages\\msbuild.webapplication.copycontentlinkedfiles\\1.1.0-beta\\msbuild.webapplication.copycontentlinkedfiles.1.1.0-beta.nupkg.sha512"
+  ],
+  "logs": []
+}

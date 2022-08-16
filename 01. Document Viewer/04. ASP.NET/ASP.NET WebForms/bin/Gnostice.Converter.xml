@@ -1,0 +1,723 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gnostice.Converter</name>
+    </assembly>
+    <members>
+        <member name="T:Gnostice.Converter.ConverterJobInfoEventArgs">
+            <summary>
+            Represents information about a conversion job. 
+            </summary>                                     
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.IsStreamInput">
+            <summary>
+            Gets whether the input documents have been specified as
+            streams.
+            </summary>                                             
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.IsStreamOutput">
+            <summary>
+            Gets whether output documents are set to be saved to streams.
+            </summary>                                                   
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.InputDocumentCount">
+            <summary>
+            Gets number of input documents that need to be converted.
+            </summary>                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.OutputDocumentCount">
+            <summary>
+            Gets number of output documents.
+            </summary>                      
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.InputFilePathList">
+            <summary>
+            Gets list of pathnames of input documents.
+            </summary>                                
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.InputStreamList">
+            <summary>
+            Gets a list of streams containing the input documents.
+            </summary>                                            
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.OutputFilePathList">
+            <summary>
+            Gets list of output documents.
+            </summary>                    
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.OutputStreamList">
+            <summary>
+            Gets list of streams to which input documents need to be
+            saved.
+            </summary>                                              
+        </member>
+        <member name="P:Gnostice.Converter.ConverterJobInfoEventArgs.OutputFormat">
+            <summary>
+            Gets format to which input documents need to be converted.
+            </summary>                                                
+        </member>
+        <member name="T:Gnostice.Converter.ConverterDocumentInfoEventArgs">
+            <summary>
+            Represents details about a document in a conversion job. 
+            </summary>                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterDocumentInfoEventArgs.PageCount">
+            <summary>
+            Gets number of total documents in a conversion job.
+            </summary>                                         
+        </member>
+        <member name="P:Gnostice.Converter.ConverterDocumentInfoEventArgs.InputIndex">
+            <summary>
+            Gets index of the document in a conversion job.
+            </summary>                                     
+        </member>
+        <member name="P:Gnostice.Converter.ConverterDocumentInfoEventArgs.FileName">
+            <summary>
+            Gets file name of the document.
+            </summary>                     
+        </member>
+        <member name="P:Gnostice.Converter.ConverterDocumentInfoEventArgs.ConverterSettings">
+            <summary>
+            Gets or sets conversion settings specified for this document.
+            </summary>                                                   
+        </member>
+        <member name="T:Gnostice.Converter.ConverterEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.DocumentConverter.BeginJob" text="DocumentConverter.BeginJob" />
+            or <see cref="!:Gnostice.Documents.DocumentConverter.EndJob" text="DocumentConverter.EndJob" />
+            event. 
+            </summary>                                                                                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEventArgs.JobInfo">
+            <summary>
+            Gets information about the conversion job.
+            </summary>                                
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEventArgs.Cancel">
+            <summary>
+            Gets or sets whether the conversion job needs to be canceled.
+            
+            </summary>                                                   
+        </member>
+        <member name="T:Gnostice.Converter.ConverterBeginDocumentEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.BeginDocument" text="DocumentConverter.BeginDocument" />
+            event. 
+            </summary>                                                                                                                       
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginDocumentEventArgs.InputDocument">
+            <summary>
+            Gets the input document.
+            </summary>              
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginDocumentEventArgs.SkipDocument">
+            <summary>
+            Gets or sets whether the conversion of the current document
+            is set to be skipped.
+            </summary>                                                 
+        </member>
+        <member name="T:Gnostice.Converter.ConverterEndDocumentEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.DocumentConverter.EndDocument" text="DocumentConverter.EndDocument" />
+            event.
+            </summary>                                                                                                                       
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndDocumentEventArgs.InputDocument">
+            <summary>
+            Gets input document. 
+            </summary>           
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndDocumentEventArgs.OutputPageCount">
+            <summary>
+            Gets number of pages in the output document.
+            </summary>                                  
+        </member>
+        <member name="T:Gnostice.Converter.ConverterBeginJobEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.BeginPage" text="DocumentConverter.BeginPage" />
+            event. 
+            </summary>                                                                                                               
+        </member>
+        <member name="T:Gnostice.Converter.ConverterEndJobEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.EndJob" text="DocumentConverter.EndJob" />
+            event.
+            </summary>                                                                                                         
+        </member>
+        <member name="T:Gnostice.Converter.ConverterBeginPageEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.BeginPage" text="DocumentConverter.BeginPage" />
+            event. 
+            </summary>                                                                                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginPageEventArgs.InputDocument">
+            <summary>
+            Gets document containing the page.
+            </summary>                        
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginPageEventArgs.InputPageNumber">
+            <summary>
+            Gets number of the page.
+            </summary>              
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginPageEventArgs.SkipDocument">
+            <summary>
+            Gets or sets whether conversion of the current document
+            should be stopped and the conversion of the next document
+            should be proceeded to.
+            </summary>                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterBeginPageEventArgs.SkipPage">
+            <summary>
+            Gets or sets whether conversion of the current page should be
+            stop and the conversion of the next page should be proceeded
+            to.
+            </summary>                                                   
+        </member>
+        <member name="T:Gnostice.Converter.ConverterEndPageEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.EndPage" text="DocumentConverter.EndPage" />
+            event.
+            </summary>                                                                                                           
+        </member>
+        <member name="M:Gnostice.Converter.ConverterEndPageEventArgs.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndPageEventArgs.InputDocument">
+            <summary>
+            Gets information about the current input document.
+            </summary>                                        
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndPageEventArgs.InputPageNumber">
+            <summary>
+            Gets number of the current page that is converted from the
+            \input document. 
+            </summary>                                                
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndPageEventArgs.OutputPageNumber">
+            <summary>
+            Gets number of the current page that is converted from the
+            \output document. 
+            </summary>                                                
+        </member>
+        <member name="P:Gnostice.Converter.ConverterEndPageEventArgs.SkipDocument">
+            <summary>
+            Gets or sets whether conversion of the current document needs
+            to be abandoned.
+            </summary>                                                   
+        </member>
+        <member name="T:Gnostice.Converter.ConverterErrorEventArgs">
+            <summary>
+            Represents details about a <see cref="!:Gnostice.Documents.DocumentConverter.Error" text="DocumentConverter.ConverterError" />
+            event. 
+            </summary>                                                                                                                           
+        </member>
+        <member name="M:Gnostice.Converter.ConverterErrorEventArgs.#ctor(Gnostice.Converter.ConverterJobInfoEventArgs,System.String,System.Int32,System.Exception)">
+            <summary>
+            Creates an instance of this class. 
+            </summary>                         
+        </member>
+        <member name="P:Gnostice.Converter.ConverterErrorEventArgs.ErrorMessage">
+            <summary>
+            Gets error description.
+            </summary>             
+        </member>
+        <member name="P:Gnostice.Converter.ConverterErrorEventArgs.InputDocumentIndex">
+            <summary>
+            Gets index of the document with which the error occurred.
+            </summary>                                               
+        </member>
+        <member name="P:Gnostice.Converter.ConverterErrorEventArgs.InnerException">
+            <summary>
+            Gets Exception instance that caused the error.
+            </summary>                                    
+        </member>
+        <member name="P:Gnostice.Converter.ConverterNeedOutputStreamEventArgs.FileExtension">
+            <summary>
+            Gets extension of the output document. 
+            </summary>                             
+        </member>
+        <member name="P:Gnostice.Converter.ConverterNeedOutputStreamEventArgs.Stream">
+            <summary>
+            Gets or sets stream to which the output documents need to be
+            saved.
+            </summary>                                                  
+        </member>
+        <member name="T:Gnostice.Converter.ConverterNeedFileNameEventArgs">
+            <summary>
+            Represents details about the <see cref="!:Gnostice.Documents.DocumentConverter.NeedFileName" text="DocumentConverter.NeedFileName" />
+            event.
+            </summary>                                                                                                                         
+        </member>
+        <member name="M:Gnostice.Converter.ConverterNeedFileNameEventArgs.#ctor(System.String,System.String,Gnostice.Converter.ConverterJobInfoEventArgs)">
+            <summary>
+            Creates an instance of this class.
+            </summary>
+            <param name="doc">Document that needs to be saved.</param>
+            <param name="pageNumber">Number of the original page of the
+                                     \input document or the total page
+                                     count of the input document.</param>
+        </member>
+        <member name="P:Gnostice.Converter.ConverterNeedFileNameEventArgs.FileName">
+            <summary>
+            Gets or sets name of the output file.
+            </summary>                           
+        </member>
+        <member name="P:Gnostice.Converter.ConverterNeedFileNameEventArgs.FileExtension">
+            <summary>
+            Gets extension of the file.
+            </summary>       
+        </member>
+        <member name="T:Gnostice.Converter.ConverterOutputReadyEventArgs">
+            <summary>
+            Represents details about <see cref="!:Gnostice.Documents.DocumentConverter.OutputReady" text="DocumentConverter.OutputReady" />
+            event.
+            </summary>                                                                                                                   
+        </member>
+        <member name="P:Gnostice.Converter.ConverterOutputReadyEventArgs.Stream">
+            <summary>
+            Gets the stream to which the document has been saved.
+            </summary>                                           
+        </member>
+        <member name="P:Gnostice.Converter.ConverterOutputReadyEventArgs.FileName">
+            <summary>
+            Gets filename of the document that has been saved.
+            </summary>                                        
+        </member>
+        <member name="T:Gnostice.Converter.ConverterPreferences">
+            <summary>
+            This class represents <see cref="!:Gnostice.Converter.Preferences" text="DocumentConverter" />
+            settings such as those for input page range, password and digitization.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Converter.ConverterPreferences.DigitizerSettings">
+            <summary>
+            Gets digitization settings. 
+            </summary>
+        </member>
+        <member name="P:Gnostice.Converter.ConverterPreferences.Password">
+            <summary>
+            Gets or sets password settings.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Converter.ConverterPreferences.FormatterSettings">
+            <summary>
+            Gets or sets formatting settings for viewer controls. 
+            </summary>
+        </member>
+        <member name="T:Gnostice.Converter.ConverterSettings">
+            <summary>
+            This class represents document conversion settings such as
+            the input page ranges.
+            </summary>                                                
+        </member>
+        <member name="P:Gnostice.Converter.ConverterSettings.PageRange">
+            <summary>
+            Gets or sets pages that need to be converted.
+            </summary>                                   
+        </member>
+        <member name="P:Gnostice.Converter.ConverterSettings.CustomPageRange">
+            <summary>
+            Gets or sets specific pages that need to be converted.
+            </summary>
+            <remarks>
+            Requires <see cref="!:Gnostice.Documents.ConverterSettings.PageRange" text="PageRange" />
+            property to be set to <see cref="!:Gnostice.Documents.PageRange.Custom" text="PageRange.Custom" />.
+            </remarks>                                                                                       
+        </member>
+        <member name="T:Gnostice.Converter.DocumentConverter">
+            <summary>
+            Represents the document converter component. 
+            </summary>
+        </member>
+        <member name="F:Gnostice.Converter.DocumentConverter.PRODUCT_NAME">
+            <summary>
+            The name to display in the license install form
+            </summary>
+        </member>
+        <member name="F:Gnostice.Converter.DocumentConverter._lastDesignContext">
+            <summary>
+            The license context last time we checked the license
+            </summary>
+            <remarks>
+            This is used to reduce the number of times the license check needs to be done.
+            If your control is likely to be used in multiple places (eg like a text box) then 
+            checking the license each time a control is created can be very annoying when 
+            in evaluation mode.
+            </remarks>
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.#ctor">
+            <summary>
+            Creates an instance of the document converter component.
+            </summary>                                              
+        </member>
+        <member name="P:Gnostice.Converter.DocumentConverter.EncoderSettings">
+            <summary>
+            Gets format-specific conversion settings. 
+            </summary>                                        
+        </member>
+        <member name="P:Gnostice.Converter.DocumentConverter.ConverterSettings">
+            <summary>
+            Gets or sets conversion operation settings.
+            </summary>                                 
+        </member>
+        <member name="P:Gnostice.Converter.DocumentConverter.Preferences">
+            <summary>
+            Gets or sets conversion settings such as those for input page
+            ranges, password and digitization.
+            </summary>                                                   
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.NeedPassword">
+            <summary>
+            Occurs when a password is required to decrypt a document.
+            </summary>                                               
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.NeedFileName">
+            <summary>
+            Occurs when a file name can be specified for saving a
+            converted document.
+            </summary>                                           
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.NeedOutputStream">
+            <summary>
+            Occurs when a stream can be specified for saving a converted
+            document.
+            </summary>                                                  
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.BeginDocument">
+            <summary>
+            Occurs when a document is about to be converted.
+            </summary>                                      
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.EndDocument">
+            <summary>
+            Occurs when the conversion ends for a document.
+            </summary>                                     
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.BeginJob">
+            <summary>
+            Occurs when a conversion job for a set of documents is about
+            to start.
+            </summary>                                                  
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.EndJob">
+            <summary>
+            Occurs when conversion of a document has ended.
+            </summary>                                     
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.BeginPage">
+            <summary>
+            Occurs when conversion of a page is about to start.
+            </summary>                                             
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.EndPage">
+            <summary>
+            Occurs when a page in a page has been converted.
+            </summary>                                          
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.Error">
+            <summary>
+            Occurs when there is an error with the conversion operation.
+            </summary>                                          
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.AddAttachment">
+            <summary>
+            Occurs when the attachment is added to a PDF portfolio. 
+            </summary>                                     
+        </member>
+        <member name="E:Gnostice.Converter.DocumentConverter.OutputReady">
+            <summary>
+            Occurs when the conversion job has completed and the output
+            documents have been saved.
+            </summary>                                                 
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.ConvertToFile(System.String,System.String,Gnostice.Core.EncoderSettings,Gnostice.Converter.ConverterSettings,System.String)">
+            <summary>
+            Converts document from specified file to specified format and
+            saves it to specified file.
+            </summary>
+            <param name="inputDocument">Pathname of the document
+                                        that needs to be converted.</param>
+            <param name="outputDocument">Pathname of the file to
+                                         which the converted document
+                                         needs to be saved to.</param>
+            <param name="converterSettings">Conversion settings with
+                                            which the document needs to
+                                            be converted.</param>
+            <param name="encoderSettings">Format\-specific conversion
+                                          settings with which the
+                                          document needs to be
+                                          converted.</param>
+            <param name="inputDocPassword">Password with which the
+                                           document needs to be opened
+                                           if it is encrypted.</param>
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.ConvertToFile(System.Object,System.String,System.String,System.String,Gnostice.Documents.ConversionMode,Gnostice.Core.EncoderSettings,Gnostice.Converter.ConverterSettings,System.String)">
+            <property name="flag" value="deprecated" />
+            
+            <summary>
+            Convert specified files to specified format using specified
+            settings.
+            </summary>
+            <param name="input">\input document that needs
+                                to be converted (a stream, a
+                                \file pathname, a list of
+                                streams, a list of
+                                pathnames)</param>
+            <param name="outputFileFormat">format to which the input
+                                           document needs to be
+                                           converted</param>
+            <param name="outputDir">folder to which the
+                                    converted documents need to
+                                    be saved</param>
+            <param name="baseFileName">prefix for the output
+                                       documents</param>
+            <param name="mergeAfterConvert">whether the output documents
+                                            need to be merged into a
+                                            single document</param>
+            <param name="encoderSettings">format\-specific conversion
+                                        settings</param>
+            <param name="converterSettings">conversion operation
+                                          settings</param>
+            <param name="inputDocPassword">password with which the
+                                           \input document needs to be
+                                           opened</param>               
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.ConvertToStream(System.Object,System.String,Gnostice.Documents.ConversionMode,Gnostice.Core.EncoderSettings,Gnostice.Converter.ConverterSettings,System.String)">
+            <summary>
+            Convert specified files to specified format and returns a
+            list of streams containing the converted documents.
+            </summary>
+            <param name="input">Document that needs to be
+                                converted (a stream, a file
+                                pathname, a list of streams,
+                                a list of pathnames)</param>
+            <param name="outputFileFormat">Format to which the input
+                                           document needs to be
+                                           converted.</param>
+            <param name="mergeAfterConvert">Whether the output documents
+                                            need to be merged into a
+                                            single document.</param>
+            <param name="converterSettings">Conversion job settings.</param>
+            <param name="encoderSettings">Format\-specific conversion
+                                        settings.</param>
+            <param name="inputDocPassword">Password with which the
+                                           \input document needs to be
+                                           opened.</param>                
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.Convert(Gnostice.Core.DOM.IDocument,System.Object,System.String)">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="M:Gnostice.Converter.DocumentConverter.Convert(Gnostice.Core.DOM.IDocument,System.String)">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Gnostice.Converter.EncoderSettingsList">
+            <summary>
+            This class provides an indexer for <see cref="!:Gnostice.Converter.EncoderSettings" text="file format encoders" />
+            supported by the <see cref="T:Gnostice.Converter.DocumentConverter" text="DocumentConverter" />
+            class.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Converter.EncoderSettingsList.Item(System.String)">
+            <summary>
+            Gets read-only conversion settings for specified format.
+            </summary>
+            <param name="fileFormat">\File extension or MIME type
+                                     specifying the file format.</param>
+        </member>
+        <member name="T:Infralution.Licensing.Forms.EvaluationDialogResult">
+            <summary>
+            The result of displaying an <see cref="T:Infralution.Licensing.Forms.EvaluationDialog"/>
+            </summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialogResult.Exit">
+            <summary>
+            Exit the application
+            </summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialogResult.Continue">
+            <summary>
+            Continue the evaluation
+            </summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialogResult.InstallLicense">
+            <summary>
+            Install a license for the application 
+            </summary>
+        </member>
+        <member name="T:Infralution.Licensing.Forms.EvaluationDialog">
+            <summary>
+            Form to display to evaluation customers
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.#ctor">
+            <summary>
+            Default constructor (required for designer)
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.#ctor(Infralution.Licensing.ASP.EvaluationMonitor)">
+            <summary>
+            Create a new instance of the form using the given evaluation monitor 
+            </summary>
+            <param name="evaluationMonitor">The evalulation monitor class to use to store the evaluation data</param>
+            <remarks>Uses the default ProductName from the application assembly info</remarks>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.#ctor(Infralution.Licensing.ASP.EvaluationMonitor,System.String)">
+            <summary>
+            Create a new instance of the form using the given evaluation monitor and product name
+            </summary>
+            <param name="productName">Name of the product being licensed</param>
+            <param name="evaluationMonitor">The evalulation monitor class to use to store the evaluation data</param>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.EvaluationMonitor">
+            <summary>
+            The evaluation monitor used to determine the trial period
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.ProductName">
+            <summary>
+            The name of the product being licensed
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.TrialDays">
+            <summary>
+            The number of days for the evaluation period
+            </summary>
+            <remarks>
+            After this period has expired the ContinueButton will be enabled after an increasing delay
+            until the <see cref="P:Infralution.Licensing.Forms.EvaluationDialog.ExtendedTrialDays"/> limit is reached - at which point the ContinueButton
+            will no longer be enabled.
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.ExtendedTrialDays">
+            <summary>
+            The number of trial days after which evaluation is no longer enabled
+            </summary>
+            <remarks>
+            If this is set to a value greater then <see cref="P:Infralution.Licensing.Forms.EvaluationDialog.TrialDays"/> then users can continue
+            to use the product past the evaluation period - however there is an increasing delay in
+            enabling the ContinueButton.  Once the ExtendedTrialDays limit is reached the ContinueButton 
+            will no longer be enabled.
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.ExtendedTrialDelay">
+            <summary>
+            The time to delay enabling the <see cref="F:Infralution.Licensing.Forms.EvaluationDialog.continueButton"/> for each day 
+            once the <see cref="P:Infralution.Licensing.Forms.EvaluationDialog.TrialDays"/> period is exceeded.
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.EvaluationMessage">
+            <summary>
+            The message to display to the user
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.Forms.EvaluationDialog.DialogResult">
+            <summary>
+            The result for this dialog
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.ShowDialog">
+            <summary>
+            Show the dialog
+            </summary>
+            <returns>The result of the evaluation dialog</returns>
+            <remarks>
+            The <see cref="P:Infralution.Licensing.Forms.EvaluationDialog.EvaluationMonitor"/> must be set (via the constructor or property) 
+            prior to calling this method.
+            </remarks>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.ShowDialog(Infralution.Licensing.ASP.EvaluationMonitor)">
+            <summary>
+            Show the dialog
+            </summary>
+            <param name="evaluationMonitor">The evalulation monitor class to use to store the evaluation data</param>
+            <returns>The result of the evaluation dialog</returns>
+            <remarks>Uses the default ProductName from the application assembly info</remarks>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.ShowDialog(Infralution.Licensing.ASP.EvaluationMonitor,System.String)">
+            <summary>
+            Show the dialog
+            </summary>
+            <param name="evaluationMonitor">The evalulation monitor class to use to store the evaluation data</param>
+            <param name="productName">Name of the product being licensed</param>
+            <returns>The result of the evaluation dialog</returns>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.ResizeForm">
+            <summary>
+            Resize the form to fit the message label
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.OnLoad(System.EventArgs)">
+            <summary>
+            Initialize the form data
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.OnInstallLicense(System.Object,System.EventArgs)">
+            <summary>
+            Handle a click on the <see cref="!:installLicenseButton"/>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.OnContinueEvaluation(System.Object,System.EventArgs)">
+            <summary>
+            Handle a click on the <see cref="F:Infralution.Licensing.Forms.EvaluationDialog.continueButton"/>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.OnExit(System.Object,System.EventArgs)">
+            <summary>
+            Handle a click on the <see cref="F:Infralution.Licensing.Forms.EvaluationDialog.exitButton"/>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.OnEvaluationTimerTick(System.Object,System.EventArgs)">
+            <summary>
+            Enable the <see cref="F:Infralution.Licensing.Forms.EvaluationDialog.continueButton"/> after a period of time
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.continueButton">
+            <summary>The button to allow continuation of the evaluation</summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.exitButton">
+            <summary>The button to exit the application</summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.evaluationDaysLabel">
+            <summary>Label to display number of days left in the evaluation</summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.messageLabel">
+            <summary>Label to display message about the evaluation conditions</summary>
+        </member>
+        <member name="F:Infralution.Licensing.Forms.EvaluationDialog.evaluationTimer">
+            <summary>Timer used to enable the <see cref="F:Infralution.Licensing.Forms.EvaluationDialog.continueButton"/></summary>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Infralution.Licensing.Forms.EvaluationDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
