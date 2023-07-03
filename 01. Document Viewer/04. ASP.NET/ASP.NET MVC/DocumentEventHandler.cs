@@ -1,6 +1,7 @@
 ﻿using Gnostice.Controls.ASP;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -11,8 +12,9 @@ namespace ASP.NET_MVC_Razor_CS_Document_Viewer
         public override void AfterDocumentSave(AfterDocumentSaveEventArgs documentSaveEventArgs)
         {
             //You can uncomment following code to save saved document to server. 
-            //string filePath = HttpContext.Current.Server.MapPath("~\\App_Data\\") + "savedDocument.pdf";
+            //string filePath = documentSaveEventArgs.HttpContext.Server.MapPath("~\\App_Data\\") + "tempsavedDocument.pdf";
             //FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate);
+            //documentSaveEventArgs.DocStream.Position = 0;
             //documentSaveEventArgs.DocStream.CopyTo(stream);
             //stream.Dispose();
         }

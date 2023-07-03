@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="del_PDFSignDemo.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="PDFSignDemo.Global" Language="C#" %>

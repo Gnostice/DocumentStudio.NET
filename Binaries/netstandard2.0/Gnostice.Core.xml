@@ -2345,12 +2345,31 @@
             Defines the order of operations carried out on a matrix
             </summary>
         </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphics.Dispose">
+            <summary>
+            Release resources.
+            </summary>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphics.PopulateFontDictionary(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}},System.Boolean@)">
+            <summary>
+            For inernal use.
+            </summary>
+            <param name="fontDictionary"></param>
+            <param name="populatedUserFontsDictionary"></param>
+        </member>
         <member name="M:Gnostice.Core.Graphics.IGraphics.GetAvailableFont(Gnostice.Core.Graphics.Font,Gnostice.Core.Graphics.Font)">
             <summary>
             Returns the same font object (or the alternate font) if the font is available, else returns the font closest to the available font.
             </summary>
             <param name="font"></param>
             <param name="alternateFont"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Graphics.IGraphics.ResolveToAvailableFontFamily(System.String)">
+            <summary>
+            Returns the family name of the available font, else returns the font closest to the available font.
+            </summary>
+            <param name="fontName"></param>
             <returns></returns>
         </member>
         <member name="M:Gnostice.Core.Graphics.IGraphics.Measure(System.String,Gnostice.Core.Graphics.Font,Gnostice.Core.Graphics.TextAlignment,Gnostice.Core.Graphics.MeasurementUnit,System.Boolean,Gnostice.Core.Graphics.Font)">
@@ -2575,6 +2594,7 @@
         <member name="P:Gnostice.Core.Graphics.IMatrix.Elements">
             <summary>
             Gets an array of floating-point values that represents the elements of this matrix.
+            The returned order is [scaleX skewY skewX scaleY transX transY]
             </summary>
         </member>
         <member name="P:Gnostice.Core.Graphics.IMatrix.IsIdentity">
@@ -2787,6 +2807,11 @@
             An unsupported pixel format
             </summary>
         </member>
+        <member name="T:Gnostice.Core.Image.ColorDepth">
+            <summary>
+            Only supported when saving as TIFF image
+            </summary>
+        </member>
         <member name="P:Gnostice.Core.Image.IBitmapImage.Palette">
             <summary>
             Returns the palette of colors used in this bitmap.
@@ -2813,6 +2838,13 @@
             Create a copy of this bitmap with a new pixel color type.
             </summary>
             <param name="newColorType">Pixel color type of the new image.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Core.Image.IImage.GetNativeImage">
+            <summary>
+            Returns the platform-specific underlying native image object.
+            DO NOT dispose this object since it is a reference and not a copy.
+            </summary>
             <returns></returns>
         </member>
         <member name="T:Gnostice.Core.Image.ImageEncoderSettings">
@@ -2907,17 +2939,15 @@
         <member name="P:Gnostice.Core.Printer.PageSelection.CurrentPageNumber">
             <summary>
             Sets current page that needs to be printed. (This property
-            takes effect when <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelection.SelectionType" text="DocumentPrinter.PageSelection.SelectionType" />
-            is set to <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelectionType.CurrentPage" text="PageSelectionType.CurrentPage" />.)
-            
+            takes effect when <see cref="P:Gnostice.Core.Printer.PageSelection.SelectionType" />
+            is set to <see cref="F:Gnostice.Core.Printer.PageSelectionType.CurrentPage" />.)
             </summary>
         </member>
         <member name="P:Gnostice.Core.Printer.PageSelection.CustomRange">
             <summary>
             Sets a specific selection of pages for printing. (This
-            property takes effect when <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelection.SelectionType" text="DocumentPrinter.PageSelection.SelectionType" />
-            is set to <see cref="!:Gnostice.Documents.Controls.WinForms.PageSelectionType.CustomRange" text="PageSelectionType.CustomRange" />.)
-            
+            property takes effect when <see cref="P:Gnostice.Core.Printer.PageSelection.SelectionType" />
+            is set to <see cref="F:Gnostice.Core.Printer.PageSelectionType.CustomRange" />.)
             </summary>
         </member>
         <member name="T:Gnostice.Core.Printer.PrinterBeginJobEventArgs">

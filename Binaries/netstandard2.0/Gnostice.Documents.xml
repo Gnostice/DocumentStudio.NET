@@ -96,6 +96,17 @@
             <param name="password">Password with which the document needs
                                    to be decrypted.</param>
         </member>
+        <member name="M:Gnostice.Documents.DocumentManager.LoadDocument(System.Uri,System.String,System.String,System.String)">
+            <summary>
+            Loads a document from specified URI and decrypt with specified password.
+            </summary>
+            <param name="fileUri">URI from which the document needs
+                                   to be loaded.</param>
+            <param name="docPassword">Password with which the document
+                                   needs to be decrypted.</param>
+            <param name="username">Optional, credentials (username) to be supplied to the server to download the document.</param>
+            <param name="password">Optional, credentials (password) to be supplied to the server to download the document.</param>
+        </member>
         <member name="M:Gnostice.Documents.DocumentManager.CloseDocument(Gnostice.Core.DOM.IDocument)">
             <summary>
             Close specified document.
@@ -570,6 +581,11 @@
             and <see cref="!:Gnostice.Graphics.Skia.SkiaGraphics()" /> for Xamarin and .NET Core.
             </summary>
         </member>
+        <member name="P:Gnostice.Documents.Framework.UserFontsDirectory">
+            <summary>
+            The fonts avaialble in this user specified directory (that are not installed in the Operating System's font collection) are used in addition to the OS's installed font collection while looking up a font by font family name.
+            </summary>
+        </member>
         <member name="P:Gnostice.Documents.Framework.LoadUnsupportedFormatAsTXT">
             <summary>
             Property to specify whether unsupported and corrupted files should be loaded as plain text files.
@@ -733,644 +749,16 @@
             Gets or sets TIFF compression algorithm.
             </summary>
         </member>
+        <member name="P:Gnostice.Documents.Image.TIFFEncoderSettings.ColorDepth">
+            <summary>
+            Gets or sets the color depth of the saved image. Note that some compression types do not support all color depths. 
+            For example, both CCITT_T4 and CCITT_T6 always save the image in 1 BPP color depth.
+            </summary>
+        </member>
         <member name="T:Gnostice.Documents.Margins">
             <summary>
             This class specifies page settings
             </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.RC4.#ctor(System.Byte[],System.Int32)">
-            <summary>
-            Instantiate and initialize RC4 key with the given key.
-            </summary>
-            <param name="key">Byte array representing the key with which 
-            encryption will be done. Key should be of length less than 256.</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.RC4.Crypt(System.Byte[],System.Int32)">
-            <summary>
-            Encrypts the input byte array with the RC4 key and returns 
-            the encrypted byte array.
-            </summary>
-            <param name="inBytes">Input array of bytes to be encrypted.</param>
-            <returns>Output array of bytes after encryption.</returns>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFArray.ParentDoc">
-            <summary>
-            Gets and sets the Parent document of this object
-            </summary>
-            <param name="value">is the Parent document for the object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.#ctor(Gnostice.Documents.NewPDF.PDFDocument,System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="parentDoc">is parent document of this array object</param>
-            <param name="objNumber">is the object number that need to be set for this object</param>
-            <param name="genNumber">is the generation number that need to be set for this object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.#ctor(Gnostice.Documents.NewPDF.PDFDocument)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="parentDoc">is parent document of this array object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.#ctor(Gnostice.Documents.NewPDF.PDFDocument,System.Collections.Generic.List{Gnostice.Documents.NewPDF.PDFBaseObject},System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="array">is the array object with which we create a array</param>
-            <param name="objNumber">is the object number that need to be set for this object</param>
-            <param name="genNumber">is the generation number that need to be set for this object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.Clone">
-            <summary>
-            Clones the current PDFArray object
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.IsArray">
-            <summary>
-            Specifies if the object is Array type
-            </summary>
-            <returns>true if the object is Array type object</returns>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFArray.Length">
-            <summary>
-            Gets the number of elements present in the array
-            </summary>
-            <returns>the number of elements in the array</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.Add(Gnostice.Documents.NewPDF.PDFBaseObject)">
-            <summary>
-            Adds an element into the current Array object
-            </summary>
-            <param name="element">is the Element to be added to the Array object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.Insert(Gnostice.Documents.NewPDF.PDFBaseObject,System.Int32)">
-            <summary>
-            Inserts an element into the current Array object at the specified index
-            </summary>
-            <param name="element">is the element to be inserted</param>
-            <param name="index">is the index at which the element should be inserted</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.Remove(System.Int32)">
-            <summary>
-            Removes the element at the specified index
-            </summary>
-            <param name="index">the index of the element to be removed</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.GetIndirectRefs(System.Collections.Generic.List{Gnostice.Documents.NewPDF.PDFBaseObject})">
-            <summary>
-            Gets all indirect references(indirect objects) from the Array
-            </summary>
-            <param name="list">is the list where all the indirect references will be stored</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.SetValue(Gnostice.Documents.NewPDF.PDFBaseObject,System.Int32)">
-            <summary>
-            Replaces the value of an element at the specified index
-            </summary>
-            <param name="element">is the element that should be replaced with existing one</param>
-            <param name="index">is the index at the which the given element should be replaced with the existing one</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.Get(System.Int32)">
-            <summary>
-            Gets the element from index position of the array
-            </summary>
-            <param name="index">is the position of the element to be retrieved</param>
-            <returns>is the object in the Index position</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.GetReferenceObj(System.Int32)">
-            <summary>
-            Gets a reference object present in the array from the given position
-            </summary>
-            <param name="index">is the index of the reference element to be retrieved</param>
-            <returns>is the reference object(indirect object) in the index position</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.GetClone(System.Int32)">
-            <summary>
-            Gets a clone object from the position Index of Array
-            </summary>
-            <param name="index">is the position of Element to be retrieved from Array object</param>
-            <returns>is the Element present at the requested index of the Array</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFArray.GetReferenceObjClone(System.Int32)">
-            <summary>
-            Gets a clone object of Indirect reference from the position Index of Array
-            </summary>
-            <param name="index">is the position of Indirect reference Element to be retrieved from Array object</param>
-            <returns>is the Indirect reference Element present at the requested index of the Array</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFBaseObject">
-            <summary>
-            PDFBaseObject is the base class for all PDF objects.
-            </summary>
-        </member>
-        <member name="F:Gnostice.Documents.NewPDF.PDFBaseObject.PDFObjectTypeNames">
-            <summary>
-            PDFObjectTypeNames string array contains string values for each type in the PDFObjectTypes Enum 
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.GetPDFObjectType">
-            <summary>
-            Gets the Type of the object it holds currently
-            </summary>
-            <returns>PDFObjectTypes is the type of the object (integer, Dictionary etc..)</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsBoolean">
-            <summary>
-            true if the object is a boolean
-            </summary>
-            <returns>true if the Object is Boolean Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsInteger">
-            <summary>
-            true if the object is an Integer
-            </summary>
-            <returns>true if the Object is Integer Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsReal">
-            <summary>
-            true if the object is a Real
-            </summary>
-            <returns>true if the Object is Real Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsNumber">
-            <summary>
-            true if the object is a Number
-            </summary>
-            <returns>true if the Object is Number Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsString">
-            <summary>
-            true if the object is an Ansi string
-            </summary>
-            <returns>true if the Object is Ansi string Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsName">
-            <summary>
-            true if the object is a Name
-            </summary>
-            <returns>true if the Object is Name Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsNull">
-            <summary>
-            true if the object is a Null
-            </summary>
-            <returns>true if the Object is Null Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsArray">
-            <summary>
-            true if the object is an array
-            </summary>
-            <returns>true if the Object is Array Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsDict">
-            <summary>
-            true if the object is a Dictionary
-            </summary>
-            <returns>true if the Object is Dictionary Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsStream">
-            <summary>
-            true if the object is a Stream
-            </summary>
-            <returns>true if the Object is Stream Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsIndirectRef">
-            <summary>
-            true if the object is an Indirect Reference
-            </summary>
-            <returns>true if the Object is Indirect Reference Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsCommand">
-            <summary>
-            true if the object is a Command
-            </summary>
-            <returns>true if the Object is Command Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsError">
-            <summary>
-            true if the object is an Error
-            </summary>
-            <returns>true if the Object is Error Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsEOF">
-            <summary>
-            true if the object is End of Line
-            </summary>
-            <returns>true if the Object is EOF Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsName(System.String)">
-            <summary>
-            true if the parameter passed is a Name
-            </summary>
-            <param name="name">is the object that need to be checked</param>
-            <returns>true if the Object passed is Name Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsCommand(System.String)">
-            <summary>
-            true if the parameter passed is a Command object
-            </summary>
-            <param name="command">is the command object that need to be checked</param>
-            <returns>true if the command is Command Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.IsDict(System.String)">
-            <summary>
-            true if the object passed is a Dictionary
-            </summary>
-            <param name="dictType">is the object that need to be checked</param>
-            <returns>true if the Object passed is Dictionary Object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.Clone">
-            <summary>
-            Returns a Copy of the object
-            </summary>
-            <returns>copy of the object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBaseObject.SaveToStream(System.IO.Stream,System.Boolean,System.Object)">
-            <summary>
-            This function will write the corresponding object into the stream provided
-            </summary>
-            <param name="stream">is the stream where the object need to be written into</param>
-            <param name="onlyChanged">is the flag that determines if the object is changed</param>
-            <param name="XRef">is the Xreference table of this object</param>
-            <returns>Count bytes written into the Stream</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFBoolean">
-            <summary>
-            This class represents the Boolean Object in the PDF. A boolean object can have either the value false or true.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFBoolean.Value">
-            <summary>
-            Gets and sets the boolean value of the object
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBoolean.#ctor(System.Boolean,System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">The value with which the boolean object to be created</param>
-            <param name="objNumber">is object number to be set for this boolean object</param>
-            <param name="genNumber">is generation number to be set for this boolean object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBoolean.#ctor(System.Boolean)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">The value with which the boolean object to be created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBoolean.Clone">
-            <summary>
-            Clones the current PDFBoolean object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFBoolean object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFBoolean.IsBoolean">
-            <summary>
-            Specifies if the object is Boolean
-            </summary>
-            <returns>true if the object is Boolean object</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFDictionary">
-            <summary>
-            This class represents a PDF document's Dictionary object. A Dictionary object is an associative table containing pairs of objects, known as the dictionary's entries. The first element of each entry is the key and the second element is the value.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFDictionary.ParentDoc">
-            <summary>
-            Gets and sets the Parent document of this object
-            </summary>
-            <param name="value">is the Parent document for the object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.#ctor(System.UInt32,System.UInt32,System.Object)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="objNumber">is the object number that need to be set for this object</param>
-            <param name="genNumber">is the generation number that need to be set for this object</param>
-            <param name="parentDoc">is parent document of this Dictionary object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.#ctor(System.UInt32,System.UInt32,System.Object,System.Collections.Generic.Dictionary{System.String,Gnostice.Documents.NewPDF.PDFBaseObject})">
-            <summary>
-            Constructor
-            </summary>
-            <param name="objNumber">is the object number that need to be set for this object</param>
-            <param name="genNumber">is the generation number that need to be set for this object</param>
-            <param name="parentDoc">is parent document of this Dictionary object</param>
-            <param name="dict">is the Dictionary object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.#ctor(System.Object)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="parentDoc">is parent document of this Dictionary object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.#ctor(System.Collections.Generic.Dictionary{System.String,Gnostice.Documents.NewPDF.PDFBaseObject})">
-            <summary>
-            Constructor
-            </summary>
-            <param name="dict">is the Dictionary object</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.Clone">
-            <summary>
-            Gets a copy of the current object
-            </summary>
-            <returns>Copy of current object(Dictionary)</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.IsDict">
-            <summary>
-            Specifies if the object is Dictionary type
-            </summary>
-            <returns>true if the object is Dictionary type object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.IsOf(System.String)">
-            <summary>
-            Checks whether the dictionary has given type entry
-            </summary>
-            <param name="type">is the given type to check</param>
-            <returns>true if dictionary has given type entry, else false</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.Add(System.String,Gnostice.Documents.NewPDF.PDFBaseObject)">
-            <summary>
-            Adds an entry into the current Dictionary object
-            </summary>
-            <param name="key">is the name of the entry</param>
-            <param name="value">is the value of the entry</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.Add(Gnostice.Documents.NewPDF.PDFName,Gnostice.Documents.NewPDF.PDFBaseObject)">
-            <summary>
-            Adds an entry into the current Dictionary object
-            </summary>
-            <param name="key">is the name of the entry</param>
-            <param name="value">is the value of the entry</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.Remove(System.String)">
-            <summary>
-            Removes an object from the current Dictionary object
-            </summary>
-            <param name="key">is the key of the entry that should be removed from the dictionary</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.SetKeyValue(System.String,Gnostice.Documents.NewPDF.PDFBaseObject)">
-            <summary>
-            Sets/replaces the given value for the specified key. This method will overwrite the given value in the entry if a value already exist for the specified key.
-            </summary>
-            <param name="key">is the name of the entry</param>
-            <param name="value">is the value of the entry</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.LookUp(System.String)">
-            <summary>
-            Gets the value of an entry for the given key. If the value is an instance of Indirect Reference object then this method will resolve it to actual object and return the actual object.
-            </summary>
-            <param name="key">is the key of the entry for which the value should be returned</param>
-            <returns>the value for the given key</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.LookupRefObj(System.String)">
-            <summary>
-            Gets the value of an entry for the given key. If the value is an instance of Indirect Reference object then this method will not resolve it to actual object.
-            </summary>
-            <param name="key">is the key of the entry for which the value should be returned</param>
-            <returns>the value for the given key</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.LookUpClone(System.String)">
-            <summary>
-            Gets the value of an entry for the given key and returns the cloned copy of it. If the value is an instance of Indirect Reference object then this method will resolve it to actual object and return the actual object.
-            </summary>
-            <param name="key">is the key of the entry for which the value should be returned</param>
-            <returns>the value for the given key</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDictionary.LookupRefObjClone(System.String)">
-            <summary>
-            Gets the value of an entry for the given key and returns the cloned copy of it. If the value is an instance of Indirect Reference object then this method will not resolve it to actual object.
-            </summary>
-            <param name="key">is the key of the entry for which the value should be returned</param>
-            <returns>the value for the given key</returns>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFDictionary.Length">
-            <summary>
-            Gets the Length of the Dictionary entries
-            </summary>
-            <returns>length of the Dictionary entries</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFDocument">
-            <summary>
-            PDFDocument is the main class for working with PDF documents. One PDFDocument instance represents one PDF document. It provides all high level and low level APIs.
-            Following are its roles:
-            - Read existing documents
-            - Write edits to existing documents and commit documents created from scratch
-            - Render the document contents to the provided graphics surface
-            - Build/Create documents from scratch
-            It provides:
-            - high level APIs for each of the supported functions for eg. LoadDocument, ...
-            - low level APIs to access the document by its physical structure and as raw data. The main interface for the low level APIs is the PDFDocument.DOM property.
-            
-            About PDF Document....
-            
-            The DOM property of PDFDocument class corelates the physical structure of the document. For eg. PDFDocument.DOM.Header represents the header part of the document, PDFDocument.DOM.Catalog represents the root of the body part of the document.
-            
-            Organisation and design decisions
-            Common Builder for all formats and so on....
-            
-            
-            
-            
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDocument.LoadDocument(System.String,System.String)">
-            <summary>
-            Loads a PDF document using the file path of the document
-            </summary>
-            <param name="fileName">file path of the document</param>
-            <param name="password">Optional password required for opening the document</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDocument.LoadDocument(System.IO.Stream,System.String)">
-            <summary>
-            Loads a PDF document using a Stream object of a document
-            </summary>
-            <param name="stream">Stream object of a document</param>
-            <param name="password">Optional password required for opening the document</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFDocument.CloseDocument">
-            <summary>
-            Close the document and release all resources
-            </summary>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFDocumentObjectModel">
-            <summary>
-            This class has methods to load a PDF document using file path and stream.
-            This class is responsible for locating the startxref, reading XRef table/stream, builds XRef table and reads Encryption data for all the objects in the document.
-            It also has methods to read PDF objects for the given object numbers and to read PDF object with its fully qualified name. For eg. reading Fields entry which is available in the path “/Catalog -&gt; /AcroForm” with the method getObject(“/Catalog/AcroForm/Fields”)
-            </summary>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFObjectType">
-            <summary>
-            PDFObjectType enumeration defines all types of PDF objects
-            </summary>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFIndirectRef">
-            <summary>
-            This class represents the Indirect Reference Object in the PDF.
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFIndirectRef.Clone">
-            <summary>
-            Clones the current PDFIndirectRef object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFIndirectRef object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFIndirectRef.IsIndirectRef">
-            <summary>
-            Specifies if the object is IndirectRef type
-            </summary>
-            <returns>true if the object is IndirectRef object</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFInteger">
-            <summary>
-            This class represents the Integer Object in the PDF.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFInteger.Value">
-            <summary>
-            Gets and sets the integer value of the object
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFInteger.#ctor(System.Int64,System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the integer value with which this object will created</param>
-            <param name="objNumber">is the object number with which this object will created</param>
-            <param name="genNumber">is the object generation with which this object will created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFInteger.#ctor(System.Int64)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the integer value with which this object will created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFInteger.Clone">
-            <summary>
-            Clones the current PDFInteger object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFInteger object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFInteger.IsInteger">
-            <summary>
-            Specifies if the object is Integer
-            </summary>
-            <returns>true if the object is Integer object</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFName">
-            <summary>
-            This class represents the Name Object in the PDF.
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFName.#ctor(System.String,System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the Name value(ANSI string) with which this object will be created</param>
-            <param name="objNumber">is the object number with which this object will be created</param>
-            <param name="genNumber">is the object generation with which this object will be created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFName.#ctor(System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the string value with which this object will be created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFName.Clone">
-            <summary>
-            Clones the current PDFName object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFName object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFName.IsName">
-            <summary>
-            Specifies if the object is Name type
-            </summary>
-            <returns>true if the object is Name type object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFName.IsName(System.String)">
-            <summary>
-            Specifies if the name parameter is Name object
-            </summary>
-            <param name="name">is object that need to be checked for Name object</param>
-            <returns>true if the AName parameter is Name object</returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:Gnostice.Documents.NewPDF.PDFName.GetDecodedName(System.String)" -->
-        <member name="T:Gnostice.Documents.NewPDF.PDFReal">
-            <summary>
-            This class represents the Real Object in the PDF.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.NewPDF.PDFReal.Value">
-            <summary>
-            Gets and sets the real/float value of the object
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFReal.#ctor(System.Double,System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the real/float value with which this object will created</param>
-            <param name="objNumber">is the object number with which this object will created</param>
-            <param name="genNumber">is the object generation with which this object will created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFReal.#ctor(System.Double)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the real/float value with which this object will created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFReal.Clone">
-            <summary>
-            Clones the current PDFReal object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFReal object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFReal.IsReal">
-            <summary>
-            Specifies if the object is Real type
-            </summary>
-            <returns>true if the object is Real type object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFRect.GetSimpleRect">
-            <summary>
-            Returns the values of current PDFRect as SimpleRect object.
-            </summary>
-            <returns>the values of current PDFRect as SimpleRect object.</returns>
-        </member>
-        <member name="T:Gnostice.Documents.NewPDF.PDFString">
-            <summary>
-            This class represents the AnsiString Object in the PDF.
-            </summary>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFString.#ctor(System.String,System.UInt32,System.UInt32,System.Boolean)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the string value with which this object will created</param>
-            <param name="objNumber">is the object number with which this object will created</param>
-            <param name="genNumber">is the object generation with which this object will created</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFString.#ctor(System.String,System.Boolean)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="value">is the string value with which this object will created</param>
-            <param name="isHex">indecates whether AnsiString is a hex AnsiString or not</param>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFString.Clone">
-            <summary>
-            Clones the current PDFString object
-            </summary>
-            <returns>PDFBaseObject type of the cloned PDFString object</returns>
-        </member>
-        <member name="M:Gnostice.Documents.NewPDF.PDFString.IsString">
-            <summary>
-            Specifies if the object is String type
-            </summary>
-            <returns>true if the object is String type object</returns>
         </member>
         <member name="T:Gnostice.Documents.PageSettings">
             <summary>
@@ -1414,6 +802,35 @@
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:Gnostice.Documents.PDF.FontUtil.GetFontFileName(Gnostice.Core.Graphics.Font)" -->
+        <member name="M:Gnostice.Documents.PDF.CstPDFDoc.ExtractPagesTo(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new PDF document with specified pages of this
+            document. If specified, pages will be copied in the same
+            order as they appear in "this" document.
+            </summary>
+            <param name="path">Pathname of the new PDF document
+                               that needs to be created.</param>
+            <param name="pageRange">Pages that need to be created.</param>
+            <param name="sortPages">Whether the specified pages need to
+                                    be copied in the order that they
+                                    appear in "this" document rather
+                                    than in the order they appear in the
+                                    pageRange parameter.</param>
+        </member>
+        <member name="M:Gnostice.Documents.PDF.CstPDFDoc.ExtractPagesTo(System.IO.Stream,System.String,System.Boolean)">
+            <summary>
+            Creates a new PDF document with specified pages of this
+            document. If specified, pages will be copied in the same
+            order as they appear in "this" document.
+            </summary>
+            <param name="stream">Writable stream where the new PDF file will be written.</param>
+            <param name="pageRange">Pages that need to be created.</param>
+            <param name="sortPages">Whether the specified pages need to
+                                    be copied in the order that they
+                                    appear in "this" document rather
+                                    than in the order they appear in the
+                                    pageRange parameter.</param>
+        </member>
         <member name="M:Gnostice.Documents.PDF.CstPDFDoc.WriteWatermarkText(System.String,Gnostice.Documents.PDF.PDFFont,System.Single,System.Single,Gnostice.Core.Graphics.SolidBrush,System.Boolean,System.String)">
             <summary>
             Adds a watermark with specified text, Brush and font at a
@@ -1821,6 +1238,13 @@
             <summary>
             Dispose any resources that may have been cached for speeding up rendering
             </summary>
+        </member>
+        <member name="M:Gnostice.Documents.PDF.PDFStream.ReadStreamTillEnd">
+            <summary>
+            Read the stream contents till the specified length or till "endstream" or "endbobj" is encountered
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:Gnostice.Documents.PDF.PDFEncoderSettings">
             <property name="autolink" value="off" />
@@ -3835,6 +3259,15 @@
             </version>
             <author> 	Bruce A. Kern
             </author>
+        </member>
+        <member name="P:CSJ2K.Color.Boxes.ColorSpecificationBox.RawMethod">
+            Return the value of the Method field
+        </member>
+        <member name="P:CSJ2K.Color.Boxes.ColorSpecificationBox.tRawApproximationAccuracy">
+            Return the value of the approxAccuracy field
+        </member>
+        <member name="P:CSJ2K.Color.Boxes.ColorSpecificationBox.RawColorSpace">
+            Return the value of the ColorSpace field
         </member>
         <member name="M:CSJ2K.Color.Boxes.ColorSpecificationBox.#ctor(CSJ2K.j2k.io.RandomAccessIO,System.Int32)">
             <summary> Construct a ColorSpecificationBox from an input image.</summary>
@@ -12297,7 +11730,7 @@
             <param name="in">The RandomAccessIO from which to read the file format
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
             <exception cref="!:java.io.EOFException">If end of file is reached
@@ -12311,7 +11744,7 @@
             <returns> false if the File Type box was not found or invalid else true
             
             </returns>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             </exception>
             <exception cref="!:java.io.EOFException">If the end of file was reached
             
@@ -12390,7 +11823,7 @@
             <returns> The number of bytes increases because of the file format
             
             </returns>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12398,7 +11831,7 @@
             <summary> This method writes the File Type box
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12406,7 +11839,7 @@
             <summary> This method writes the JP2Header box
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12414,7 +11847,7 @@
             <summary> This method writes the Bits Per Component box
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12422,7 +11855,7 @@
             <summary> This method writes the Colour Specification box
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12430,7 +11863,7 @@
             <summary> This method writes the Image Header box
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -12441,7 +11874,7 @@
             <param name="cs">The contiguous codestream
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15486,7 +14919,7 @@
             <param name="bufferSize">The number of bytes to buffer
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15504,7 +14937,7 @@
             already exists).
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15524,7 +14957,7 @@
             <param name="bufferSize">The number of bytes to buffer
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15542,7 +14975,7 @@
             already exists).
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15558,7 +14991,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15571,7 +15004,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15584,7 +15017,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15597,7 +15030,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15610,7 +15043,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15626,7 +15059,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15645,7 +15078,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15661,7 +15094,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15679,7 +15112,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15695,7 +15128,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15712,7 +15145,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15729,7 +15162,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15770,7 +15203,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15789,7 +15222,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15805,7 +15238,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15824,7 +15257,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15840,7 +15273,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15859,7 +15292,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15875,7 +15308,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15892,7 +15325,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15909,7 +15342,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15925,7 +15358,7 @@
             bytes could be skipped.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -15952,7 +15385,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             
             
@@ -15967,7 +15400,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             
             
@@ -15982,7 +15415,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             
             
@@ -15997,7 +15430,7 @@
             <param name="v">The value to write to the output
             
             </param>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             
             
@@ -16008,7 +15441,7 @@
             be realigned at the byte level.
             
             </summary>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             
             
@@ -16080,7 +15513,7 @@
             <param name="bufferSize">The number of bytes to buffer
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16098,7 +15531,7 @@
             file already exists).
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16118,7 +15551,7 @@
             <param name="bufferSize">The number of bytes to buffer
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16136,7 +15569,7 @@
             file already exists).
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16149,7 +15582,7 @@
             <param name="off">The offset where to move to.
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16157,7 +15590,7 @@
             <summary> Closes the buffered random access file
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16169,7 +15602,7 @@
             <returns> The length of the stream, in bytes.
             
             </returns>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16185,7 +15618,7 @@
             <exception cref="!:EOFException">If in read-only and seeking beyond EOF.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16197,7 +15630,7 @@
             <returns> The byte read.
             
             </returns>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
             <exception cref="!:java.io.EOFException">If the end of file was reached
@@ -16225,7 +15658,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16238,7 +15671,7 @@
             written.
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16250,7 +15683,7 @@
             <param name="b">The byte to write.
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16268,7 +15701,7 @@
             <param name="length">The number of bytes from b to write 
             
             </param>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16279,7 +15712,7 @@
             at the byte level.
             
             </summary>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16295,7 +15728,7 @@
             all the bytes could be skipped.
             
             </exception>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16333,7 +15766,7 @@
             <returns> The offset of the current position, in bytes.
             
             </returns>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16342,7 +15775,7 @@
             (at the bit and byte level) should be written.
             
             </summary>
-            <exception cref="!:IOException">If an I/O error ocurred. 
+            <exception cref="!:IOException">If an I/O error occurred. 
             
             </exception>
         </member>
@@ -16354,7 +15787,7 @@
             <returns> The length of the stream, in bytes.
             
             </returns>
-            <exception cref="!:IOException">If an I/O error ocurred. 
+            <exception cref="!:IOException">If an I/O error occurred. 
             
             </exception>
         </member>
@@ -16373,7 +15806,7 @@
             <exception cref="!:EOFException">If in read-only and seeking beyond EOF.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16388,7 +15821,7 @@
             <exception cref="!:EOFException">If the end-of file was reached.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16413,7 +15846,7 @@
             getting all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -16426,7 +15859,7 @@
             written.
             
             </param>
-            <exception cref="!:IOException">If an I/O error ocurred. 
+            <exception cref="!:IOException">If an I/O error occurred. 
             
             </exception>
         </member>
@@ -18555,7 +17988,7 @@
             <returns> The number of bytes that the file has increased by
             
             </returns>
-            <exception cref="!:java.io.IOException">If an I/O error ocurred.
+            <exception cref="!:java.io.IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18658,7 +18091,7 @@
             known.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18671,7 +18104,7 @@
             <returns> The length of the stream, in bytes.
             
             </returns>
-            <exception cref="!:IOException">If an I/O error ocurred.  
+            <exception cref="!:IOException">If an I/O error occurred.  
             
             </exception>
         </member>
@@ -18685,7 +18118,7 @@
             <exception cref="!:EOFException">If the end-of file was reached.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18710,7 +18143,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18725,7 +18158,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18740,7 +18173,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18755,7 +18188,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18771,7 +18204,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18786,7 +18219,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18801,7 +18234,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18817,7 +18250,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18833,7 +18266,7 @@
             all the necessary data.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -18851,7 +18284,7 @@
             bytes could be skipped.
             
             </exception>
-            <exception cref="!:IOException">If an I/O error ocurred.
+            <exception cref="!:IOException">If an I/O error occurred.
             
             </exception>
         </member>
@@ -25943,137 +25376,6 @@
             <param name="title">The title for the error</param>
             <param name="message">The error message</param>
         </member>
-        <member name="T:Infralution.Licensing.ASP.EvaluationMonitor">
-            <summary>
-            Defines the base class for managing time/usage limited evaluations of products.  The 
-            <see cref="!:RegistryEvaluationMonitor" /> and <see cref="!:IsolatedStorageEvaluationMonitor" /> classes provide
-            concrete instances of this class that store the data in the registry and isolated storage respectively.
-            </summary>
-            <remarks>
-                <para>
-            Instantiate an instance of a derived class to read/write the evaluation parameters for the   
-            given product.  The <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.FirstUseDate" /> is set the first time that
-            the class is instantiated.  The <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.LastUseDate" /> and <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> 
-            properties are set each time the class is instantiated (or once per day if
-            the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.CountUsageOncePerDay" /> property is set to true).
-            </para>
-                <para>
-            Note that evaluation data must be stored somewhere on the users 
-            hard disk.  It is therefore not too difficult for a sophisticated user to determine the 
-            changes made either to registry keys or files (using file/registry monitoring software) 
-            and restore the state of these to their pre-installation state (thus resetting the 
-            evaluation period).  For this reason it is recommended that you don't rely on this 
-            mechanism alone.  You should also consider limiting the functionality of your product 
-            in some way or adding nag screens to discourage long term use of evaluation versions.
-            </para>
-                <para>
-            If you have a data oriented application you can increase the security of evaluations by
-            storing the current <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> somewhere in your database each time the 
-            application runs and cross checking this with the number returned by the EvaluationMonitor.
-            </para>
-            </remarks>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.#ctor(System.String,System.Boolean)">
-            <summary>
-            Initialize a new instance of the evaluation monitor.
-            </summary>
-            <param name="countUsageOncePerDay">Should the usage count only be incremented once per day</param>
-            <param name="productId">A unique Id for this product</param>
-            <remarks>
-            If countUsageOncePerDay is set to true then the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> is only incremented once
-            for each day that the product is actually used.   If countUsageOncePerDay is false then the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" />
-            is incremented each time a new evaluation monitor is instantiated for a product
-            </remarks>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.CountUsageOncePerDay">
-            <summary>
-            Get whether the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> should be incremented only once per day 
-            </summary>
-            <remarks>
-            If CountUsageOncePerDay is set to true then the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> is only incremented once
-            for each day that the product is actually used.   If CountUsageOncePerDay is false then 
-            the <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount" /> is incremented each time a new evaluation monitor is instantiated for 
-            a given product id. To change this property set the corresponding parameter in the constructor.
-            </remarks>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.UsageCount">
-            <summary>
-            Return the number of times the product has been used 
-            </summary>
-            <remarks>
-            If <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.CountUsageOncePerDay" /> is set to true then the UsageCount is only incremented once
-            for each day that the product is actually used.   If <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.CountUsageOncePerDay" /> is false then 
-            the UsageCount is incremented each time a new evaluation monitor is instantiated for 
-            a given product id.  Typically you should instantiate an EvaluationMonitor object just once in your 
-            software.
-            </remarks>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.FirstUseDate">
-            <summary>
-            Return the date/time the product was first used
-            </summary>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.LastUseDate">
-            <summary>
-            Return the date/time the product was last used
-            </summary>
-            <remarks>
-            If <see cref="P:Infralution.Licensing.ASP.EvaluationMonitor.CountUsageOncePerDay" /> is set to true then this is the date
-            at which the usage count was last updated - otherwise it is the date at 
-            which the EvaluationMonitor was last created.
-            </remarks>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.DaysInUse">
-            <summary>
-            Return the number of days since the product was first run.
-            </summary>
-        </member>
-        <member name="P:Infralution.Licensing.ASP.EvaluationMonitor.Invalid">
-            <summary>
-            Returns true if the evaluation monitor detects attempts to circumvent
-            evaluation limits by tampering with the hidden evaluation data or winding
-            the PC clock backwards 
-            </summary>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.Reset(System.Boolean)">
-            <summary>
-            Allows you to reset the evaluation period.
-            </summary>
-            <remarks>
-            This can be useful if a customer needs an extension to their evaluation period
-            </remarks>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.UpdateMonitor(System.DateTime,System.DateTime,System.Int32)">
-            <summary>
-            Called by derived classes to set the monitor parameters, update the usage count
-            and check for clock winding
-            </summary>
-            <param name="firstUseDate">The date the monitor was first used</param>
-            <param name="lastUseDate">The date the monitor was last used</param>
-            <param name="usageCount">The usage count</param>
-            <returns>True if the monitor parameters have changed</returns>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.DeleteData(System.String)">
-            <summary>
-            Overridden by derived classes to delete the evaluation data
-            </summary>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.Dispose(System.Boolean)">
-            <summary>
-            Handle disposing resources used by derived classes
-            </summary>
-            <param name="disposing">Is the object being disposed</param>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.Dispose">
-            <summary>
-            Free resources used by the EvaluationMonitor
-            </summary>
-        </member>
-        <member name="M:Infralution.Licensing.ASP.EvaluationMonitor.Finalize">
-            <summary>
-            Finalizer calls Dispose to cleanup
-            </summary>
-        </member>
         <member name="T:Infralution.Licensing.ASP.LicenseResources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -26679,6 +25981,137 @@
             </summary>
             <param name="value">The string to hash</param>
             <returns>An MD5 hash of the given value</returns>
+        </member>
+        <member name="T:Infralution.Licensing.EvaluationMonitor">
+            <summary>
+            Defines the base class for managing time/usage limited evaluations of products.  The 
+            <see cref="!:RegistryEvaluationMonitor" /> and <see cref="!:IsolatedStorageEvaluationMonitor" /> classes provide
+            concrete instances of this class that store the data in the registry and isolated storage respectively.
+            </summary>
+            <remarks>
+                <para>
+            Instantiate an instance of a derived class to read/write the evaluation parameters for the   
+            given product.  The <see cref="P:Infralution.Licensing.EvaluationMonitor.FirstUseDate" /> is set the first time that
+            the class is instantiated.  The <see cref="P:Infralution.Licensing.EvaluationMonitor.LastUseDate" /> and <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> 
+            properties are set each time the class is instantiated (or once per day if
+            the <see cref="P:Infralution.Licensing.EvaluationMonitor.CountUsageOncePerDay" /> property is set to true).
+            </para>
+                <para>
+            Note that evaluation data must be stored somewhere on the users 
+            hard disk.  It is therefore not too difficult for a sophisticated user to determine the 
+            changes made either to registry keys or files (using file/registry monitoring software) 
+            and restore the state of these to their pre-installation state (thus resetting the 
+            evaluation period).  For this reason it is recommended that you don't rely on this 
+            mechanism alone.  You should also consider limiting the functionality of your product 
+            in some way or adding nag screens to discourage long term use of evaluation versions.
+            </para>
+                <para>
+            If you have a data oriented application you can increase the security of evaluations by
+            storing the current <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> somewhere in your database each time the 
+            application runs and cross checking this with the number returned by the EvaluationMonitor.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initialize a new instance of the evaluation monitor.
+            </summary>
+            <param name="countUsageOncePerDay">Should the usage count only be incremented once per day</param>
+            <param name="productId">A unique Id for this product</param>
+            <remarks>
+            If countUsageOncePerDay is set to true then the <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> is only incremented once
+            for each day that the product is actually used.   If countUsageOncePerDay is false then the <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" />
+            is incremented each time a new evaluation monitor is instantiated for a product
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.CountUsageOncePerDay">
+            <summary>
+            Get whether the <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> should be incremented only once per day 
+            </summary>
+            <remarks>
+            If CountUsageOncePerDay is set to true then the <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> is only incremented once
+            for each day that the product is actually used.   If CountUsageOncePerDay is false then 
+            the <see cref="P:Infralution.Licensing.EvaluationMonitor.UsageCount" /> is incremented each time a new evaluation monitor is instantiated for 
+            a given product id. To change this property set the corresponding parameter in the constructor.
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.UsageCount">
+            <summary>
+            Return the number of times the product has been used 
+            </summary>
+            <remarks>
+            If <see cref="P:Infralution.Licensing.EvaluationMonitor.CountUsageOncePerDay" /> is set to true then the UsageCount is only incremented once
+            for each day that the product is actually used.   If <see cref="P:Infralution.Licensing.EvaluationMonitor.CountUsageOncePerDay" /> is false then 
+            the UsageCount is incremented each time a new evaluation monitor is instantiated for 
+            a given product id.  Typically you should instantiate an EvaluationMonitor object just once in your 
+            software.
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.FirstUseDate">
+            <summary>
+            Return the date/time the product was first used
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.LastUseDate">
+            <summary>
+            Return the date/time the product was last used
+            </summary>
+            <remarks>
+            If <see cref="P:Infralution.Licensing.EvaluationMonitor.CountUsageOncePerDay" /> is set to true then this is the date
+            at which the usage count was last updated - otherwise it is the date at 
+            which the EvaluationMonitor was last created.
+            </remarks>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.DaysInUse">
+            <summary>
+            Return the number of days since the product was first run.
+            </summary>
+        </member>
+        <member name="P:Infralution.Licensing.EvaluationMonitor.Invalid">
+            <summary>
+            Returns true if the evaluation monitor detects attempts to circumvent
+            evaluation limits by tampering with the hidden evaluation data or winding
+            the PC clock backwards 
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.Reset(System.Boolean)">
+            <summary>
+            Allows you to reset the evaluation period.
+            </summary>
+            <remarks>
+            This can be useful if a customer needs an extension to their evaluation period
+            </remarks>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.UpdateMonitor(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Called by derived classes to set the monitor parameters, update the usage count
+            and check for clock winding
+            </summary>
+            <param name="firstUseDate">The date the monitor was first used</param>
+            <param name="lastUseDate">The date the monitor was last used</param>
+            <param name="usageCount">The usage count</param>
+            <returns>True if the monitor parameters have changed</returns>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.DeleteData(System.String)">
+            <summary>
+            Overridden by derived classes to delete the evaluation data
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.Dispose(System.Boolean)">
+            <summary>
+            Handle disposing resources used by derived classes
+            </summary>
+            <param name="disposing">Is the object being disposed</param>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.Dispose">
+            <summary>
+            Free resources used by the EvaluationMonitor
+            </summary>
+        </member>
+        <member name="M:Infralution.Licensing.EvaluationMonitor.Finalize">
+            <summary>
+            Finalizer calls Dispose to cleanup
+            </summary>
         </member>
         <member name="T:MiscUtil.IO.NonClosingStreamWrapper">
             <summary>

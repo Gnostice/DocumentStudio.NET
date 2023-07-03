@@ -11,5 +11,19 @@
             <param name="font"></param>
             <returns></returns>
         </member>
+        <member name="M:Gnostice.Graphics.Skia.SkiaGraphics.ResolveToAvailableFontFamily(System.String)">
+            <summary>
+            Returns the family name of the available font, else returns the font closest to the available font.
+            </summary>
+            <param name="fontName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gnostice.Graphics.Skia.SkiaGraphics.PopulateFontDictionary(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}},System.Boolean@)">
+            <summary>
+            For inernal use.
+            </summary>
+            <param name="fontDictionary"></param>
+            <param name="populatedUserFontsDictionary"></param>
+        </member>
     </members>
 </doc>

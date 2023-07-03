@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms_CS_Document_Converter", "WinForms_CS_Document_Converter.csproj", "{F610BF75-3426-42CE-B2AD-0422B209547B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms_Document_Converter", "WinForms_Document_Converter.csproj", "{F610BF75-3426-42CE-B2AD-0422B209547B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

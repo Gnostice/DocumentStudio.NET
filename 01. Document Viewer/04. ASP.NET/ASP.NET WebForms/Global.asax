@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="HTML5_DocumentViewer.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ASP.NET_WebForms_Document_Viewer.Global" Language="C#" %>

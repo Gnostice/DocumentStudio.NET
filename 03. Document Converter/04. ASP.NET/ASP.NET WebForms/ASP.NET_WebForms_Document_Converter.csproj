@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ASP.NET_Web_Converter</RootNamespace>
     <AssemblyName>ASP.NET_Web Converter</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -26,6 +26,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,39 +45,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\..\Binaries\net45\AngleSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BitMiracle.LibJpeg.NET, Version=1.5.324.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\BitMiracle.LibJpeg.NET.1.5.324\lib\net40\BitMiracle.LibJpeg.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Converter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Converter.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.DigitizationEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.DigitizationEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Documents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Graphics.GDIPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Graphics.GDIPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
-    </Reference>
+    <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
+	  <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="AngleSharp" Version="0.16.1" />
+    <PackageReference Include="AngleSharp.Css" Version="0.16.4" />
+
+    <Reference Include="..\..\..\Binaries\net462\Tesseract.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.Converter.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.Core.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.DigitizationEngine.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.Documents.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.Graphics.GDIPlus.dll" />
+    <Reference Include="..\..\..\Binaries\net462\Gnostice.Controls.WinForms.dll" />
+
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -93,10 +77,6 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="Tesseract, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Tesseract.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +169,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -218,9 +195,9 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x86" "$(ProjectDir)bin\x86"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x64" "$(ProjectDir)bin\x64"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\tessdata" "$(ProjectDir)bin\tessdata"</PostBuildEvent>
+    <PostBuildEvent>xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net462\x86" "$(ProjectDir)bin\x86"
+xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net462\x64" "$(ProjectDir)bin\x64"
+xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net462\tessdata" "$(ProjectDir)bin\tessdata"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

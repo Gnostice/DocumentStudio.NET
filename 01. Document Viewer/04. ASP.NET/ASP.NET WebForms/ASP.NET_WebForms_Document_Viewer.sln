@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET_WebForms_Document_Viewer", "ASP.NET_WebForms_Document_Viewer.csproj", "{838E3F2A-C0C7-472E-9911-2971BB95A2E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{838E3F2A-C0C7-472E-9911-2971BB95A2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838E3F2A-C0C7-472E-9911-2971BB95A2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838E3F2A-C0C7-472E-9911-2971BB95A2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838E3F2A-C0C7-472E-9911-2971BB95A2E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD9E28FD-02B4-4989-8E5A-E074FDFBE44B}
+	EndGlobalSection
+EndGlobal

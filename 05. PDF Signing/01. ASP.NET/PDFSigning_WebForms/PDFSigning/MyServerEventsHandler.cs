@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace del_PDFSignDemo
+namespace PDFSignDemo
 {
     public class MyServerEventsHandler : ServerEventsHandler
     {

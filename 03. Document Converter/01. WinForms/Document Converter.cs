@@ -365,19 +365,20 @@ namespace XDocument_Converter_Demo
         private void Animate(bool flag)
         {
             // To Show Progress Bar
+            int speed = 8;
             if (flag)
             {
-                for (int i = 0; i <= 529; i++)
+                for (int i = 0; i <= 529; i += speed)
                 {
-                    grpBxProgress.Left += 1;
+                    grpBxProgress.Left += speed;
                     this.Update();
                 }
             }
             else // Hide Progress Bar
             {
-                for (int i = 0; i <= 529; i++)
+                for (int i = 0; i <= 529; i += speed)
                 {
-                    this.Invoke(new Action(() => grpBxProgress.Left -= 1));
+                    this.Invoke(new Action(() => grpBxProgress.Left -= speed));
                     this.Invoke(new Action(() => this.Update()));
                 }
             }
@@ -432,7 +433,7 @@ namespace XDocument_Converter_Demo
             int totalDocument = e.JobInfo.InputDocumentCount;
             int inputIndex = e.InputDocument.InputIndex;
             int percent = pageNumber * 100 / pageCount;
-            int percentage = (inputIndex - 1) * 100 / totalDocument;
+            int percentage = inputIndex * 100 / totalDocument;
             if (this.InvokeRequired)
             {
                 this.Invoke(new Action(() => prgsBrPageProgress.Value = percent));

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Viewer.aspx.cs" Inherits="del_PDFSignDemo.Viewer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Viewer.aspx.cs" Inherits="PDFSignDemo.Viewer" %>
 
 <!DOCTYPE html>
 

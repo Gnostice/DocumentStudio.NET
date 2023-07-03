@@ -1,7 +1,0 @@
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_MailMerge.exe.config
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_MailMerge.exe
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\Binaries\net45\WinForms_CS_MailMerge.pdb
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_MailMerge.csproj.CopyComplete
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.exe
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_CS_MailMerge.pdb
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\04. Mail-Merge\Console Application\obj\Debug\WinForms_MailMerge.csprojAssemblyReference.cache

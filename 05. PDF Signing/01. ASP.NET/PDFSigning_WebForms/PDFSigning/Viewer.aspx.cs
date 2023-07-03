@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace del_PDFSignDemo
+namespace PDFSignDemo
 {
     public partial class Viewer : System.Web.UI.Page
     {

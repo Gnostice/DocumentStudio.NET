@@ -10,17 +10,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Printer_Demo</RootNamespace>
     <AssemblyName>WinForms_CS_Document_Printer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Binaries\net45\</OutputPath>
+    <OutputPath>..\..\Binaries\net462\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,48 +28,26 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Binaries\net45\</OutputPath>
+    <OutputPath>..\..\Binaries\net462\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\Binaries\net45\AngleSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BitMiracle.LibJpeg.NET, Version=1.5.324.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\BitMiracle.LibJpeg.NET.1.5.324\lib\net40\BitMiracle.LibJpeg.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Controls.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.Controls.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Documents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Graphics.GDIPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.Graphics.GDIPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.PageManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.PageManager.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Printer, Version=21.1.1097.2473, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Binaries\net45\Gnostice.Printer.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
-    </Reference>
+    <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
+    <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="AngleSharp" Version="0.16.1" />
+    <PackageReference Include="AngleSharp.Css" Version="0.16.4" />
+
+    <Reference Include="..\..\Binaries\net462\Gnostice.Converter.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.Core.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.DigitizationEngine.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.Documents.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.Controls.WinForms.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.Graphics.GDIPlus.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.PageManager.dll" />
+    <Reference Include="..\..\Binaries\net462\Gnostice.Printer.dll" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -106,7 +83,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

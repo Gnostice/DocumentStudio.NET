@@ -629,6 +629,11 @@ namespace WPF_CS_Document_Viewer
             }
         }
 
+        private void menuItemClose_Click(object sender, RoutedEventArgs e)
+        {
+            DocumentViewer1.CloseDocument();
+        }
+
         private void BtnChangeShortcutKey_Click(object sender, RoutedEventArgs e)
         {
             string tempText = txtExistingShotcutKey.Text;

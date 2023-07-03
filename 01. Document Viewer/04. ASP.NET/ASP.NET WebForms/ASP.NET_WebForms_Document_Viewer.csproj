@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,21 +6,22 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1945CD82-3275-45AE-A6C4-7C2EB493FD7F}</ProjectGuid>
+    <ProjectGuid>{838E3F2A-C0C7-472E-9911-2971BB95A2E3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HTML5_DocumentViewer</RootNamespace>
-    <AssemblyName>HTML5_DocumentViewer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ASP.NET_WebForms_Document_Viewer</RootNamespace>
+    <AssemblyName>ASP.NET_WebForms_Document_Viewer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
-    <TargetFrameworkProfile />
-    <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
+    <IISExpressSSLPort>44307</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -41,79 +42,57 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\..\Binaries\netstandard2.0\AngleSharp.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Controls.ASP, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Controls.ASP.dll</HintPath>
+    <Reference Include="Gnostice.Controls.ASP">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Controls.ASP.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
+    <Reference Include="Gnostice.Converter">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Converter.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Converter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Converter.dll</HintPath>
+    <Reference Include="Gnostice.Core">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.DigitizationEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.DigitizationEngine.dll</HintPath>
+    <Reference Include="Gnostice.DigitizationEngine">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.DigitizationEngine.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Documents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
+    <Reference Include="Gnostice.Documents">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Documents.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Graphics.GDIPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Graphics.GDIPlus.dll</HintPath>
+    <Reference Include="Gnostice.Graphics.GDIPlus">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Graphics.GDIPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.MailMerge">
+      <HintPath>..\..\..\Binaries\net462\Gnostice.MailMerge.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Binaries\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Tesseract">
-      <HintPath>..\..\..\Binaries\net45\Tesseract.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\Binaries\CSS\documentviewer.css">
-      <Link>CSS\documentviewer.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\jquery-ui.css">
-      <Link>CSS\jquery-ui.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\all.min.css">
-      <Link>CSS\all.min.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\solid.min.css">
-      <Link>CSS\solid.min.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\documentviewer.min.js">
-      <Link>Script\documentviewer.min.js</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\jquery-1.11.0.min.js">
-      <Link>Script\jquery-1.11.0.min.js</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\jquery-ui.min.js">
-      <Link>Script\jquery-ui.min.js</Link>
-    </Content>
+    <Content Include="Content\gnostice\all.min.css" />
+    <Content Include="Content\gnostice\documentviewer.css" />
     <Content Include="Content\Images\a.png" />
     <Content Include="Content\Images\chrome-24.png" />
     <Content Include="Content\Images\firefox-icon.png" />
@@ -124,11 +103,74 @@
     <Content Include="Content\Images\pdfe_button_175.gif" />
     <Content Include="Content\Images\safari-24.png" />
     <Content Include="Content\Images\selected Icons resized 60.png" />
+    <Content Include="Content\gnostice\solid.min.css" />
     <Content Include="Content\Stylesheet\Demo-Stylesheet.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\gnostice\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\gnostice\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\gnostice\webfonts\fa-solid-900.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Content\gnostice\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\gnostice\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\gnostice\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\gnostice\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\gnostice\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\gnostice\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\gnostice\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\gnostice\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\gnostice\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\gnostice\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\gnostice\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\gnostice\webfonts\fa-solid-900.woff2" />
+    <Content Include="App_Data\datasheet.pdf" />
+    <Content Include="App_Data\sampleFormDocument.pdf" />
+    <None Include="Scripts\jquery-2.0.0.intellisense.js" />
+    <Content Include="Scripts\gnostice\documentviewer.min.js" />
+    <Content Include="Scripts\jquery-2.0.0.js" />
+    <Content Include="Scripts\jquery-2.0.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Web.config" />
     <Content Include="WebViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -146,53 +188,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Data\datasheet.pdf" />
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.svg">
-      <Link>CSS\webfonts\fa-brands-400.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.svg">
-      <Link>CSS\webfonts\fa-regular-400.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.svg">
-      <Link>CSS\webfonts\fa-solid-900.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.eot">
-      <Link>CSS\webfonts\fa-brands-400.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.ttf">
-      <Link>CSS\webfonts\fa-brands-400.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff">
-      <Link>CSS\webfonts\fa-brands-400.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff2">
-      <Link>CSS\webfonts\fa-brands-400.woff2</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.eot">
-      <Link>CSS\webfonts\fa-regular-400.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.ttf">
-      <Link>CSS\webfonts\fa-regular-400.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff">
-      <Link>CSS\webfonts\fa-regular-400.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff2">
-      <Link>CSS\webfonts\fa-regular-400.woff2</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.eot">
-      <Link>CSS\webfonts\fa-solid-900.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.ttf">
-      <Link>CSS\webfonts\fa-solid-900.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff">
-      <Link>CSS\webfonts\fa-solid-900.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff2">
-      <Link>CSS\webfonts\fa-solid-900.woff2</Link>
-    </Content>
-    <None Include="Properties\PublishProfiles\HTML5DocumentViewerProfile.pubxml" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-2.0.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -201,18 +198,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="BitMiracle.LibJpeg.NET">
-      <Version>1.5.324</Version>
-    </PackageReference>
-    <PackageReference Include="DotNetZip">
-      <Version>1.15.0</Version>
-    </PackageReference>
-    <PackageReference Include="log4net">
-      <Version>2.0.14</Version>
-    </PackageReference>
-    <PackageReference Include="MSBuild.WebApplication.CopyContentLinkedFiles">
-      <Version>1.1.0-beta</Version>
-    </PackageReference>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -225,11 +214,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>35500</DevelopmentServerPort>
+          <DevelopmentServerPort>4181</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3293/</IISUrl>
+          <IISUrl>https://localhost:44307/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -239,11 +228,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x86" "$(ProjectDir)bin\x86"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x64" "$(ProjectDir)bin\x64"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\tessdata" "$(ProjectDir)bin\tessdata"</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\Source\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\..\..\Source\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,29 +8,21 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{60357709-3E62-4612-9C2D-29F0DBDD5929}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectGuid>{0AD63A29-BC1C-450F-9033-2E7C244FE688}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ASP.NET_MVC_CS_HTML5_Document_Viewer</RootNamespace>
-    <AssemblyName>ASP.NET_MVC_CS_HTML5_Document_Viewer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ASP.NET_MVC_Razor_Document_Viewer</RootNamespace>
+    <AssemblyName>ASP.NET_MVC_Razor_Document_Viewer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
-    <IISExpressSSLPort />
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>4.0</OldToolsVersion>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
     <UseGlobalApplicationHostFile />
-    <Use64BitIISExpress />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -43,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -51,46 +45,71 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\..\Binaries\net45\AngleSharp.dll</HintPath>
+    <Reference Include="AngleSharp, Version=0.16.1.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>packages\AngleSharp.0.16.1\lib\net461\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp.Css, Version=0.16.4.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>packages\AngleSharp.Css.0.16.4\lib\net461\AngleSharp.Css.dll</HintPath>
     </Reference>
     <Reference Include="BitMiracle.LibJpeg.NET, Version=1.5.324.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\BitMiracle.LibJpeg.NET.1.5.324\lib\net40\BitMiracle.LibJpeg.NET.dll</HintPath>
+      <HintPath>packages\BitMiracle.LibJpeg.NET.1.5.324\lib\net40\BitMiracle.LibJpeg.NET.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Core">
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Source\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Converter">
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Converter.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Source\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Documents">
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
+    <Reference Include="Gnostice.Controls.ASP, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Controls.ASP.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.Documents.WebHandler">
-      <HintPath>..\..\..\Binaries\net45\Gnostice.Controls.ASP.dll</HintPath>
+    <Reference Include="Gnostice.Converter, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Converter.dll</HintPath>
     </Reference>
-    <Reference Include="Gnostice.DigitizationEngine">
-      <HintPath>..\..\..\Binaries\net45\Gnostice.DigitizationEngine.dll</HintPath>
+    <Reference Include="Gnostice.Core, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Core.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    <Reference Include="Gnostice.DigitizationEngine, Version=1.1.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.DigitizationEngine.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Gnostice.Documents, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Documents.dll</HintPath>
     </Reference>
-    <Reference Include="Tesseract">
-      <HintPath>..\..\..\Binaries\net45\Tesseract.dll</HintPath>
+    <Reference Include="Gnostice.Graphics.GDIPlus, Version=1.1.1.1, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\net462\Gnostice.Graphics.GDIPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
@@ -102,85 +121,78 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="WebGrease">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentEventHandler.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DocumentViewerController.cs" />
+    <Compile Include="DocumentEventHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="..\..\..\Binaries\CSS\documentviewer.css">
-      <Link>CSS\documentviewer.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\jquery-ui.css">
-      <Link>CSS\jquery-ui.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\all.min.css">
-      <Link>CSS\all.min.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\solid.min.css">
-      <Link>CSS\solid.min.css</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\documentviewer.min.js">
-      <Link>Script\documentviewer.min.js</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\jquery-1.11.0.min.js">
-      <Link>Script\jquery-1.11.0.min.js</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\Scripts\jquery-ui.min.js">
-      <Link>Script\jquery-ui.min.js</Link>
-    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\a.png" />
     <Content Include="Content\Images\chrome-24.png" />
     <Content Include="Content\Images\firefox-icon.png" />
@@ -191,8 +203,82 @@
     <Content Include="Content\Images\pdfe_button_175.gif" />
     <Content Include="Content\Images\safari-24.png" />
     <Content Include="Content\Images\selected Icons resized 60.png" />
+    <Content Include="Content\Images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="Content\Stylesheet\Demo-Stylesheet.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.svg">
+      <Link>Content\Gnostice\webfonts\fa-brands-400.svg</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.svg">
+      <Link>Content\Gnostice\webfonts\fa-regular-400.svg</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.svg">
+      <Link>Content\Gnostice\webfonts\fa-solid-900.svg</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.eot">
+      <Link>Content\Gnostice\webfonts\fa-brands-400.eot</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.ttf">
+      <Link>Content\Gnostice\webfonts\fa-brands-400.ttf</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff">
+      <Link>Content\Gnostice\webfonts\fa-brands-400.woff</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff2">
+      <Link>Content\Gnostice\webfonts\fa-brands-400.woff2</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.eot">
+      <Link>Content\Gnostice\webfonts\fa-regular-400.eot</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.ttf">
+      <Link>Content\Gnostice\webfonts\fa-regular-400.ttf</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff">
+      <Link>Content\Gnostice\webfonts\fa-regular-400.woff</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff2">
+      <Link>Content\Gnostice\webfonts\fa-regular-400.woff2</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.eot">
+      <Link>Content\Gnostice\webfonts\fa-solid-900.eot</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.ttf">
+      <Link>Content\Gnostice\webfonts\fa-solid-900.ttf</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff">
+      <Link>Content\Gnostice\webfonts\fa-solid-900.woff</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff2">
+      <Link>Content\Gnostice\webfonts\fa-solid-900.woff2</Link>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -201,62 +287,53 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\DocumentViewer\DocumentViewer.cshtml" />
+    <Content Include="..\..\..\Binaries\CSS\documentviewer.css">
+      <Link>Content\Gnostice\documentviewer.css</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\all.min.css">
+      <Link>Content\Gnostice\all.min.css</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\CSS\solid.min.css">
+      <Link>Content\Gnostice\solid.min.css</Link>
+    </Content>
+    <Content Include="..\..\..\Binaries\Scripts\documentviewer.min.js">
+      <Link>Scripts\Gnostice\documentviewer.min.js</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Data\datasheet.pdf" />
-    <Content Include="Views\DocumentViewer\Index.cshtml" />
-    <Content Include="App_Data\sampleFormDocument.pdf" />
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.svg">
-      <Link>CSS\webfonts\fa-brands-400.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.svg">
-      <Link>CSS\webfonts\fa-regular-400.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.svg">
-      <Link>CSS\webfonts\fa-solid-900.svg</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.eot">
-      <Link>CSS\webfonts\fa-brands-400.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.ttf">
-      <Link>CSS\webfonts\fa-brands-400.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff">
-      <Link>CSS\webfonts\fa-brands-400.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-brands-400.woff2">
-      <Link>CSS\webfonts\fa-brands-400.woff2</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.eot">
-      <Link>CSS\webfonts\fa-regular-400.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.ttf">
-      <Link>CSS\webfonts\fa-regular-400.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff">
-      <Link>CSS\webfonts\fa-regular-400.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-regular-400.woff2">
-      <Link>CSS\webfonts\fa-regular-400.woff2</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.eot">
-      <Link>CSS\webfonts\fa-solid-900.eot</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.ttf">
-      <Link>CSS\webfonts\fa-solid-900.ttf</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff">
-      <Link>CSS\webfonts\fa-solid-900.woff</Link>
-    </Content>
-    <Content Include="..\..\..\Binaries\CSS\webfonts\fa-solid-900.woff2">
-      <Link>CSS\webfonts\fa-solid-900.woff2</Link>
-    </Content>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -272,12 +349,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6928</DevelopmentServerPort>
+          <DevelopmentServerPort>50473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>https://localhost:44335/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -287,20 +363,9 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x86" "$(ProjectDir)bin\x86"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\x64" "$(ProjectDir)bin\x64"
-xcopy /E /i /Y "$(ProjectDir)..\..\..\Binaries\net45\tessdata" "$(ProjectDir)bin\tessdata"</PostBuildEvent>
-  </PropertyGroup>
-  <Import Project="..\..\..\packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets" Condition="Exists('..\..\..\packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.1.0-beta\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.0.0\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets" Condition="Exists('packages\MSBuild.WebApplication.CopyContentLinkedFiles.1.0.0\build\MSBuild.WebApplication.CopyContentLinkedFiles.targets')" />
+  <Import Project="..\..\..\..\Source\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\..\..\Source\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

@@ -15,6 +15,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,13 +116,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-
-    <Reference Include="Gnostice.Controls.Xamarin.iOS">
-	<SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Controls.Xamarin.iOS.dll</HintPath>
-
-      
-    </Reference>
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Controls.Xamarin.iOS.dll" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -130,9 +125,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Forms">
-      <Version>2.80.3</Version>
-    </PackageReference>
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.3" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>

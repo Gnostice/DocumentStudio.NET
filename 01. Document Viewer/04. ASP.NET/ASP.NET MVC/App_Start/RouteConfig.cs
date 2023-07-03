@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ASP.NET_MVC_Razor_CS_Document_Viewer
+namespace ASP.NET_MVC_Razor_Document_Viewer
 {
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.IgnoreRoute("{*DocumentHandler}", new { DocumentHandler = @".*\.axd(/.*)?" });
 
             routes.MapRoute(
                 name: "Default",

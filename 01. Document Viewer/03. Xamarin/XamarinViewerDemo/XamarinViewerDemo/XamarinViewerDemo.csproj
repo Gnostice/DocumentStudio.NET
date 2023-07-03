@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,41 +13,24 @@
 
   <ItemGroup>
     <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
-	  <PackageReference Include="DotNetZip" Version="1.15.0" />
-    <PackageReference Include="log4net" Version="2.0.14" />
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.3" />
-    <PackageReference Include="System.IO.Packaging" Version="5.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991757" />
+	  <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="AngleSharp" Version="0.16.1" />
+    <PackageReference Include="AngleSharp.Css" Version="0.16.4" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.3" />
+    <PackageReference Include="System.IO.Packaging" Version="6.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\AngleSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Controls.Xamarin">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Controls.Xamarin.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Converter">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Converter.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Core">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.DigitizationEngine">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.DigitizationEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Documents">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Graphics.Skia">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.Graphics.Skia.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.MailMerge">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.MailMerge.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.PageManager">
-      <HintPath>..\..\..\..\Binaries\netstandard2.0\Gnostice.PageManager.dll</HintPath>
-    </Reference>
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Tesseract.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Converter.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Core.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.DigitizationEngine.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Documents.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Controls.Xamarin.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.Graphics.Skia.dll" />
+    <Reference Include="..\..\..\..\Binaries\netstandard2.0\Gnostice.PageManager.dll" />
   </ItemGroup>
 </Project>

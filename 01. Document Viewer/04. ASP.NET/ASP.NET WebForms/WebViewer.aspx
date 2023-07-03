@@ -10,16 +10,16 @@
     <link href="Content/Stylesheet/Demo-Stylesheet.css" rel="stylesheet" />
 
    
-   
-    <link href="CSS/all.min.css" rel="stylesheet" />
-    <link href="CSS/solid.min.css" rel="stylesheet" />
-    <link href="CSS/documentviewer.css" rel="stylesheet" />
     <link href="CSS/jquery-ui.css" rel="stylesheet" />
-  
-    <script src="Script/jquery-1.11.0.min.js"></script>
-    <script src="Script/jquery-ui.min.js"></script>
+
+    <link href="Content/gnostice/all.min.css" rel="stylesheet" />
+    <link href="Content/gnostice/solid.min.css" rel="stylesheet" />
+    <link href="Content/gnostice/documentviewer.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-2.0.0.min.js"></script>
+    <script src="Scripts/jquery-ui-1.13.2.min.js"></script>
     
-    <script src="Script/documentviewer.min.js"></script>
+    <script src="Scripts/gnostice/documentviewer.min.js"></script>
 
      <script type="text/javascript">
 	 

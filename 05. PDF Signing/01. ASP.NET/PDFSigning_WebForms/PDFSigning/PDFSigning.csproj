@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>del_PDFSignDemo</RootNamespace>
-    <AssemblyName>del_PDFSignDemo</AssemblyName>
+    <RootNamespace>PDFSignDemo</RootNamespace>
+    <AssemblyName>PDFSignDemo</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -22,7 +22,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-  </PropertyGroup>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -42,42 +43,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\..\..\..\Binaries\net45\AngleSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BitMiracle.LibJpeg.NET, Version=1.5.324.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\BitMiracle.LibJpeg.NET.1.5.324\lib\net40\BitMiracle.LibJpeg.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Core">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Converter">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Converter.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Documents">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Documents.dll</HintPath>
-    </Reference>
-		<Reference Include="Gnostice.Graphics.GDIPlus">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Graphics.GDIPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.Controls.ASP">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.Controls.ASP.dll</HintPath>
-    </Reference>
-    <Reference Include="Gnostice.DigitizationEngine">
-      <HintPath>..\..\..\..\Binaries\net45\Gnostice.DigitizationEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Tesseract">
-      <HintPath>..\..\..\..\Binaries\net45\Tesseract.dll</HintPath>
-    </Reference>
+    <Reference Include="..\..\..\..\Binaries\net462\Tesseract.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Gnostice.Converter.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Gnostice.Core.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Gnostice.DigitizationEngine.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Gnostice.Documents.dll" />
+		<Reference Include="..\..\..\..\Binaries\net462\Gnostice.Graphics.GDIPlus.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Gnostice.Controls.ASP.dll" />
+    <Reference Include="..\..\..\..\Binaries\net462\Tesseract.dll" />
+
+    <PackageReference Include="BitMiracle.LibJpeg.NET" Version="1.5.324" />
+    <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="AngleSharp" Version="0.16.1" />
+    <PackageReference Include="AngleSharp.Css" Version="0.16.4" />
+
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,7 +121,6 @@
     <Content Include="Content\Gnostice\webfonts\fa-brands-400.ttf" />
     <Content Include="Content\Gnostice\webfonts\fa-brands-400.eot" />
     <Content Include="Content\Gnostice\localization\Messages.properties" />
-    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

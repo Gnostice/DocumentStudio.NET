@@ -635,14 +635,14 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.#ctor(Infralution.Licensing.ASP.EvaluationMonitor)">
+        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.#ctor(Infralution.Licensing.EvaluationMonitor)">
             <summary>
             Create a new instance of the window using the given evaluation monitor 
             </summary>
             <param name="evaluationMonitor">The evalulation monitor class to use to store the evaluation data</param>
             <remarks>Uses the default ProductName from the application assembly info</remarks>
         </member>
-        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.#ctor(Infralution.Licensing.ASP.EvaluationMonitor,System.String)">
+        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.#ctor(Infralution.Licensing.EvaluationMonitor,System.String)">
             <summary>
             Create a new instance of the window using the given evaluation monitor and product name
             </summary>
@@ -716,7 +716,7 @@
             prior to calling this method.
             </remarks>
         </member>
-        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.ShowDialog(Infralution.Licensing.ASP.EvaluationMonitor)">
+        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.ShowDialog(Infralution.Licensing.EvaluationMonitor)">
             <summary>
             Show the dialog
             </summary>
@@ -724,7 +724,7 @@
             <returns>The result of the evaluation dialog</returns>
             <remarks>Uses the default ProductName from the application assembly info</remarks>
         </member>
-        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.ShowDialog(Infralution.Licensing.ASP.EvaluationMonitor,System.String)">
+        <member name="M:Infralution.Licensing.WPF.EvaluationDialog.ShowDialog(Infralution.Licensing.EvaluationMonitor,System.String)">
             <summary>
             Show the dialog
             </summary>

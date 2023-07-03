@@ -1,4 +1,0 @@
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET MVC\obj\Debug\ASP.NET_MVC_Razor_Document_Converter.csproj.AssemblyReference.cache
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET MVC\obj\Debug\ASP.NET_MVC_Razor_CS_Document_Converter.dll.licenses
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET MVC\obj\Debug\ASP.NET_MVC_Razor_Document_Converter.csproj.CoreCompileInputs.cache
-C:\Users\buildadmin\Documents\Gnostice\Document Studio .NET\Demos\03. Document Converter\04. ASP.NET\ASP.NET MVC\obj\Debug\ASP.NET_MVC_Razor_Document_Converter.csprojAssemblyReference.cache

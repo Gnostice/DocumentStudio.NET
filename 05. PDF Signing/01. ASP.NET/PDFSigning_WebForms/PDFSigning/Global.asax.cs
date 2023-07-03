@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace del_PDFSignDemo
+namespace PDFSignDemo
 {
     public class Global : System.Web.HttpApplication
     {

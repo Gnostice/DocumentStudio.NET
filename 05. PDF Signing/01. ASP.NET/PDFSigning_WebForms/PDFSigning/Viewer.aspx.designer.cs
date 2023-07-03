@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace del_PDFSignDemo
+namespace PDFSignDemo
 {
 
 

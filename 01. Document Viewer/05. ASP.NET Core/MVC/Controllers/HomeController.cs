@@ -3,6 +3,7 @@ using Gnostice.Controls.ASP;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,11 @@ namespace ASPNETCore_MVC_Document_Viewer.Controllers
         private readonly ILogger<HomeController> _logger;
         private IMemoryCache _memoryCache;
         private IWebHostEnvironment _environment;
+        private IServiceScopeFactory _serviceScopeFactory;
 
-        public HomeController(ILogger<HomeController> logger, IMemoryCache memoryCache, IWebHostEnvironment environment)
+        public HomeController(IServiceScopeFactory serviceScopeFactory, ILogger<HomeController> logger, IMemoryCache memoryCache, IWebHostEnvironment environment)
         {
+            _serviceScopeFactory = serviceScopeFactory;
             _logger = logger;
             _memoryCache = memoryCache;
             _environment = environment;
@@ -29,7 +32,7 @@ namespace ASPNETCore_MVC_Document_Viewer.Controllers
         public IActionResult Index()
         {
             var file = Path.Combine(_environment.WebRootPath, "files", "DifferentAlignments.docx");
-            ViewerController controller = new ViewerController(_memoryCache);
+            ViewerController controller = new ViewerController(_serviceScopeFactory, _memoryCache);
             string documentUri = controller.LoadDocument(file);
             ViewBag.docUri = documentUri;
             return View();
