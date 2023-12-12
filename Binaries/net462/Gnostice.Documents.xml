@@ -2196,6 +2196,24 @@
             derived.
             </summary>
         </member>
+        <member name="P:Gnostice.Documents.PDF.PDFFormField.ActionType">
+            <summary>
+            Gets or sets the type of PDF action that viewer applications
+            need to execute when the widget is activated by the end-user.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Documents.PDF.PDFFormField.FdfFilePath">
+            <summary>
+            Gets or sets pathname of the FDF file from which viewer
+            applications should read values to populate the form fields.
+            </summary>
+        </member>
+        <member name="P:Gnostice.Documents.PDF.PDFFormField.JavaScript">
+            <summary>
+            Gets or sets JavaScript script that needs to be executed when
+            the form field is selected by the end-user.
+            </summary>
+        </member>
         <member name="P:Gnostice.Documents.PDF.PDFFormField.Orientation">
             <summary>
             Gets or sets angle of rotation of the form field.
@@ -2398,25 +2416,6 @@
             Gets or sets caption that viewer applications should display
             on the push button when the end-user brings presses down on
             the form field.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.PDF.PDFFormPushButton.FdfFilePath">
-            <summary>
-            Gets or sets pathname of the FDF file from which viewer
-            applications should read values to populate the form fields.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.PDF.PDFFormPushButton.ActionType">
-            <summary>
-            Gets or sets the type of PDF action that viewer applications
-            need to execute when the push button is selected by the
-            end-user.
-            </summary>
-        </member>
-        <member name="P:Gnostice.Documents.PDF.PDFFormPushButton.JavaScript">
-            <summary>
-            Gets or sets JavaScript script that needs to be executed when
-            the form field is selected by the end-user.
             </summary>
         </member>
         <member name="P:Gnostice.Documents.PDF.PDFFormPushButton.NormalCaption">
